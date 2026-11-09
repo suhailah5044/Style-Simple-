@@ -1,0 +1,1 @@
+drawtext=fontfile='/home/user/Style-Simple-/style-edit-phoneholder/assets/Cweyons-Regular.ttf':text='steady gila holder ni':fontsize=72:fontcolor=white:shadowcolor=black@0.45:shadowx=0:shadowy=3:x=(w-text_w)/2:y='270+14*(1-min(1,(t-0.1)/0.3))':alpha='if(lt(t,0.4),(t-0.1)/0.3,if(gt(t,2.75),(3.0-t)/0.25,1))':enable='between(t,0.1,3.0)'
