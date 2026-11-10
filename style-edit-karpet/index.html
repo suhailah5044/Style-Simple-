@@ -1,0 +1,174 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}
+html,body{margin:0;background:#000;}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}
+.scene{position:absolute;inset:0;overflow:hidden;}
+.cam{position:absolute;inset:0;transform-origin:50% 50%;}
+.cam video{width:100%;height:100%;object-fit:cover;display:block;}
+/* phone mockup + latar pro */
+.mock .bg{position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 38%,#2b2f36 0%,#15171b 55%,#0b0c0e 100%);}
+.mock .spot{position:absolute;left:140px;top:300px;width:800px;height:1300px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.10),rgba(255,255,255,0));}
+.mock .grid{position:absolute;inset:0;opacity:.18;background-image:radial-gradient(rgba(255,255,255,.55) 1.2px,transparent 1.4px);background-size:36px 36px;
+  -webkit-mask-image:radial-gradient(70% 60% at 50% 55%,transparent 30%,#000 100%);mask-image:radial-gradient(70% 60% at 50% 55%,transparent 30%,#000 100%);}
+.phone{position:absolute;left:50%;top:50%;width:700px;height:1290px;margin:-570px 0 0 -350px;border-radius:84px;background:#0d0e10;
+  box-shadow:0 0 0 3px #3a3d43,0 0 0 9px #1a1b1e,0 40px 90px rgba(0,0,0,.6);transform-origin:50% 50%;overflow:hidden;}
+.phone .scr{position:absolute;inset:14px;border-radius:70px;overflow:hidden;background:#000;}
+.phone video{width:100%;height:100%;object-fit:cover;display:block;}
+.phone .isl{position:absolute;top:34px;left:50%;width:150px;height:42px;margin-left:-75px;border-radius:21px;background:#000;}
+/* overlay teks: putih, kecil, ruang kosong */
+.word{position:absolute;z-index:60;width:520px;font-family:"Lexend Mega",sans-serif;color:#fff;
+  text-shadow:0 2px 8px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.35);}
+.word.L{left:150px;text-align:left;} .word.R{right:150px;text-align:right;} .word.C{left:50%;margin-left:-260px;text-align:center;}
+.word .l1,.word .l2{overflow:hidden;line-height:1.25;padding:2px 0;}
+.word span{display:inline-block;}
+.word .l1{font-weight:600;font-size:30px;letter-spacing:-0.03em;}
+.word .l2{font-weight:400;font-size:21px;letter-spacing:-0.01em;opacity:.92;margin-top:2px;}
+.word .bar{display:block;height:2px;width:48px;background:#fff;margin-top:12px;box-shadow:0 1px 4px rgba(0,0,0,.35);}
+.word.dk,#hook{text-shadow:0 0 18px rgba(0,0,0,.55),0 2px 8px rgba(0,0,0,.5),0 0 2px rgba(0,0,0,.4);}
+.word.L .bar{transform-origin:0 50%;} .word.R .bar{margin-left:auto;transform-origin:100% 50%;} .word.C .bar{margin:12px auto 0;}
+/* hook 0-3s (cover story) */
+#hook{position:absolute;top:205px;left:0;right:0;z-index:60;text-align:center;font-family:"Lexend Mega",sans-serif;color:#fff;
+  text-shadow:0 2px 10px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.35);}
+#hook .k{font-size:17px;font-weight:400;letter-spacing:.32em;opacity:.9;}
+#hook .h{font-size:40px;font-weight:600;letter-spacing:-0.035em;line-height:1.2;margin-top:10px;overflow:hidden;}
+#hook .h span{display:inline-block;}
+#hook .bar{display:block;height:2px;width:56px;background:#fff;margin:14px auto 0;}
+#flash{position:absolute;inset:0;background:#fff;z-index:50;opacity:0;pointer-events:none;}
+</style></head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="26.3" data-fps="30">
+    <div id="s1" class="scene" style="z-index:10;visibility:hidden"><div class="cam"><video id="v_s1" src="assets/clips/s1.mp4" data-start="0.0" data-duration="3.0" muted playsinline></video></div></div>
+  <div id="s2" class="scene" style="z-index:11;visibility:hidden"><div class="cam"><video id="v_s2" src="assets/clips/s2.mp4" data-start="3.0" data-duration="2.6" muted playsinline></video></div></div>
+  <div id="s3" class="scene mock" style="z-index:12;visibility:hidden">
+    <div class="bg"><i class="spot"></i><i class="grid"></i></div>
+    <div class="phone" id="phone"><div class="scr"><video id="v_s3" src="assets/clips/s3.mp4" data-start="5.6" data-duration="3.0" muted playsinline></video></div><i class="isl"></i></div>
+  </div>
+  <div id="s4" class="scene" style="z-index:13;visibility:hidden"><div class="cam"><video id="v_s4" src="assets/clips/s4.mp4" data-start="8.6" data-duration="2.8" muted playsinline></video></div></div>
+  <div id="s5" class="scene" style="z-index:14;visibility:hidden"><div class="cam"><video id="v_s5" src="assets/clips/s5.mp4" data-start="11.4" data-duration="3.0" muted playsinline></video></div></div>
+  <div id="s6" class="scene" style="z-index:15;visibility:hidden"><div class="cam"><video id="v_s6" src="assets/clips/s6.mp4" data-start="14.4" data-duration="1.9" muted playsinline></video></div></div>
+  <div id="s7" class="scene" style="z-index:16;visibility:hidden"><div class="cam"><video id="v_s7" src="assets/clips/s7.mp4" data-start="16.3" data-duration="2.1" muted playsinline></video></div></div>
+  <div id="s8" class="scene" style="z-index:17;visibility:hidden"><div class="cam"><video id="v_s8" src="assets/clips/s8.mp4" data-start="18.4" data-duration="2.7" muted playsinline></video></div></div>
+  <div id="s9" class="scene" style="z-index:18;visibility:hidden"><div class="cam"><video id="v_s9" src="assets/clips/s9.mp4" data-start="21.1" data-duration="2.2" muted playsinline></video></div></div>
+  <div id="s10" class="scene" style="z-index:19;visibility:hidden"><div class="cam"><video id="v_s10" src="assets/clips/s10.mp4" data-start="23.3" data-duration="3.0" muted playsinline></video></div></div>
+  <div id="fb0" class="scene" style="z-index:40;visibility:hidden;clip-path:polygon(0 0%,100% -2%,100% 32%,0 34%)"><div class="cam"><video id="v_fb0" src="assets/clips/s6.mp4" data-start="16.3" data-duration="0.32" data-media-start="1.9" muted playsinline></video></div></div>
+  <div id="fb1" class="scene" style="z-index:40;visibility:hidden;clip-path:polygon(0 33%,100% 35%,100% 69%,0 67%)"><div class="cam"><video id="v_fb1" src="assets/clips/s6.mp4" data-start="16.3" data-duration="0.33" data-media-start="1.9" muted playsinline></video></div></div>
+  <div id="fb2" class="scene" style="z-index:40;visibility:hidden;clip-path:polygon(0 66%,100% 64%,100% 98%,0 100%)"><div class="cam"><video id="v_fb2" src="assets/clips/s6.mp4" data-start="16.3" data-duration="0.34" data-media-start="1.9" muted playsinline></video></div></div>
+  <div id="flash"></div>
+  <div id="hook" class="clip" data-start="0" data-duration="2.95"><div class="k" id="hk">COVER STORY</div><div class="h"><span id="h1">Karpet Luar</span></div><div class="h" style="margin-top:0"><span id="h2">Anti Slip</span></div><i class="bar" id="hb"></i></div>
+    <div id="w0" class="clip word R" data-start="3.15" data-duration="2.3" style="top:250px"><div class="l1"><span>Outdoor Mat</span></div><div class="l2"><span>Upgrade!</span></div><i class="bar"></i></div>
+  <div id="w1" class="clip word C" data-start="6.25" data-duration="2.2" style="top:150px"><div class="l1"><span>Biggest Size</span></div><div class="l2"><span>80 × 120 cm</span></div><i class="bar"></i></div>
+  <div id="w2" class="clip word R" data-start="8.75" data-duration="2.5" style="top:230px"><div class="l1"><span>400 GSM</span></div><div class="l2"><span>Coarse Fiber</span></div><i class="bar"></i></div>
+  <div id="w3" class="clip word C dk" data-start="11.6" data-duration="2.65" style="top:215px"><div class="l1"><span>Scrape Off</span></div><div class="l2"><span>Dirt & Sand</span></div><i class="bar"></i></div>
+  <div id="w4" class="clip word R" data-start="14.55" data-duration="1.65" style="top:240px"><div class="l1"><span>Water</span></div><div class="l2"><span>Resistant</span></div><i class="bar"></i></div>
+  <div id="w5" class="clip word R" data-start="16.75" data-duration="1.55" style="top:230px"><div class="l1"><span>TPE Anti-Slip</span></div><div class="l2"><span>Base</span></div><i class="bar"></i></div>
+  <div id="w6" class="clip word L" data-start="18.6" data-duration="2.4" style="top:230px"><div class="l1"><span>Minimalist</span></div><div class="l2"><span>Embossed Design</span></div><i class="bar"></i></div>
+  <div id="w7" class="clip word C" data-start="23.6" data-duration="2.5" style="top:215px"><div class="l1"><span>Perfect for</span></div><div class="l2"><span>Home Entrance</span></div><i class="bar"></i></div>
+  <audio id="music" src="sfx/music.wav" data-start="0" data-duration="26.3" data-volume="0.55" data-fade-out="1.2"></audio>
+    <audio id="ao0" src="sfx/bell_ding.wav" data-start="3.15" data-duration="1.2" data-volume="0.22"></audio>
+  <audio id="ao1" src="sfx/ting2.wav" data-start="6.25" data-duration="1.2" data-volume="0.25"></audio>
+  <audio id="ao2" src="sfx/ui_prompt.wav" data-start="8.75" data-duration="1.2" data-volume="0.38"></audio>
+  <audio id="ao3" src="sfx/ui_prompt.wav" data-start="11.60" data-duration="1.2" data-volume="0.38"></audio>
+  <audio id="ao4" src="sfx/bell_ding.wav" data-start="14.55" data-duration="1.2" data-volume="0.22"></audio>
+  <audio id="ao5" src="sfx/ui_prompt.wav" data-start="16.75" data-duration="1.2" data-volume="0.38"></audio>
+  <audio id="ao6" src="sfx/ui_prompt.wav" data-start="18.60" data-duration="1.2" data-volume="0.38"></audio>
+  <audio id="ao7" src="sfx/ting2.wav" data-start="23.60" data-duration="1.2" data-volume="0.25"></audio>
+  <audio id="at0" src="sfx/soft_impact.wav" data-start="0.05" data-duration="1.0" data-volume="0.4"></audio>
+  <audio id="at1" src="sfx/bubble_pop.wav" data-start="0.35" data-duration="1.0" data-volume="0.3"></audio>
+  <audio id="at2" src="sfx/air_whoosh.wav" data-start="2.92" data-duration="1.0" data-volume="0.28"></audio>
+  <audio id="at3" src="sfx/air_whoosh.wav" data-start="5.50" data-duration="1.0" data-volume="0.25"></audio>
+  <audio id="at4" src="sfx/ui_click.wav" data-start="5.75" data-duration="1.0" data-volume="0.35"></audio>
+  <audio id="at5" src="sfx/soft_impact.wav" data-start="6.05" data-duration="1.0" data-volume="0.35"></audio>
+  <audio id="at6" src="sfx/air_whoosh.wav" data-start="8.50" data-duration="1.0" data-volume="0.28"></audio>
+  <audio id="at7" src="sfx/soft_impact.wav" data-start="8.62" data-duration="1.0" data-volume="0.3"></audio>
+  <audio id="at8" src="sfx/ui_click.wav" data-start="11.32" data-duration="1.0" data-volume="0.3"></audio>
+  <audio id="at9" src="sfx/air_whoosh.wav" data-start="14.35" data-duration="1.0" data-volume="0.25"></audio>
+  <audio id="at10" src="sfx/frame_break.wav" data-start="16.28" data-duration="1.0" data-volume="0.4"></audio>
+  <audio id="at11" src="sfx/ui_click.wav" data-start="18.33" data-duration="1.0" data-volume="0.3"></audio>
+  <audio id="at12" src="sfx/air_whoosh.wav" data-start="21.02" data-duration="1.0" data-volume="0.25"></audio>
+  <audio id="at13" src="sfx/air_whoosh.wav" data-start="23.22" data-duration="1.0" data-volume="0.25"></audio>
+  <audio id="at14" src="sfx/bubble_pop.wav" data-start="23.35" data-duration="1.0" data-volume="0.25"></audio>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.set(".word span",{yPercent:110},0);tl.set(".word .bar",{scaleX:0},0);
+tl.fromTo("#hk",{opacity:0,y:8},{opacity:.9,y:0,duration:.6,ease:"expo.out"},0.1);
+tl.fromTo("#h1",{yPercent:110},{yPercent:0,duration:.55,ease:"expo.out"},0.3);
+tl.fromTo("#h2",{yPercent:110},{yPercent:0,duration:.55,ease:"expo.out"},0.45);
+tl.fromTo("#hb",{scaleX:0},{scaleX:1,duration:.5,ease:"expo.out"},0.6);
+tl.to("#hook",{opacity:0,y:-12,duration:.25,ease:"power2.in"},2.65);
+tl.set("#s1",{visibility:"visible"},0.0);tl.set("#s1",{visibility:"hidden"},3.0);
+tl.fromTo("#s1 .cam",{scale:1.08},{scale:1.0,duration:3.0,ease:"sine.out"},0.0);
+tl.set("#s2",{visibility:"visible"},3.0);tl.set("#s2",{visibility:"hidden"},5.6);
+tl.fromTo("#s2 .cam",{scale:1.0},{scale:1.07,duration:2.6,ease:"sine.inOut"},3.0);
+tl.set("#s3",{visibility:"visible"},5.6);tl.set("#s3",{visibility:"hidden"},8.6);
+tl.fromTo("#phone",{scale:1.5,borderRadius:0},{scale:1,borderRadius:84,duration:.65,ease:"power3.inOut"},5.6);
+tl.fromTo("#s3 .bg",{opacity:0},{opacity:1,duration:.4},5.75);
+tl.to("#phone",{y:-14,duration:2.3,ease:"sine.inOut"},6.25);
+tl.set("#s4",{visibility:"visible"},8.6);tl.set("#s4",{visibility:"hidden"},11.399999999999999);
+tl.fromTo("#s4 .cam",{scale:1.14},{scale:1.04,duration:.5,ease:"power3.out"},8.6);tl.to("#s4 .cam",{scale:1.1,duration:2.3,ease:"sine.inOut"},9.1);
+tl.set("#s5",{visibility:"visible"},11.4);tl.set("#s5",{visibility:"hidden"},14.4);
+tl.fromTo("#s5 .cam",{scale:1.0},{scale:1.07,duration:3.0,ease:"sine.inOut"},11.4);
+tl.set("#s6",{visibility:"visible"},14.4);tl.set("#s6",{visibility:"hidden"},16.3);
+tl.fromTo("#s6 .cam",{scale:1.08},{scale:1.0,duration:1.9,ease:"sine.out"},14.4);
+tl.set("#s7",{visibility:"visible"},16.3);tl.set("#s7",{visibility:"hidden"},18.400000000000002);
+tl.fromTo("#s7 .cam",{scale:1.14},{scale:1.04,duration:.5,ease:"power3.out"},16.3);tl.to("#s7 .cam",{scale:1.1,duration:1.6,ease:"sine.inOut"},16.8);
+tl.set("#s8",{visibility:"visible"},18.4);tl.set("#s8",{visibility:"hidden"},21.099999999999998);
+tl.fromTo("#s8 .cam",{scale:1.0},{scale:1.07,duration:2.7,ease:"sine.inOut"},18.4);
+tl.set("#s9",{visibility:"visible"},21.1);tl.set("#s9",{visibility:"hidden"},23.3);
+tl.fromTo("#s9 .cam",{scale:1.08},{scale:1.0,duration:2.2,ease:"sine.out"},21.1);
+tl.set("#s10",{visibility:"visible"},23.3);tl.set("#s10",{visibility:"hidden"},26.3);
+tl.fromTo("#s10 .cam",{scale:1.0},{scale:1.07,duration:3.0,ease:"sine.inOut"},23.3);
+tl.set("#fb0",{visibility:"visible"},16.3);tl.set("#fb0",{visibility:"hidden"},16.62);
+tl.fromTo("#fb0",{x:0,rotation:0},{x:-1150,rotation:-4,duration:0.32,ease:"power3.in"},16.3);
+tl.set("#fb1",{visibility:"visible"},16.3);tl.set("#fb1",{visibility:"hidden"},16.62);
+tl.fromTo("#fb1",{x:0,rotation:0},{x:1150,rotation:4,duration:0.32,ease:"power3.in"},16.32);
+tl.set("#fb2",{visibility:"visible"},16.3);tl.set("#fb2",{visibility:"hidden"},16.62);
+tl.fromTo("#fb2",{x:0,rotation:0},{x:-1150,rotation:-4,duration:0.32,ease:"power3.in"},16.34);
+tl.fromTo("#flash",{opacity:0},{opacity:.55,duration:.05,yoyo:true,repeat:1},16.3);
+tl.fromTo("#w0 .l1 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},3.15);
+tl.fromTo("#w0 .l2 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},3.27);
+tl.fromTo("#w0 .bar",{scaleX:0},{scaleX:1,duration:.5,ease:"expo.out"},3.33);
+tl.to("#w0 .l1 span,#w0 .l2 span",{yPercent:-110,duration:.25,ease:"power2.in",stagger:.04},5.15);
+tl.to("#w0 .bar",{scaleX:0,duration:.22,ease:"power2.in"},5.19);
+tl.fromTo("#w1 .l1 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},6.25);
+tl.fromTo("#w1 .l2 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},6.37);
+tl.fromTo("#w1 .bar",{scaleX:0},{scaleX:1,duration:.5,ease:"expo.out"},6.43);
+tl.to("#w1 .l1 span,#w1 .l2 span",{yPercent:-110,duration:.25,ease:"power2.in",stagger:.04},8.15);
+tl.to("#w1 .bar",{scaleX:0,duration:.22,ease:"power2.in"},8.19);
+tl.fromTo("#w2 .l1 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},8.75);
+tl.fromTo("#w2 .l2 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},8.87);
+tl.fromTo("#w2 .bar",{scaleX:0},{scaleX:1,duration:.5,ease:"expo.out"},8.93);
+tl.to("#w2 .l1 span,#w2 .l2 span",{yPercent:-110,duration:.25,ease:"power2.in",stagger:.04},10.95);
+tl.to("#w2 .bar",{scaleX:0,duration:.22,ease:"power2.in"},10.99);
+tl.fromTo("#w3 .l1 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},11.6);
+tl.fromTo("#w3 .l2 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},11.72);
+tl.fromTo("#w3 .bar",{scaleX:0},{scaleX:1,duration:.5,ease:"expo.out"},11.78);
+tl.to("#w3 .l1 span,#w3 .l2 span",{yPercent:-110,duration:.25,ease:"power2.in",stagger:.04},13.95);
+tl.to("#w3 .bar",{scaleX:0,duration:.22,ease:"power2.in"},13.99);
+tl.fromTo("#w4 .l1 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},14.55);
+tl.fromTo("#w4 .l2 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},14.67);
+tl.fromTo("#w4 .bar",{scaleX:0},{scaleX:1,duration:.5,ease:"expo.out"},14.73);
+tl.to("#w4 .l1 span,#w4 .l2 span",{yPercent:-110,duration:.25,ease:"power2.in",stagger:.04},15.90);
+tl.to("#w4 .bar",{scaleX:0,duration:.22,ease:"power2.in"},15.94);
+tl.fromTo("#w5 .l1 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},16.75);
+tl.fromTo("#w5 .l2 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},16.87);
+tl.fromTo("#w5 .bar",{scaleX:0},{scaleX:1,duration:.5,ease:"expo.out"},16.93);
+tl.to("#w5 .l1 span,#w5 .l2 span",{yPercent:-110,duration:.25,ease:"power2.in",stagger:.04},18.00);
+tl.to("#w5 .bar",{scaleX:0,duration:.22,ease:"power2.in"},18.04);
+tl.fromTo("#w6 .l1 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},18.6);
+tl.fromTo("#w6 .l2 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},18.72);
+tl.fromTo("#w6 .bar",{scaleX:0},{scaleX:1,duration:.5,ease:"expo.out"},18.78);
+tl.to("#w6 .l1 span,#w6 .l2 span",{yPercent:-110,duration:.25,ease:"power2.in",stagger:.04},20.70);
+tl.to("#w6 .bar",{scaleX:0,duration:.22,ease:"power2.in"},20.74);
+tl.fromTo("#w7 .l1 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},23.6);
+tl.fromTo("#w7 .l2 span",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},23.72);
+tl.fromTo("#w7 .bar",{scaleX:0},{scaleX:1,duration:.5,ease:"expo.out"},23.78);
+tl.to("#w7 .l1 span,#w7 .l2 span",{yPercent:-110,duration:.25,ease:"power2.in",stagger:.04},25.80);
+tl.to("#w7 .bar",{scaleX:0,duration:.22,ease:"power2.in"},25.84);
+tl.set({},{},26.3);
+window.__timelines=window.__timelines||{};window.__timelines["root"]=tl;
+</script>
+</body></html>
