@@ -112,7 +112,7 @@ html,body{{margin:0;background:#000;}}
 #hook{{position:absolute;top:205px;left:0;right:0;z-index:60;text-align:center;font-family:"Lexend Mega",sans-serif;color:#fff;
   text-shadow:0 2px 10px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.35);}}
 #hook .k{{font-size:17px;font-weight:400;letter-spacing:.32em;opacity:.9;}}
-#hook .h{{font-size:40px;font-weight:600;letter-spacing:-0.035em;line-height:1.2;margin-top:10px;overflow:hidden;}}
+#hook .h{{font-size:40px;font-weight:600;letter-spacing:-0.035em;line-height:1.2;margin-top:0;overflow:hidden;}}
 #hook .h span{{display:inline-block;}}
 #hook .bar{{display:block;height:2px;width:56px;background:#fff;margin:14px auto 0;}}
 #flash{{position:absolute;inset:0;background:#fff;z-index:50;opacity:0;pointer-events:none;}}
@@ -121,7 +121,7 @@ html,body{{margin:0;background:#000;}}
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
   {chr(10).join("  "+x for x in vid)}
   <div id="flash"></div>
-  <div id="hook" class="clip" data-start="0" data-duration="2.95"><b class="gl" id="hgl" style="left:50%;right:auto;width:620px;margin-left:-310px;top:-40px;bottom:-40px"></b><div class="k" id="hk">COVER STORY</div><div class="h"><span id="h1">Karpet Luar</span></div><div class="h" style="margin-top:0"><span id="h2">Anti Slip</span></div><i class="bar" id="hb"></i></div>
+  <div id="hook" class="clip" data-start="0" data-duration="2.95"><b class="gl" id="hgl" style="left:50%;right:auto;width:620px;margin-left:-310px;top:-40px;bottom:-40px"></b><div class="h"><span id="h1">Karpet Luar</span></div><div class="h" style="margin-top:0"><span id="h2">Anti Slip</span></div><i class="bar" id="hb"></i></div>
   {chr(10).join("  "+x for x in ov)}
   {chr(10).join("  "+x for x in au)}
 </div>
@@ -130,7 +130,7 @@ html,body{{margin:0;background:#000;}}
 const tl=gsap.timeline({{paused:true}});
 tl.set(".word span",{{yPercent:110}},0);tl.set(".word .bar",{{scaleX:0}},0);
 tl.fromTo("#hgl",{{opacity:0}},{{opacity:1,duration:.4}},0.15);
-tl.fromTo("#hk",{{opacity:0,y:8}},{{opacity:.9,y:0,duration:.6,ease:"expo.out"}},0.1);
+
 tl.fromTo("#h1",{{yPercent:110}},{{yPercent:0,duration:.55,ease:"expo.out"}},0.3);
 tl.fromTo("#h2",{{yPercent:110}},{{yPercent:0,duration:.55,ease:"expo.out"}},0.45);
 tl.fromTo("#hb",{{scaleX:0}},{{scaleX:1,duration:.5,ease:"expo.out"}},0.6);

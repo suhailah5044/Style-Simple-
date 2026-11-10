@@ -93,7 +93,7 @@ html,body{margin:0;background:#000;}
 <div id="sc8" class="scene" style="z-index:18;visibility:hidden"><div class="bg bg5"></div><div class="grid4"><div class="cell c0"><div class="cam"><video id="m15_sc80" src="assets/src/1970t.mp4" data-start="15.000" data-duration="2.800" data-media-start="0.000" muted playsinline></video></div></div><div class="cell c1"><div class="cam"><video id="m16_sc81" src="assets/src/1978.mp4" data-start="15.000" data-duration="2.800" data-media-start="0.500" muted playsinline></video></div></div><div class="cell c2"><div class="cam"><video id="m17_sc82" src="assets/src/1983.mp4" data-start="15.000" data-duration="2.800" data-media-start="1.000" muted playsinline></video></div></div><div class="cell c3"><div class="cam"><video id="m18_sc83" src="assets/src/1971.mp4" data-start="15.000" data-duration="2.800" data-media-start="1.500" muted playsinline></video></div></div></div></div>
 <i id="wl8" class="wline" style="z-index:38"></i>
 <div id="w8" class="word stD C" style="top:150px;visibility:hidden"><b class="gl"></b><div class="ix"><b class="num">08</b><i class="hl"></i></div><div class="l1 m"><span class="tx">Perfect for</span></div><div class="l2 m"><span class="tx">Home Entrance</span></div></div>
-<div id="hook" class="hook stD L"><b class="gl"></b><div class="k">01 — 08</div><div class="l1 big m"><span class="tx">Outdoor Mat</span></div><div class="l2 big m"><span class="tx">Anti Slip</span></div></div>
+<div id="hook" class="hook stD L"><b class="gl"></b><div class="l1 big m"><span class="tx">Outdoor Mat</span></div><div class="l2 big m"><span class="tx">Anti Slip</span></div></div>
 <audio id="a0" src="sfx/paper_slide.wav" data-start="2.55" data-duration="0.9" data-volume="0.3"></audio>
 <audio id="a1" src="sfx/tick_index.wav" data-start="3.12" data-duration="0.9" data-volume="0.3"></audio>
 <audio id="a2" src="sfx/sparkle_tail.wav" data-start="3.32" data-duration="0.9" data-volume="0.2"></audio>
@@ -224,7 +224,6 @@ tl.fromTo("#w8 .m .tx",{opacity:1,yPercent:110},{opacity:1,yPercent:0,duration:.
 tl.to("#w8 .m .tx",{yPercent:-110,duration:.25,ease:"power2.in",stagger:.04},17.38);tl.to("#w8 .num,#w8 .hl",{opacity:0,duration:.25},17.40);
 tl.set("#w8",{visibility:"visible"},15.47);tl.set("#w8",{visibility:"hidden"},17.70);
 tl.fromTo("#hook .gl",{opacity:0},{opacity:1,duration:.35},0.20);tl.to("#hook .gl",{opacity:0,duration:.3},2.45);
-tl.fromTo("#hook .k",{opacity:0,y:8},{opacity:.9,y:0,duration:.5,ease:"expo.out"},0.15);tl.to("#hook .k",{opacity:0,duration:.25},2.45);
 tl.fromTo("#hook .num",{opacity:0,y:10},{opacity:1,y:0,duration:.35,ease:"expo.out"},0.25);
 tl.fromTo("#hook .hl",{scaleX:0},{scaleX:1,duration:.5,ease:"expo.out"},0.30);
 tl.fromTo("#hook .m .tx",{opacity:1,yPercent:110},{opacity:1,yPercent:0,duration:.5,ease:"expo.out",stagger:.1},0.37);

@@ -6,7 +6,7 @@ Footage iPhone HDR (HLG) ditukar ke SDR bt709 dengan tonemap *mobius* sahaja —
 ## Susunan scene (footage karpet sahaja, tiada orang) — ~24.2s
 | Masa | Klip | Overlay |
 |---|---|---|
-| 0–3.0 | IMG_1978 | Hook: COVER STORY / Karpet Luar / Anti Slip |
+| 0–3.0 | IMG_1978 | Hook: Karpet Luar / Anti Slip |
 | 3.0–5.0 | IMG_1971 | Outdoor Mat / Upgrade! |
 | 5.0–7.6 | IMG_1983 dalam **phone mockup** + latar pro | Biggest Size / 80 × 120 cm |
 | 7.6–10.0 | IMG_1982 close-up (**digital zoom**) | 400 GSM / Coarse Fiber |
@@ -34,7 +34,7 @@ Volume SFX 0.22–0.4. **Tiada muzik** (dibuang atas permintaan); footage senyap
 Render (bila diluluskan): `npx hyperframes render . -q delivery --video-frame-format png -o Karpet_FINAL.mp4`
 
 ---
-# Variasi V2–V5 (`gen.py` → `v2.html`…`v5.html`)
+# Variasi V2–V5 (`gen.py` → `variants/vN/index.html`)
 Footage sama (karpet sahaja, tiada orang), klip sumber penuh di `assets/src/` (dipotong guna `data-media-start`). Setiap variasi berbeza susunan klip, gaya teks, transisi, grafik dan SFX (`sfx4.py`).
 
 | Variasi | Gaya teks | Transisi | Grafik khas | SFX teks / USP |
@@ -44,4 +44,4 @@ Footage sama (karpet sahaja, tiada orang), klip sumber penuh di `assets/src/` (d
 | **V4 Kinetic Blur** (18.5s) | perkataan muncul dari blur, nombor mengira | iris bulatan | bingkai polaroid | chime_soft / ting2 |
 | **V5 Editorial Index** (17.8s) | indeks 01–08 + garis, mask reveal | wipe menegak + garis cahaya, frame break | intro letterbox, kolaj 2×2 | tick_index / sparkle_tail |
 
-Render satu variasi: salin `vN.html` jadi `index.html` dalam folder lain (symlink `assets/` & `sfx/`), kemudian `npx hyperframes render <folder> -q delivery --video-frame-format png -o Karpet_vN_FINAL.mp4`.
+Render satu variasi: `npx hyperframes render variants/vN -q delivery --video-frame-format png -o Karpet_vN_FINAL.mp4` (folder `variants/vN` guna symlink ke `assets/` & `sfx/`).

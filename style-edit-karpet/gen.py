@@ -1,6 +1,6 @@
 # Enjin variasi V2-V5: susunan klip, transisi, gaya teks, grafik & SFX berbeza.
 # Footage karpet sahaja (tiada orang), warna asal, tiada filter. Font Lexend Mega putih kecil.
-# Guna: python3 gen.py  -> v2.html v3.html v4.html v5.html
+# Guna: python3 gen.py  -> variants/vN/index.html (assets/ & sfx/ = symlink)
 import json
 SRC = "assets/src/"
 
@@ -203,7 +203,11 @@ tl.set({{}},{{}},{DUR});
 window.__timelines=window.__timelines||{{}};window.__timelines["root"]=tl;
 </script>
 </body></html>'''
-    open(f"{key}.html", "w").write(html)
+    import os
+    d = f"variants/{key}"; os.makedirs(d, exist_ok=True)
+    for l in ("assets", "sfx"):
+        if not os.path.islink(f"{d}/{l}"): os.symlink(f"../../{l}", f"{d}/{l}")
+    open(f"{d}/index.html", "w").write(html)
     return DUR
 
 def chars(s):  # untuk gaya B (taip)
@@ -230,14 +234,12 @@ def hook_html(style, k, h1, h2):
     vl = '<i class="vl"></i>' if style == "A" else ""
     cls = "L" if style in ("A", "D") else "C"
     m = " m" if style == "D" else ""
-    return (f'<div id="hook" class="hook st{style} {cls}"><b class="gl"></b>{vl}<div class="k">{k}</div>'
+    return (f'<div id="hook" class="hook st{style} {cls}"><b class="gl"></b>{vl}'
             f'<div class="l1 big{m}"><span class="tx">{l1}</span></div><div class="l2 big{m}"><span class="tx">{l2}</span>{cur}</div></div>')
 
 def text_anim(style, sel, a, e, l1, l2, count, hook=False):
     J = []
     J.append(f'tl.fromTo("{sel} .gl",{{opacity:0}},{{opacity:1,duration:.35}},{a-0.05:.2f});tl.to("{sel} .gl",{{opacity:0,duration:.3}},{e-0.3:.2f});')
-    if hook:
-        J.append(f'tl.fromTo("{sel} .k",{{opacity:0,y:8}},{{opacity:.9,y:0,duration:.5,ease:"expo.out"}},{a-0.1:.2f});tl.to("{sel} .k",{{opacity:0,duration:.25}},{e-0.3:.2f});')
     if style == "A":
         J.append(f'tl.fromTo("{sel} .vl",{{scaleY:0}},{{scaleY:1,duration:.4,ease:"expo.out"}},{a:.2f});')
         J.append(f'tl.fromTo("{sel} .tx",{{opacity:0,x:-28}},{{opacity:1,x:0,duration:.5,ease:"expo.out",stagger:.1}},{a+0.08:.2f});')
