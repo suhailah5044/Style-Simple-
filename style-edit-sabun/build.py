@@ -6,23 +6,25 @@ CUTS=[round(t,3) for a,b,t in E["edl"]]           # masa mula setiap segmen (out
 O=[
  [0.05,2.70,"Baju Takkan Bau Hapak!","hook_hit","pill"],
  [4.12,4.95,"Paling Wangi","bell_ding",""],
- [5.20,7.95,"Dah Berkali-kali Repeat","soft_click",""],
- [10.40,11.80,"Wangi Semerbak","sparkle_rise",""],
- [12.40,14.90,"Sesuai Sidai Lambat","soft_click",""],
- [16.42,18.10,"Basuh Waktu Malam","bubble_pop",""],
- [18.26,20.20,"Kena Cuba!","bubble_pop","pill"],
- [20.60,22.45,"Wangi Melekat","sparkle_rise",""],
- [23.90,25.00,"Floral Perfume","bell_ding",""],
- [26.50,29.15,"Tadah &amp; Pam Je","soft_click",""],
- [29.25,30.90,"Tak Perlu Angkat Berat","air_whoosh",""],
- [31.05,32.65,"5 Liter","soft_impact","pill"],
- [32.83,34.80,"Harga Sangat Murah!","cash_ting","pill"],
- [37.23,39.30,"Hilang Bau Kepam","bubble_pop",""],
- [39.60,DUR-0.05,"Memang Recommend!","sparkle_rise",""],
+ [5.20,8.00,"Dah Berkali-kali Repeat","soft_click",""],
+ [13.00,14.40,"Wangi Semerbak","sparkle_rise",""],
+ [14.90,17.70,"Sesuai Sidai Lambat","soft_click",""],
+ [19.02,20.70,"Basuh Waktu Malam","bubble_pop",""],
+ [22.84,24.60,"Kena Cuba!","bubble_pop","pill"],
+ [25.10,26.95,"Wangi Melekat","sparkle_rise",""],
+ [28.30,29.25,"Floral Perfume","bell_ding",""],
+ [29.75,30.95,"Sangat Lembut","bubble_pop",""],
+ [32.10,34.70,"Ada 2 Jenis Kepala","soft_click",""],
+ [34.80,36.10,"Tak Perlu Angkat Berat","air_whoosh",""],
+ [36.24,38.85,"Tadah &amp; Pam Je","soft_click",""],
+ [39.55,41.00,"5 Liter","soft_impact","pill"],
+ [41.14,42.85,"Harga Sangat Murah!","cash_ting","pill"],
+ [45.50,47.70,"Hilang Bau Kepam","bubble_pop",""],
+ [47.94,DUR-0.05,"Memang Recommend!","sparkle_rise",""],
 ]
 # digital zoom: setiap potongan + titik tambahan dalam take panjang. h=1.0 z=1.08 p=push k=punch
-ZPTS=sorted([(c,l) for c,l in zip(CUTS,"kzhpzhpzpzk")]+[(31.05,"k"),(32.83,"z"),(37.2,"h")])
-FB={CUTS[3],CUTS[5],CUTS[7],CUTS[9]}   # frame break pada potongan ini
+ZPTS=sorted([(c,l) for c,l in zip(CUTS,"kzhzhpzhpzhpzk")]+[(39.55,"k"),(41.14,"z"),(45.5,"h")])
+FB={CUTS[5],CUTS[7],CUTS[10],CUTS[12]}   # frame break pada potongan ini
 VOL={"soft_impact":0.5,"hook_hit":0.55,"air_whoosh":0.28,"sparkle_rise":0.3,"bell_ding":0.28,"cash_ting":0.32,"soft_click":0.4,"bubble_pop":0.38}
 ov=[];au=[];js=[]
 for i,(s,e,t,sfx,st) in enumerate(O):
