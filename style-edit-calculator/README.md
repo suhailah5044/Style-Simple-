@@ -15,7 +15,10 @@ Segmen sumber: `0.40–6.50 | 6.92–16.95 | 23.88–26.85 | 29.72–32.05 | 32.
 - **Hook 0–3s**: "Calculator Solar" (Plus Jakarta Sans 700, 44px) + "ada button [%]" — butang % kecil animasi ditekan. SFX stereo `hook_shimmer` + `key_triple` + `ding_soft`.
 - **Overlay**: Lexend Mega 600, 27px, putih, tengah atas (ruang kosong bumbung kereta, tak tutup muka/produk). Animasi wipe kiri→kanan + kursor (gaya UI prompt).
   Atas B-roll (latar bunga) guna pil gelap lut sinar kecil supaya teks jelas.
-- **Ikon**: troli (bakul kuning), matahari (solar). Putih sahaja.
+- **Animasi masuk berbeza** setiap overlay (+ SFX sendiri): `rise` (naik+blur), `prompt` (wipe+kursor), `pop` (bounce), `drop` (jatuh), `type` (huruf satu-satu).
+- **Simbol kira-kira** (+ − × ÷ = %) terapung di ruang kosong atas masa sebut harga (9.4–12.9s) + bunyi tik butang.
+- **Anak panah lukis tangan** (SVG, animasi dilukis) tunjuk panel solar: "Guna Solar Je" & "Hidup Kat Sini!".
+- Overlay "Check Bakul Kuning" dibuang. Ikon matahari pada "Guna Solar Je".
 - **SFX baru** (`sfx3.py`, lain dari video sebelum): `ui_prompt`, `ui_select`, `key_tick`, `key_triple`, `ding_glass`, `ding_soft`, `whoosh_lr/rl`, `soft_impact`, `bubble_pop`, `sparkle_lr`, `hook_shimmer`, `bgm` (lo-fi lembut, vol 0.09).
 - **Zoom**: punch pada jump cut & penekanan, zoom perlahan selebihnya; B-roll settle 1.06→1.0.
 
