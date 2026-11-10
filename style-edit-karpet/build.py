@@ -123,7 +123,6 @@ html,body{{margin:0;background:#000;}}
   <div id="flash"></div>
   <div id="hook" class="clip" data-start="0" data-duration="2.95"><b class="gl" id="hgl" style="left:50%;right:auto;width:620px;margin-left:-310px;top:-40px;bottom:-40px"></b><div class="k" id="hk">COVER STORY</div><div class="h"><span id="h1">Karpet Luar</span></div><div class="h" style="margin-top:0"><span id="h2">Anti Slip</span></div><i class="bar" id="hb"></i></div>
   {chr(10).join("  "+x for x in ov)}
-  <audio id="music" src="sfx/music.wav" data-start="0" data-duration="{DUR}" data-volume="0.55" data-fade-out="1.2"></audio>
   {chr(10).join("  "+x for x in au)}
 </div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

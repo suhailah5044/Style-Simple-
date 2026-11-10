@@ -1,6 +1,6 @@
 # Style Edit — Karpet Luar Anti Slip (B-roll + Phone Mockup)
 
-Template HyperFrames 9:16 (1080x1920), ~26.3s. B-roll sahaja (tiada VO) + muzik latar sintetik.
+Template HyperFrames 9:16 (1080x1920), ~26.3s. B-roll sahaja (tiada VO, tiada muzik) — SFX sahaja.
 Footage iPhone HDR (HLG) ditukar ke SDR bt709 dengan tonemap *mobius* sahaja — **tiada filter / grade warna**.
 
 ## Susunan scene (footage karpet sahaja, tiada orang) — ~24.2s
@@ -26,8 +26,8 @@ Letak di ruang kosong atas, tak tutup produk. `dk` = bayang lebih tebal untuk la
 
 ## Bunyi (`sfx3.py`, baru — lain dari v1/v2)
 `air_whoosh` (tukar footage) · `bubble_pop` (teks/produk muncul) · `ui_click` (perubahan visual) · `bell_ding` (USP) ·
-`soft_impact` (visual penting) · `frame_break` · `ting2` · `ui_prompt` (subtitle) · `music.wav` 116bpm house ringan, stereo lebar.
-Volume SFX 0.22–0.4, muzik 0.55 + fade-out.
+`soft_impact` (visual penting) · `frame_break` · `ting2` · `ui_prompt` (subtitle)
+Volume SFX 0.22–0.4. **Tiada muzik** (dibuang atas permintaan); footage senyap.
 
 ## Cara guna
 `python3 build.py` → `npx hyperframes lint .` → preview: `npx hyperframes preview .` atau `npx hyperframes snapshot . --at 1.5,7.4,...`
