@@ -66,12 +66,13 @@ for k,(top,bot,dx) in enumerate([(0,34,-1),(33,67,1),(66,100,-1)]):
     js.append(f'tl.fromTo("#fb{k}",{{x:0,rotation:0}},{{x:{dx*1150},rotation:{dx*4},duration:{FBD},ease:"power3.in"}},{FB+0.02*k});')
 js.append(f'tl.fromTo("#flash",{{opacity:0}},{{opacity:.55,duration:.05,yoyo:true,repeat:1}},{FB});')
 for i,(s,e,a,b,pos,top,sfx) in enumerate(O):
-    ov.append(f'<div id="w{i}" class="clip word {pos}" data-start="{s}" data-duration="{round(e-s,2)}" style="top:{top}px"><div class="l1"><span>{a}</span></div><div class="l2"><span>{b}</span></div><i class="bar"></i></div>')
+    ov.append(f'<div id="w{i}" class="clip word {pos}" data-start="{s}" data-duration="{round(e-s,2)}" style="top:{top}px">{'<b class="gl"></b>' if "dk" in pos else ""}<div class="l1"><span>{a}</span></div><div class="l2"><span>{b}</span></div><i class="bar"></i></div>')
     au.append(f'<audio id="ao{i}" src="sfx/{sfx}.wav" data-start="{s:.2f}" data-duration="1.2" data-volume="{VOL.get(sfx,0.3)}"></audio>')
     js.append(f'tl.fromTo("#w{i} .l1 span",{{yPercent:110}},{{yPercent:0,duration:.5,ease:"expo.out"}},{s});')
     js.append(f'tl.fromTo("#w{i} .l2 span",{{yPercent:110}},{{yPercent:0,duration:.5,ease:"expo.out"}},{s+0.12:.2f});')
     js.append(f'tl.fromTo("#w{i} .bar",{{scaleX:0}},{{scaleX:1,duration:.5,ease:"expo.out"}},{s+0.18:.2f});')
     js.append(f'tl.to("#w{i} .l1 span,#w{i} .l2 span",{{yPercent:-110,duration:.25,ease:"power2.in",stagger:.04}},{e-0.3:.2f});')
+    if "dk" in pos: js.append(f'tl.fromTo("#w{i} .gl",{{opacity:0}},{{opacity:1,duration:.35}},{s});tl.to("#w{i} .gl",{{opacity:0,duration:.3}},{e-0.3:.2f});')
     js.append(f'tl.to("#w{i} .bar",{{scaleX:0,duration:.22,ease:"power2.in"}},{e-0.26:.2f});')
 for j,(s,sfx,v) in enumerate(T):
     au.append(f'<audio id="at{j}" src="sfx/{sfx}.wav" data-start="{s:.2f}" data-duration="1.0" data-volume="{v}"></audio>')
@@ -104,7 +105,7 @@ html,body{{margin:0;background:#000;}}
 .word .l2{{font-weight:400;font-size:24px;letter-spacing:-0.01em;opacity:.95;margin-top:2px;}}
 .word .bar{{display:block;height:2px;width:48px;background:#fff;margin-top:12px;box-shadow:0 1px 4px rgba(0,0,0,.35);}}
 .word.dk,#hook{{text-shadow:0 0 18px rgba(0,0,0,.55),0 2px 8px rgba(0,0,0,.5),0 0 2px rgba(0,0,0,.4);}}
-.word.dk::before,#hook::before{{content:"";position:absolute;left:-60px;right:-60px;top:-50px;bottom:-50px;z-index:-1;
+.gl{{display:block;position:absolute;opacity:0;left:-60px;right:-60px;top:-50px;bottom:-50px;z-index:-1;
   background:radial-gradient(closest-side,rgba(0,0,0,.30),rgba(0,0,0,0));}}
 .word.L .bar{{transform-origin:0 50%;}} .word.R .bar{{margin-left:auto;transform-origin:100% 50%;}} .word.C .bar{{margin:12px auto 0;}}
 /* hook 0-3s (cover story) */
@@ -120,7 +121,7 @@ html,body{{margin:0;background:#000;}}
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
   {chr(10).join("  "+x for x in vid)}
   <div id="flash"></div>
-  <div id="hook" class="clip" data-start="0" data-duration="2.95"><div class="k" id="hk">COVER STORY</div><div class="h"><span id="h1">Karpet Luar</span></div><div class="h" style="margin-top:0"><span id="h2">Anti Slip</span></div><i class="bar" id="hb"></i></div>
+  <div id="hook" class="clip" data-start="0" data-duration="2.95"><b class="gl" id="hgl" style="left:50%;right:auto;width:620px;margin-left:-310px;top:-40px;bottom:-40px"></b><div class="k" id="hk">COVER STORY</div><div class="h"><span id="h1">Karpet Luar</span></div><div class="h" style="margin-top:0"><span id="h2">Anti Slip</span></div><i class="bar" id="hb"></i></div>
   {chr(10).join("  "+x for x in ov)}
   <audio id="music" src="sfx/music.wav" data-start="0" data-duration="{DUR}" data-volume="0.55" data-fade-out="1.2"></audio>
   {chr(10).join("  "+x for x in au)}
@@ -129,6 +130,7 @@ html,body{{margin:0;background:#000;}}
 <script>
 const tl=gsap.timeline({{paused:true}});
 tl.set(".word span",{{yPercent:110}},0);tl.set(".word .bar",{{scaleX:0}},0);
+tl.fromTo("#hgl",{{opacity:0}},{{opacity:1,duration:.4}},0.15);
 tl.fromTo("#hk",{{opacity:0,y:8}},{{opacity:.9,y:0,duration:.6,ease:"expo.out"}},0.1);
 tl.fromTo("#h1",{{yPercent:110}},{{yPercent:0,duration:.55,ease:"expo.out"}},0.3);
 tl.fromTo("#h2",{{yPercent:110}},{{yPercent:0,duration:.55,ease:"expo.out"}},0.45);
