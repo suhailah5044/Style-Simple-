@@ -4,27 +4,25 @@ E=json.load(open("edl.json")); DUR=E["dur"]; SP=E["speed"]
 CUTS=[round(t,3) for a,b,t in E["edl"]]           # masa mula setiap segmen (output)
 # [mula, tamat, teks, sfx, gaya]  gaya: "" biasa | "pill" (hook, ada bg)
 O=[
- [0.05,2.75,"Baju Takkan Bau Hapak!","hook_hit","pill"],
- [4.10,5.00,"Paling Wangi","bell_ding",""],
- [7.10,8.70,"Wangi Semerbak","sparkle_rise",""],
- [9.30,11.55,"Basuh Waktu Malam","soft_click",""],
- [11.70,13.35,"Sidai Ruang Tertutup","bubble_pop",""],
- [13.80,16.35,"Sesuai Sidai Lambat","soft_click",""],
- [16.50,18.35,"Kena Cuba!","bubble_pop","pill"],
- [18.80,20.90,"Wangi Melekat","sparkle_rise",""],
- [23.00,24.40,"Floral Perfume","bell_ding",""],
- [26.30,29.40,"Bunga · Buah · Susu","soft_click",""],
- [30.10,31.90,"Mudahkan Kerja","bubble_pop",""],
- [32.40,33.95,"Tak Perlu Angkat Berat","air_whoosh",""],
- [34.00,35.10,"5 Liter","soft_impact","pill"],
- [35.20,37.90,"Tadah &amp; Pam Je","soft_click",""],
- [38.00,39.80,"Harga Sangat Murah!","cash_ting","pill"],
- [42.40,44.60,"Hilang Bau Kepam","bubble_pop",""],
- [44.76,DUR-0.05,"Memang Recommend!","sparkle_rise",""],
+ [0.05,2.70,"Baju Takkan Bau Hapak!","hook_hit","pill"],
+ [4.12,4.95,"Paling Wangi","bell_ding",""],
+ [5.20,7.95,"Dah Berkali-kali Repeat","soft_click",""],
+ [10.40,11.80,"Wangi Semerbak","sparkle_rise",""],
+ [12.40,14.90,"Sesuai Sidai Lambat","soft_click",""],
+ [16.42,18.10,"Basuh Waktu Malam","bubble_pop",""],
+ [18.26,20.20,"Kena Cuba!","bubble_pop","pill"],
+ [20.60,22.45,"Wangi Melekat","sparkle_rise",""],
+ [23.90,25.00,"Floral Perfume","bell_ding",""],
+ [26.50,29.15,"Tadah &amp; Pam Je","soft_click",""],
+ [29.25,30.90,"Tak Perlu Angkat Berat","air_whoosh",""],
+ [31.05,32.65,"5 Liter","soft_impact","pill"],
+ [32.83,34.80,"Harga Sangat Murah!","cash_ting","pill"],
+ [37.23,39.30,"Hilang Bau Kepam","bubble_pop",""],
+ [39.60,DUR-0.05,"Memang Recommend!","sparkle_rise",""],
 ]
-# digital zoom per segmen: h=hold 1.0, z=hold 1.08 (zoom digital), p=push perlahan, k=punch
-ZM="kzhpzhpzhpkzhkzk"
-FB={3,6,11,13}   # frame break pada potongan ini (indeks segmen)
+# digital zoom: setiap potongan + titik tambahan dalam take panjang. h=1.0 z=1.08 p=push k=punch
+ZPTS=sorted([(c,l) for c,l in zip(CUTS,"kzhpzhpzpzk")]+[(31.05,"k"),(32.83,"z"),(37.2,"h")])
+FB={CUTS[3],CUTS[5],CUTS[7],CUTS[9]}   # frame break pada potongan ini
 VOL={"soft_impact":0.5,"hook_hit":0.55,"air_whoosh":0.28,"sparkle_rise":0.3,"bell_ding":0.28,"cash_ting":0.32,"soft_click":0.4,"bubble_pop":0.38}
 ov=[];au=[];js=[]
 for i,(s,e,t,sfx,st) in enumerate(O):
@@ -35,13 +33,13 @@ for i,(s,e,t,sfx,st) in enumerate(O):
     else:
         js.append(f'tl.fromTo("#w{i} .tx",{{opacity:0,y:18,filter:"blur(6px)"}},{{opacity:1,y:0,filter:"blur(0px)",duration:.36,ease:"expo.out"}},{s});')
     js.append(f'tl.to("#w{i} .tx",{{opacity:0,y:-8,duration:.18,ease:"power2.in"}},{e-0.2:.2f});')
-for k,c in enumerate(CUTS):
-    nxt=CUTS[k+1] if k+1<len(CUTS) else DUR; d=round(nxt-c,3); z=ZM[k%len(ZM)]
+for k,(c,z) in enumerate(ZPTS):
+    nxt=ZPTS[k+1][0] if k+1<len(ZPTS) else DUR; d=round(nxt-c,3)
     if z=="h": js.append(f'tl.set("#cam",{{scale:1}},{c});')
     elif z=="z": js.append(f'tl.set("#cam",{{scale:1.08}},{c});')
     elif z=="p": js.append(f'tl.fromTo("#cam",{{scale:1}},{{scale:1.05,duration:{d-.04:.3f},ease:"none",immediateRender:false}},{c});')
     else: js.append(f'tl.fromTo("#cam",{{scale:1.12}},{{scale:1.03,duration:.5,ease:"power3.out",immediateRender:false}},{c});tl.to("#cam",{{scale:1.0,duration:{max(.1,d-.56):.2f},ease:"sine.inOut"}},{c+.5:.2f});')
-    if k in FB:
+    if c in FB:
         js.append(f'tl.fromTo("#fb",{{x:-34,rotation:-.6,skewX:-3}},{{x:0,rotation:0,skewX:0,duration:.26,ease:"power3.out",immediateRender:false}},{c});')
         js.append(f'tl.fromTo("#fbl",{{opacity:.9,scaleY:1}},{{opacity:0,scaleY:.2,duration:.16,ease:"power2.out",immediateRender:false}},{c});')
         au.append(f'<audio id="fbs{k}" src="sfx/air_whoosh.wav" data-start="{max(0,c-0.12):.2f}" data-duration="0.6" data-volume="0.22"></audio>')

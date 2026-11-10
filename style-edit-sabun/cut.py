@@ -1,21 +1,17 @@
 # Potong footage: buang pause/gagap/ulang, susun hook di depan, speed 1.1, kuatkan suara.
 import subprocess,json,sys
 SRC=sys.argv[1]; SPEED=1.1
-SEG=[ # [mula, tamat] masa asal (saat)
+SEG=[ # [mula, tamat] masa asal — HANYA bahagian ada muka (bahagian kosong = tiru sound orang, dibuang)
  [44.12,46.95],   # HOOK: pakai yang ini sebab baju korang takkan ada bau hapak
  [4.05,6.72],     # sabun basuh baju paling wangi
- [16.7,20.85],    # bila keluar dari mesin ni wangi semerbak
- [29.6,32.7],     # kalau korang suka basuh baju waktu malam, jemur lambat
- [32.8,34.6],     # jemur dalam ruang tertutup
- [37.1,40.55],    # memang recommended untuk yang selalu sidai lambat
+ [9.0,12.38],     # tak tahu dah kali keberapa repeat sabun ni
+ [16.7,20.85],    # keluar dari mesin wangi semerbak
+ [37.1,44.05],    # recommended untuk yang sidai lambat, sidai dalam rumah, basuh malam
  [74.8,76.75],    # wangi sangat-sangat korang kena cuba
  [79.6,82.5],     # memang wangi melekat dekat baju
- [89.4,93.2],     # bau wangi gila, floral perfume
- [94.9,97.05],    # bau bunga yang lembut je
- [119.9,123.2],   # lily, bunga, buah, susu
- [125.0,131.55],  # kepala memudahkan kerja, tak payah angkat, 5 kilo
- [144.25,147.3],  # penutup boleh tadah dan pam sahaja
- [151.25,158.75], # harga sangat murah, hilangkan bau hapak & kepam
+ [102.2,104.5],   # saya ambil ni floral perfume (buang "yang yang")
+ [105.85,107.75], # bau dia memang sangat-sangat lembut
+ [144.25,158.75], # penutup tadah & pam, tak perlu angkat, 5 liter, harga murah, hilang bau hapak & kepam
  [160.7,162.9],   # memang sangat-sangat recommend
 ]
 import os,tempfile
