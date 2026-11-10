@@ -3,20 +3,20 @@
 Template HyperFrames 9:16 (1080x1920), ~26.3s. B-roll sahaja (tiada VO) + muzik latar sintetik.
 Footage iPhone HDR (HLG) ditukar ke SDR bt709 dengan tonemap *mobius* sahaja — **tiada filter / grade warna**.
 
-## Susunan scene (klip asal Drive)
-| Masa | Klip | Overlay | Efek |
-|---|---|---|---|
-| 0–3.0 | IMG_1968 (gulung karpet) | Hook: COVER STORY / Karpet Luar / Anti Slip | zoom-out, soft impact + pop |
-| 3.0–5.6 | IMG_1970 (bentang) | Outdoor Mat / Upgrade! | zoom-in, ding |
-| 5.6–8.6 | IMG_1969 dalam **phone mockup** + latar pro (gradient + spotlight + dot grid) | Biggest Size / 80 × 120 cm | zoom skrin penuh → phone |
-| 8.6–11.4 | IMG_1982 (close-up bulu) | 400 GSM / Coarse Fiber | **digital zoom** punch |
-| 11.4–14.4 | IMG_1976 (pijak) | Scrape Off / Dirt & Sand | zoom-in |
-| 14.4–16.3 | IMG_1981 | Water / Resistant | zoom-out |
-| 16.3–16.6 | — | — | **frame break** (3 jalur pecah) + flash |
-| 16.3–18.4 | IMG_1972 (selak bawah) | TPE Anti-Slip / Base | punch zoom |
-| 18.4–21.1 | IMG_1973 (pan corak) | Minimalist / Embossed Design | zoom-in |
-| 21.1–23.3 | IMG_1977 | (tiada — ruang bernafas) | zoom-out |
-| 23.3–26.3 | IMG_1970 akhir (depan pintu) | Perfect for / Home Entrance | zoom-in, ting2 |
+## Susunan scene (footage karpet sahaja, tiada orang) — ~24.2s
+| Masa | Klip | Overlay |
+|---|---|---|
+| 0–3.0 | IMG_1978 | Hook: COVER STORY / Karpet Luar / Anti Slip |
+| 3.0–5.0 | IMG_1971 | Outdoor Mat / Upgrade! |
+| 5.0–7.6 | IMG_1983 dalam **phone mockup** + latar pro | Biggest Size / 80 × 120 cm |
+| 7.6–10.0 | IMG_1982 close-up (**digital zoom**) | 400 GSM / Coarse Fiber |
+| 10.0–11.6 | IMG_1979 | — |
+| 11.6–13.3 | IMG_1976 (kaki pijak) | Scrape Off / Dirt & Sand |
+| 13.3–15.0 | IMG_1980 → **frame break** | Water / Resistant |
+| 14.7–16.5 | IMG_1972 (bawah) | TPE Anti-Slip / Base |
+| 16.5–18.7 | IMG_1974 | Minimalist / Embossed Design |
+| 18.7–21.9 | IMG_1973, IMG_1981 | — |
+| 21.9–24.2 | IMG_1970 akhir | Perfect for / Home Entrance |
 
 Klip goyang diukur (phase-correlation jitter); hujung klip yang goyang dipotong.
 
