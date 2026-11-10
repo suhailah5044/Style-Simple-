@@ -1,0 +1,61 @@
+@font-face{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}
+html,body{margin:0;background:#000;}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}
+.scene{position:absolute;inset:0;overflow:hidden;transform-origin:50% 50%;}
+.cam{position:absolute;inset:0;transform-origin:50% 50%;}
+.cam video,.ph video,.scr video{width:100%;height:100%;object-fit:cover;display:block;}
+/* letterbox */
+.lb{position:absolute;left:0;right:0;height:50%;background:#0b0b0d;z-index:2;}
+.lb.t{top:0;transform-origin:50% 0;} .lb.b{bottom:0;transform-origin:50% 100%;}
+/* split */
+.half{position:absolute;left:0;right:0;height:50%;overflow:hidden;}
+.half.top{top:0;} .half.bot{bottom:0;}
+.seam{position:absolute;left:0;right:0;top:959px;height:3px;background:#fff;z-index:3;box-shadow:0 0 10px rgba(0,0,0,.4);}
+/* latar pro */
+.bg{position:absolute;inset:0;}
+.bg3{background:radial-gradient(110% 70% at 50% 40%,#2a3240 0%,#151a22 55%,#0a0c10 100%);overflow:hidden;}
+.bg3 .streak{position:absolute;top:-10%;left:20%;width:30%;height:120%;transform:rotate(18deg);background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.07),rgba(255,255,255,0));}
+.bg4{background:radial-gradient(120% 80% at 50% 45%,#34302c 0%,#1d1b19 60%,#0e0d0c 100%);}
+.bg4 .dots{position:absolute;inset:0;opacity:.14;background-image:radial-gradient(rgba(255,255,255,.6) 1.2px,transparent 1.4px);background-size:34px 34px;}
+.bg5{background:#0d0e10;}
+/* phone 3D */
+.stage{position:absolute;inset:0;perspective:1800px;}
+.phone{position:absolute;left:50%;top:50%;width:660px;height:1220px;margin:-560px 0 0 -330px;border-radius:82px;background:#0d0e10;
+  box-shadow:0 0 0 3px #3a3f48,0 0 0 9px #191b1f,0 50px 100px rgba(0,0,0,.65);}
+.phone .scr{position:absolute;inset:14px;border-radius:68px;overflow:hidden;background:#000;}
+.phone .isl{position:absolute;top:32px;left:50%;width:140px;height:40px;margin-left:-70px;border-radius:20px;background:#000;}
+/* polaroid */
+.pol{position:absolute;left:50%;top:50%;width:720px;height:1020px;margin:-430px 0 0 -360px;background:#f6f4ef;padding:30px 30px 150px;box-sizing:border-box;
+  box-shadow:0 40px 90px rgba(0,0,0,.6);}
+.pol .ph{width:100%;height:100%;overflow:hidden;background:#000;}
+/* collage */
+.grid4{position:absolute;left:60px;right:60px;top:330px;bottom:200px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:18px;}
+.cell{position:relative;overflow:hidden;border-radius:18px;}
+/* transisi */
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;}
+.wline{position:absolute;left:0;right:0;top:0;height:3px;background:#fff;opacity:0;box-shadow:0 0 12px rgba(255,255,255,.6);}
+/* teks: Lexend Mega putih kecil */
+.word,.hook{position:absolute;z-index:90;width:560px;font-family:"Lexend Mega",sans-serif;color:#fff;
+  text-shadow:0 0 14px rgba(0,0,0,.45),0 2px 8px rgba(0,0,0,.5),0 0 2px rgba(0,0,0,.4);}
+.word.L,.hook.L{left:140px;text-align:left;} .word.R{right:140px;text-align:right;} .word.C,.hook.C{left:50%;margin-left:-280px;text-align:center;}
+.hook{top:215px;}
+.gl{display:block;position:absolute;left:-50px;right:-50px;top:-45px;bottom:-45px;z-index:-1;opacity:0;
+  background:radial-gradient(closest-side,rgba(0,0,0,.30),rgba(0,0,0,0));}
+.l1,.l2{line-height:1.25;padding:2px 0;}
+.l1{font-weight:600;font-size:30px;letter-spacing:-0.03em;}
+.l2{font-weight:400;font-size:24px;letter-spacing:-0.01em;margin-top:2px;}
+.l1.big{font-size:38px;} .l2.big{font-size:38px;font-weight:600;letter-spacing:-0.03em;}
+.k{font-size:16px;letter-spacing:.32em;opacity:0;margin-bottom:10px;}
+.tx{display:inline-block;}
+.m{overflow:hidden;}
+/* A: garis menegak */
+.stA .vl{position:absolute;left:-22px;top:4px;bottom:4px;width:2px;background:#fff;transform-origin:50% 0;}
+.stA .tx{opacity:0;}
+/* B: kursor */
+.stB .cur{display:inline-block;width:2px;height:1.0em;background:#fff;margin-left:6px;vertical-align:-0.1em;opacity:0;}
+/* C */
+.stC .wd{display:inline-block;}
+/* D: indeks */
+.stD .ix{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
+.stD .num{font-weight:400;font-size:15px;letter-spacing:.2em;opacity:0;}
+.stD .hl{display:block;height:1.5px;width:70px;background:#fff;transform-origin:0 50%;}

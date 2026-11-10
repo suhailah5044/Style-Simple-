@@ -1,0 +1,240 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Karpet V3 — Typewriter UI</title>
+<style>@font-face{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}
+html,body{margin:0;background:#000;}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}
+.scene{position:absolute;inset:0;overflow:hidden;transform-origin:50% 50%;}
+.cam{position:absolute;inset:0;transform-origin:50% 50%;}
+.cam video,.ph video,.scr video{width:100%;height:100%;object-fit:cover;display:block;}
+/* letterbox */
+.lb{position:absolute;left:0;right:0;height:50%;background:#0b0b0d;z-index:2;}
+.lb.t{top:0;transform-origin:50% 0;} .lb.b{bottom:0;transform-origin:50% 100%;}
+/* split */
+.half{position:absolute;left:0;right:0;height:50%;overflow:hidden;}
+.half.top{top:0;} .half.bot{bottom:0;}
+.seam{position:absolute;left:0;right:0;top:959px;height:3px;background:#fff;z-index:3;box-shadow:0 0 10px rgba(0,0,0,.4);}
+/* latar pro */
+.bg{position:absolute;inset:0;}
+.bg3{background:radial-gradient(110% 70% at 50% 40%,#2a3240 0%,#151a22 55%,#0a0c10 100%);overflow:hidden;}
+.bg3 .streak{position:absolute;top:-10%;left:20%;width:30%;height:120%;transform:rotate(18deg);background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.07),rgba(255,255,255,0));}
+.bg4{background:radial-gradient(120% 80% at 50% 45%,#34302c 0%,#1d1b19 60%,#0e0d0c 100%);}
+.bg4 .dots{position:absolute;inset:0;opacity:.14;background-image:radial-gradient(rgba(255,255,255,.6) 1.2px,transparent 1.4px);background-size:34px 34px;}
+.bg5{background:#0d0e10;}
+/* phone 3D */
+.stage{position:absolute;inset:0;perspective:1800px;}
+.phone{position:absolute;left:50%;top:50%;width:660px;height:1220px;margin:-560px 0 0 -330px;border-radius:82px;background:#0d0e10;
+  box-shadow:0 0 0 3px #3a3f48,0 0 0 9px #191b1f,0 50px 100px rgba(0,0,0,.65);}
+.phone .scr{position:absolute;inset:14px;border-radius:68px;overflow:hidden;background:#000;}
+.phone .isl{position:absolute;top:32px;left:50%;width:140px;height:40px;margin-left:-70px;border-radius:20px;background:#000;}
+/* polaroid */
+.pol{position:absolute;left:50%;top:50%;width:720px;height:1020px;margin:-430px 0 0 -360px;background:#f6f4ef;padding:30px 30px 150px;box-sizing:border-box;
+  box-shadow:0 40px 90px rgba(0,0,0,.6);}
+.pol .ph{width:100%;height:100%;overflow:hidden;background:#000;}
+/* collage */
+.grid4{position:absolute;left:60px;right:60px;top:330px;bottom:200px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:18px;}
+.cell{position:relative;overflow:hidden;border-radius:18px;}
+/* transisi */
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;}
+.wline{position:absolute;left:0;right:0;top:0;height:3px;background:#fff;opacity:0;box-shadow:0 0 12px rgba(255,255,255,.6);}
+/* teks: Lexend Mega putih kecil */
+.word,.hook{position:absolute;z-index:90;width:560px;font-family:"Lexend Mega",sans-serif;color:#fff;
+  text-shadow:0 0 14px rgba(0,0,0,.45),0 2px 8px rgba(0,0,0,.5),0 0 2px rgba(0,0,0,.4);}
+.word.L,.hook.L{left:140px;text-align:left;} .word.R{right:140px;text-align:right;} .word.C,.hook.C{left:50%;margin-left:-280px;text-align:center;}
+.hook{top:215px;}
+.gl{display:block;position:absolute;left:-50px;right:-50px;top:-45px;bottom:-45px;z-index:-1;opacity:0;
+  background:radial-gradient(closest-side,rgba(0,0,0,.30),rgba(0,0,0,0));}
+.l1,.l2{line-height:1.25;padding:2px 0;}
+.l1{font-weight:600;font-size:30px;letter-spacing:-0.03em;}
+.l2{font-weight:400;font-size:24px;letter-spacing:-0.01em;margin-top:2px;}
+.l1.big{font-size:38px;} .l2.big{font-size:38px;font-weight:600;letter-spacing:-0.03em;}
+.k{font-size:16px;letter-spacing:.32em;opacity:0;margin-bottom:10px;}
+.tx{display:inline-block;}
+.m{overflow:hidden;}
+/* A: garis menegak */
+.stA .vl{position:absolute;left:-22px;top:4px;bottom:4px;width:2px;background:#fff;transform-origin:50% 0;}
+.stA .tx{opacity:0;}
+/* B: kursor */
+.stB .cur{display:inline-block;width:2px;height:1.0em;background:#fff;margin-left:6px;vertical-align:-0.1em;opacity:0;}
+/* C */
+.stC .wd{display:inline-block;}
+/* D: indeks */
+.stD .ix{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
+.stD .num{font-weight:400;font-size:15px;letter-spacing:.2em;opacity:0;}
+.stD .hl{display:block;height:1.5px;width:70px;background:#fff;transform-origin:0 50%;}
+</style></head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="18.0" data-fps="30">
+<div id="sc0" class="scene" style="z-index:10;visibility:hidden"><div class="cam"><video id="m1_sc0" src="assets/src/1982.mp4" data-start="0.000" data-duration="3.000" data-media-start="0.800" muted playsinline></video></div></div>
+<div id="sc1" class="scene" style="z-index:11;visibility:hidden"><div class="cam"><video id="m2_sc1" src="assets/src/1970t.mp4" data-start="2.600" data-duration="2.200" data-media-start="0.000" muted playsinline></video></div></div>
+<div id="w1" class="word stB C" style="top:210px;visibility:hidden"><b class="gl"></b><div class="l1"><span class="tx"><span class="ch">O</span><span class="ch">u</span><span class="ch">t</span><span class="ch">d</span><span class="ch">o</span><span class="ch">o</span><span class="ch">r</span><span class="ch">&nbsp;</span><span class="ch">M</span><span class="ch">a</span><span class="ch">t</span></span></div><div class="l2"><span class="tx"><span class="ch">U</span><span class="ch">p</span><span class="ch">g</span><span class="ch">r</span><span class="ch">a</span><span class="ch">d</span><span class="ch">e</span><span class="ch">!</span></span><i class="cur"></i></div></div>
+<div id="sc2" class="scene" style="z-index:12;visibility:hidden"><div class="bg bg3"><i class="streak"></i></div><div class="stage"><div class="phone p3"><div class=scr><video id="m3_sc2" src="assets/src/1976.mp4" data-start="4.400" data-duration="2.800" data-media-start="0.000" muted playsinline></video></div><i class="isl"></i></div></div></div>
+<div id="w2" class="word stB C" style="top:150px;visibility:hidden"><b class="gl"></b><div class="l1"><span class="tx"><span class="ch">B</span><span class="ch">i</span><span class="ch">g</span><span class="ch">g</span><span class="ch">e</span><span class="ch">s</span><span class="ch">t</span><span class="ch">&nbsp;</span><span class="ch">S</span><span class="ch">i</span><span class="ch">z</span><span class="ch">e</span></span></div><div class="l2"><span class="tx"><span class="ch">8</span><span class="ch">0</span><span class="ch">&nbsp;</span><span class="ch">×</span><span class="ch">&nbsp;</span><span class="ch">1</span><span class="ch">2</span><span class="ch">0</span><span class="ch">&nbsp;</span><span class="ch">c</span><span class="ch">m</span></span><i class="cur"></i></div></div>
+<div id="sc3" class="scene" style="z-index:13;visibility:hidden"><div class="cam"><video id="m4_sc3" src="assets/src/1974.mp4" data-start="6.800" data-duration="2.100" data-media-start="0.000" muted playsinline></video></div></div>
+<div id="w3" class="word stB C" style="top:210px;visibility:hidden"><b class="gl"></b><div class="l1"><span class="tx"><span class="ch">4</span><span class="ch">0</span><span class="ch">0</span><span class="ch">&nbsp;</span><span class="ch">G</span><span class="ch">S</span><span class="ch">M</span></span></div><div class="l2"><span class="tx"><span class="ch">C</span><span class="ch">o</span><span class="ch">a</span><span class="ch">r</span><span class="ch">s</span><span class="ch">e</span><span class="ch">&nbsp;</span><span class="ch">F</span><span class="ch">i</span><span class="ch">b</span><span class="ch">e</span><span class="ch">r</span></span><i class="cur"></i></div></div>
+<div id="sc4" class="scene" style="z-index:14;visibility:hidden"><div class="cam"><video id="m5_sc4" src="assets/src/1976.mp4" data-start="8.900" data-duration="1.700" data-media-start="3.000" muted playsinline></video></div></div>
+<div id="w4" class="word stB C" style="top:210px;visibility:hidden"><b class="gl"></b><div class="l1"><span class="tx"><span class="ch">S</span><span class="ch">c</span><span class="ch">r</span><span class="ch">a</span><span class="ch">p</span><span class="ch">e</span><span class="ch">&nbsp;</span><span class="ch">O</span><span class="ch">f</span><span class="ch">f</span></span></div><div class="l2"><span class="tx"><span class="ch">D</span><span class="ch">i</span><span class="ch">r</span><span class="ch">t</span><span class="ch">&nbsp;</span><span class="ch">&</span><span class="ch">&nbsp;</span><span class="ch">S</span><span class="ch">a</span><span class="ch">n</span><span class="ch">d</span></span><i class="cur"></i></div></div>
+<div id="sc5" class="scene" style="z-index:15;visibility:hidden"><div class="cam"><video id="m6_sc5" src="assets/src/1981.mp4" data-start="10.200" data-duration="1.900" data-media-start="1.600" muted playsinline></video></div></div>
+<div id="w5" class="word stB C" style="top:210px;visibility:hidden"><b class="gl"></b><div class="l1"><span class="tx"><span class="ch">W</span><span class="ch">a</span><span class="ch">t</span><span class="ch">e</span><span class="ch">r</span></span></div><div class="l2"><span class="tx"><span class="ch">R</span><span class="ch">e</span><span class="ch">s</span><span class="ch">i</span><span class="ch">s</span><span class="ch">t</span><span class="ch">a</span><span class="ch">n</span><span class="ch">t</span></span><i class="cur"></i></div></div>
+<div id="sc6" class="scene" style="z-index:16;visibility:hidden"><div class="cam"><video id="m7_sc6" src="assets/src/1972.mp4" data-start="12.100" data-duration="1.900" data-media-start="0.000" muted playsinline></video></div></div>
+<div id="w6" class="word stB C" style="top:210px;visibility:hidden"><b class="gl"></b><div class="l1"><span class="tx"><span class="ch">T</span><span class="ch">P</span><span class="ch">E</span><span class="ch">&nbsp;</span><span class="ch">A</span><span class="ch">n</span><span class="ch">t</span><span class="ch">i</span><span class="ch">-</span><span class="ch">S</span><span class="ch">l</span><span class="ch">i</span><span class="ch">p</span></span></div><div class="l2"><span class="tx"><span class="ch">B</span><span class="ch">a</span><span class="ch">s</span><span class="ch">e</span></span><i class="cur"></i></div></div>
+<div id="sc7" class="scene" style="z-index:17;visibility:hidden"><div class="cam"><video id="m8_sc7" src="assets/src/1979.mp4" data-start="13.600" data-duration="2.300" data-media-start="0.300" muted playsinline></video></div></div>
+<div id="w7" class="word stB C" style="top:210px;visibility:hidden"><b class="gl"></b><div class="l1"><span class="tx"><span class="ch">M</span><span class="ch">i</span><span class="ch">n</span><span class="ch">i</span><span class="ch">m</span><span class="ch">a</span><span class="ch">l</span><span class="ch">i</span><span class="ch">s</span><span class="ch">t</span></span></div><div class="l2"><span class="tx"><span class="ch">E</span><span class="ch">m</span><span class="ch">b</span><span class="ch">o</span><span class="ch">s</span><span class="ch">s</span><span class="ch">e</span><span class="ch">d</span><span class="ch">&nbsp;</span><span class="ch">D</span><span class="ch">e</span><span class="ch">s</span><span class="ch">i</span><span class="ch">g</span><span class="ch">n</span></span><i class="cur"></i></div></div>
+<div id="sc8" class="scene" style="z-index:18;visibility:hidden"><div class="cam"><video id="m9_sc8" src="assets/src/1971.mp4" data-start="15.500" data-duration="2.500" data-media-start="1.400" muted playsinline></video></div></div>
+<div id="w8" class="word stB C" style="top:210px;visibility:hidden"><b class="gl"></b><div class="l1"><span class="tx"><span class="ch">P</span><span class="ch">e</span><span class="ch">r</span><span class="ch">f</span><span class="ch">e</span><span class="ch">c</span><span class="ch">t</span><span class="ch">&nbsp;</span><span class="ch">f</span><span class="ch">o</span><span class="ch">r</span></span></div><div class="l2"><span class="tx"><span class="ch">H</span><span class="ch">o</span><span class="ch">m</span><span class="ch">e</span><span class="ch">&nbsp;</span><span class="ch">E</span><span class="ch">n</span><span class="ch">t</span><span class="ch">r</span><span class="ch">a</span><span class="ch">n</span><span class="ch">c</span><span class="ch">e</span></span><i class="cur"></i></div></div>
+<div id="hook" class="hook stB C"><b class="gl"></b><div class="k">NEW</div><div class="l1 big"><span class="tx"><span class="ch">U</span><span class="ch">p</span><span class="ch">g</span><span class="ch">r</span><span class="ch">a</span><span class="ch">d</span><span class="ch">e</span></span></div><div class="l2 big"><span class="tx"><span class="ch">K</span><span class="ch">a</span><span class="ch">r</span><span class="ch">p</span><span class="ch">e</span><span class="ch">t</span><span class="ch">&nbsp;</span><span class="ch">D</span><span class="ch">e</span><span class="ch">p</span><span class="ch">a</span><span class="ch">n</span><span class="ch">&nbsp;</span><span class="ch">R</span><span class="ch">u</span><span class="ch">m</span><span class="ch">a</span><span class="ch">h</span></span><i class="cur"></i></div></div>
+<audio id="a0" src="sfx/rise_sweep.wav" data-start="2.55" data-duration="0.9" data-volume="0.25"></audio>
+<audio id="a1" src="sfx/type_burst.wav" data-start="3.12" data-duration="0.9" data-volume="0.3"></audio>
+<audio id="a2" src="sfx/bell_ding.wav" data-start="3.32" data-duration="0.9" data-volume="0.2"></audio>
+<audio id="a3" src="sfx/soft_impact.wav" data-start="4.50" data-duration="0.9" data-volume="0.3"></audio>
+<audio id="a4" src="sfx/rise_sweep.wav" data-start="4.35" data-duration="0.9" data-volume="0.25"></audio>
+<audio id="a5" src="sfx/type_burst.wav" data-start="4.92" data-duration="0.9" data-volume="0.3"></audio>
+<audio id="a6" src="sfx/rise_sweep.wav" data-start="6.75" data-duration="0.9" data-volume="0.25"></audio>
+<audio id="a7" src="sfx/type_burst.wav" data-start="7.32" data-duration="0.9" data-volume="0.3"></audio>
+<audio id="a8" src="sfx/ui_click.wav" data-start="8.85" data-duration="0.9" data-volume="0.28"></audio>
+<audio id="a9" src="sfx/type_burst.wav" data-start="9.02" data-duration="0.9" data-volume="0.3"></audio>
+<audio id="a10" src="sfx/rise_sweep.wav" data-start="10.15" data-duration="0.9" data-volume="0.25"></audio>
+<audio id="a11" src="sfx/type_burst.wav" data-start="10.72" data-duration="0.9" data-volume="0.3"></audio>
+<audio id="a12" src="sfx/ui_click.wav" data-start="12.05" data-duration="0.9" data-volume="0.28"></audio>
+<audio id="a13" src="sfx/type_burst.wav" data-start="12.22" data-duration="0.9" data-volume="0.3"></audio>
+<audio id="a14" src="sfx/rise_sweep.wav" data-start="13.55" data-duration="0.9" data-volume="0.25"></audio>
+<audio id="a15" src="sfx/type_burst.wav" data-start="14.12" data-duration="0.9" data-volume="0.3"></audio>
+<audio id="a16" src="sfx/rise_sweep.wav" data-start="15.45" data-duration="0.9" data-volume="0.25"></audio>
+<audio id="a17" src="sfx/type_burst.wav" data-start="16.02" data-duration="0.9" data-volume="0.3"></audio>
+<audio id="a18" src="sfx/bell_ding.wav" data-start="16.22" data-duration="0.9" data-volume="0.2"></audio>
+<audio id="a19" src="sfx/soft_impact.wav" data-start="0.05" data-duration="0.9" data-volume="0.38"></audio>
+<audio id="a20" src="sfx/type_burst.wav" data-start="0.30" data-duration="0.9" data-volume="0.3"></audio>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+const tl=gsap.timeline({paused:true});
+gsap.set(".tx .ch,.tx .wd",{opacity:0});
+tl.set("#sc0",{visibility:"visible"},0.000);tl.set("#sc0",{visibility:"hidden"},3.000);
+tl.fromTo("#sc0 > .cam",{scale:1.16},{scale:1.04,duration:.5,ease:"power3.out"},0.000);tl.to("#sc0 > .cam",{scale:1.1,duration:2.50,ease:"sine.inOut"},0.500);
+tl.set("#sc1",{visibility:"visible"},2.600);tl.set("#sc1",{visibility:"hidden"},4.800);
+tl.fromTo("#sc1 > .cam",{scale:1.0},{scale:1.07,duration:2.20,ease:"sine.inOut"},2.600);
+tl.fromTo("#sc0",{scale:1,opacity:1},{scale:1.45,opacity:0,duration:0.4,ease:"power2.in"},2.600);
+tl.fromTo("#sc1",{scale:.8,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"power2.out"},2.600);
+tl.set("#sc1",{zIndex:11},2.600);
+tl.fromTo("#w1 .gl",{opacity:0},{opacity:1,duration:.35},3.07);tl.to("#w1 .gl",{opacity:0,duration:.3},3.98);
+tl.set("#w1 .tx",{opacity:1},3.12);
+tl.fromTo("#w1 .l1 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},3.12);
+tl.fromTo("#w1 .l2 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},3.55);
+tl.fromTo("#w1 .cur",{opacity:0},{opacity:1,duration:.01},3.12);
+tl.to("#w1 .cur",{opacity:0,duration:.01},3.52);tl.to("#w1 .cur",{opacity:1,duration:.01},3.77);
+tl.to("#w1 .cur",{opacity:0,duration:.01},4.02);tl.to("#w1 .cur",{opacity:1,duration:.01},4.27);
+tl.to("#w1 .ch,#w1 .cur",{opacity:0,duration:.01,stagger:{each:.012,from:"end"}},3.93);
+tl.set("#w1",{visibility:"visible"},3.07);tl.set("#w1",{visibility:"hidden"},4.30);
+tl.set("#sc2",{visibility:"visible"},4.400);tl.set("#sc2",{visibility:"hidden"},7.200);
+tl.fromTo("#sc2 .p3",{rotationY:-28,rotationX:8,scale:.82,y:80},{rotationY:-12,rotationX:4,scale:.95,y:0,duration:.8,ease:"power3.out"},4.400);
+tl.to("#sc2 .p3",{rotationY:8,rotationX:2,duration:2.00,ease:"sine.inOut"},5.200);
+tl.fromTo("#sc2 .streak",{xPercent:-120},{xPercent:120,duration:2.80,ease:"none"},4.400);
+tl.fromTo("#sc1",{scale:1,opacity:1},{scale:1.45,opacity:0,duration:0.4,ease:"power2.in"},4.400);
+tl.fromTo("#sc2",{scale:.8,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"power2.out"},4.400);
+tl.set("#sc2",{zIndex:12},4.400);
+tl.fromTo("#w2 .gl",{opacity:0},{opacity:1,duration:.35},4.87);tl.to("#w2 .gl",{opacity:0,duration:.3},6.38);
+tl.set("#w2 .tx",{opacity:1},4.92);
+tl.fromTo("#w2 .l1 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},4.92);
+tl.fromTo("#w2 .l2 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},5.39);
+tl.fromTo("#w2 .cur",{opacity:0},{opacity:1,duration:.01},4.92);
+tl.to("#w2 .cur",{opacity:0,duration:.01},5.32);tl.to("#w2 .cur",{opacity:1,duration:.01},5.57);
+tl.to("#w2 .cur",{opacity:0,duration:.01},5.82);tl.to("#w2 .cur",{opacity:1,duration:.01},6.07);
+tl.to("#w2 .cur",{opacity:0,duration:.01},6.32);tl.to("#w2 .cur",{opacity:1,duration:.01},6.57);
+tl.to("#w2 .ch,#w2 .cur",{opacity:0,duration:.01,stagger:{each:.012,from:"end"}},6.33);
+tl.set("#w2",{visibility:"visible"},4.87);tl.set("#w2",{visibility:"hidden"},6.70);
+tl.set("#sc3",{visibility:"visible"},6.800);tl.set("#sc3",{visibility:"hidden"},8.900);
+tl.fromTo("#sc3 > .cam",{scale:1.16},{scale:1.04,duration:.5,ease:"power3.out"},6.800);tl.to("#sc3 > .cam",{scale:1.1,duration:1.60,ease:"sine.inOut"},7.300);
+tl.fromTo("#sc2",{scale:1,opacity:1},{scale:1.45,opacity:0,duration:0.4,ease:"power2.in"},6.800);
+tl.fromTo("#sc3",{scale:.8,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"power2.out"},6.800);
+tl.set("#sc3",{zIndex:13},6.800);
+tl.fromTo("#w3 .gl",{opacity:0},{opacity:1,duration:.35},7.27);tl.to("#w3 .gl",{opacity:0,duration:.3},8.48);
+tl.set("#w3 .tx",{opacity:1},7.32);
+tl.fromTo("#w3 .l1 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},7.32);
+tl.fromTo("#w3 .l2 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},7.62);
+tl.fromTo("#w3 .cur",{opacity:0},{opacity:1,duration:.01},7.32);
+tl.to("#w3 .cur",{opacity:0,duration:.01},7.72);tl.to("#w3 .cur",{opacity:1,duration:.01},7.97);
+tl.to("#w3 .cur",{opacity:0,duration:.01},8.22);tl.to("#w3 .cur",{opacity:1,duration:.01},8.47);
+tl.to("#w3 .cur",{opacity:0,duration:.01},8.72);tl.to("#w3 .cur",{opacity:1,duration:.01},8.97);
+tl.to("#w3 .ch,#w3 .cur",{opacity:0,duration:.01,stagger:{each:.012,from:"end"}},8.43);
+tl.set("#w3",{visibility:"visible"},7.27);tl.set("#w3",{visibility:"hidden"},8.80);
+tl.set("#sc4",{visibility:"visible"},8.900);tl.set("#sc4",{visibility:"hidden"},10.600);
+tl.fromTo("#sc4 > .cam",{scale:1.0},{scale:1.07,duration:1.70,ease:"sine.inOut"},8.900);
+tl.fromTo("#w4 .gl",{opacity:0},{opacity:1,duration:.35},8.97);tl.to("#w4 .gl",{opacity:0,duration:.3},9.78);
+tl.set("#w4 .tx",{opacity:1},9.02);
+tl.fromTo("#w4 .l1 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},9.02);
+tl.fromTo("#w4 .l2 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},9.42);
+tl.fromTo("#w4 .cur",{opacity:0},{opacity:1,duration:.01},9.02);
+tl.to("#w4 .cur",{opacity:0,duration:.01},9.42);tl.to("#w4 .cur",{opacity:1,duration:.01},9.67);
+tl.to("#w4 .cur",{opacity:0,duration:.01},9.92);tl.to("#w4 .cur",{opacity:1,duration:.01},10.17);
+tl.to("#w4 .ch,#w4 .cur",{opacity:0,duration:.01,stagger:{each:.012,from:"end"}},9.73);
+tl.set("#w4",{visibility:"visible"},8.97);tl.set("#w4",{visibility:"hidden"},10.10);
+tl.set("#sc5",{visibility:"visible"},10.200);tl.set("#sc5",{visibility:"hidden"},12.100);
+tl.fromTo("#sc5 > .cam",{scale:1.08},{scale:1.0,duration:1.90,ease:"sine.out"},10.200);
+tl.fromTo("#sc4",{scale:1,opacity:1},{scale:1.45,opacity:0,duration:0.4,ease:"power2.in"},10.200);
+tl.fromTo("#sc5",{scale:.8,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"power2.out"},10.200);
+tl.set("#sc5",{zIndex:15},10.200);
+tl.fromTo("#w5 .gl",{opacity:0},{opacity:1,duration:.35},10.67);tl.to("#w5 .gl",{opacity:0,duration:.3},11.68);
+tl.set("#w5 .tx",{opacity:1},10.72);
+tl.fromTo("#w5 .l1 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},10.72);
+tl.fromTo("#w5 .l2 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},10.95);
+tl.fromTo("#w5 .cur",{opacity:0},{opacity:1,duration:.01},10.72);
+tl.to("#w5 .cur",{opacity:0,duration:.01},11.12);tl.to("#w5 .cur",{opacity:1,duration:.01},11.37);
+tl.to("#w5 .cur",{opacity:0,duration:.01},11.62);tl.to("#w5 .cur",{opacity:1,duration:.01},11.87);
+tl.to("#w5 .ch,#w5 .cur",{opacity:0,duration:.01,stagger:{each:.012,from:"end"}},11.63);
+tl.set("#w5",{visibility:"visible"},10.67);tl.set("#w5",{visibility:"hidden"},12.00);
+tl.set("#sc6",{visibility:"visible"},12.100);tl.set("#sc6",{visibility:"hidden"},14.000);
+tl.fromTo("#sc6 > .cam",{scale:1.16},{scale:1.04,duration:.5,ease:"power3.out"},12.100);tl.to("#sc6 > .cam",{scale:1.1,duration:1.40,ease:"sine.inOut"},12.600);
+tl.fromTo("#w6 .gl",{opacity:0},{opacity:1,duration:.35},12.17);tl.to("#w6 .gl",{opacity:0,duration:.3},13.18);
+tl.set("#w6 .tx",{opacity:1},12.22);
+tl.fromTo("#w6 .l1 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},12.22);
+tl.fromTo("#w6 .l2 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},12.72);
+tl.fromTo("#w6 .cur",{opacity:0},{opacity:1,duration:.01},12.22);
+tl.to("#w6 .cur",{opacity:0,duration:.01},12.62);tl.to("#w6 .cur",{opacity:1,duration:.01},12.87);
+tl.to("#w6 .cur",{opacity:0,duration:.01},13.12);tl.to("#w6 .cur",{opacity:1,duration:.01},13.37);
+tl.to("#w6 .ch,#w6 .cur",{opacity:0,duration:.01,stagger:{each:.012,from:"end"}},13.13);
+tl.set("#w6",{visibility:"visible"},12.17);tl.set("#w6",{visibility:"hidden"},13.50);
+tl.set("#sc7",{visibility:"visible"},13.600);tl.set("#sc7",{visibility:"hidden"},15.900);
+tl.fromTo("#sc7 > .cam",{scale:1.0},{scale:1.07,duration:2.30,ease:"sine.inOut"},13.600);
+tl.fromTo("#sc6",{scale:1,opacity:1},{scale:1.45,opacity:0,duration:0.4,ease:"power2.in"},13.600);
+tl.fromTo("#sc7",{scale:.8,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"power2.out"},13.600);
+tl.set("#sc7",{zIndex:17},13.600);
+tl.fromTo("#w7 .gl",{opacity:0},{opacity:1,duration:.35},14.07);tl.to("#w7 .gl",{opacity:0,duration:.3},15.08);
+tl.set("#w7 .tx",{opacity:1},14.12);
+tl.fromTo("#w7 .l1 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},14.12);
+tl.fromTo("#w7 .l2 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},14.52);
+tl.fromTo("#w7 .cur",{opacity:0},{opacity:1,duration:.01},14.12);
+tl.to("#w7 .cur",{opacity:0,duration:.01},14.52);tl.to("#w7 .cur",{opacity:1,duration:.01},14.77);
+tl.to("#w7 .cur",{opacity:0,duration:.01},15.02);tl.to("#w7 .cur",{opacity:1,duration:.01},15.27);
+tl.to("#w7 .ch,#w7 .cur",{opacity:0,duration:.01,stagger:{each:.012,from:"end"}},15.03);
+tl.set("#w7",{visibility:"visible"},14.07);tl.set("#w7",{visibility:"hidden"},15.40);
+tl.set("#sc8",{visibility:"visible"},15.500);tl.set("#sc8",{visibility:"hidden"},18.000);
+tl.fromTo("#sc8 > .cam",{scale:1.08},{scale:1.0,duration:2.50,ease:"sine.out"},15.500);
+tl.fromTo("#sc7",{scale:1,opacity:1},{scale:1.45,opacity:0,duration:0.4,ease:"power2.in"},15.500);
+tl.fromTo("#sc8",{scale:.8,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"power2.out"},15.500);
+tl.set("#sc8",{zIndex:18},15.500);
+tl.fromTo("#w8 .gl",{opacity:0},{opacity:1,duration:.35},15.97);tl.to("#w8 .gl",{opacity:0,duration:.3},17.58);
+tl.set("#w8 .tx",{opacity:1},16.02);
+tl.fromTo("#w8 .l1 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},16.02);
+tl.fromTo("#w8 .l2 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},16.46);
+tl.fromTo("#w8 .cur",{opacity:0},{opacity:1,duration:.01},16.02);
+tl.to("#w8 .cur",{opacity:0,duration:.01},16.42);tl.to("#w8 .cur",{opacity:1,duration:.01},16.67);
+tl.to("#w8 .cur",{opacity:0,duration:.01},16.92);tl.to("#w8 .cur",{opacity:1,duration:.01},17.17);
+tl.to("#w8 .cur",{opacity:0,duration:.01},17.42);tl.to("#w8 .cur",{opacity:1,duration:.01},17.67);
+tl.to("#w8 .ch,#w8 .cur",{opacity:0,duration:.01,stagger:{each:.012,from:"end"}},17.53);
+tl.set("#w8",{visibility:"visible"},15.97);tl.set("#w8",{visibility:"hidden"},17.90);
+tl.fromTo("#hook .gl",{opacity:0},{opacity:1,duration:.35},0.20);tl.to("#hook .gl",{opacity:0,duration:.3},2.45);
+tl.fromTo("#hook .k",{opacity:0,y:8},{opacity:.9,y:0,duration:.5,ease:"expo.out"},0.15);tl.to("#hook .k",{opacity:0,duration:.25},2.45);
+tl.set("#hook .tx",{opacity:1},0.25);
+tl.fromTo("#hook .l1 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},0.25);
+tl.fromTo("#hook .l2 .ch",{opacity:0},{opacity:1,duration:.01,stagger:.035},0.55);
+tl.fromTo("#hook .cur",{opacity:0},{opacity:1,duration:.01},0.25);
+tl.to("#hook .cur",{opacity:0,duration:.01},0.65);tl.to("#hook .cur",{opacity:1,duration:.01},0.90);
+tl.to("#hook .cur",{opacity:0,duration:.01},1.15);tl.to("#hook .cur",{opacity:1,duration:.01},1.40);
+tl.to("#hook .cur",{opacity:0,duration:.01},1.65);tl.to("#hook .cur",{opacity:1,duration:.01},1.90);
+tl.to("#hook .cur",{opacity:0,duration:.01},2.15);tl.to("#hook .cur",{opacity:1,duration:.01},2.40);
+tl.to("#hook .cur",{opacity:0,duration:.01},2.65);tl.to("#hook .cur",{opacity:1,duration:.01},2.90);
+tl.to("#hook .ch,#hook .cur",{opacity:0,duration:.01,stagger:{each:.012,from:"end"}},2.40);
+tl.set("#hook",{visibility:"hidden"},2.80);
+tl.set({},{},18.0);
+window.__timelines=window.__timelines||{};window.__timelines["root"]=tl;
+</script>
+</body></html>

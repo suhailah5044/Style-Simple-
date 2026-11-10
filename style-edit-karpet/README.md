@@ -32,3 +32,16 @@ Volume SFX 0.22–0.4. **Tiada muzik** (dibuang atas permintaan); footage senyap
 ## Cara guna
 `python3 build.py` → `npx hyperframes lint .` → preview: `npx hyperframes preview .` atau `npx hyperframes snapshot . --at 1.5,7.4,...`
 Render (bila diluluskan): `npx hyperframes render . -q delivery --video-frame-format png -o Karpet_FINAL.mp4`
+
+---
+# Variasi V2–V5 (`gen.py` → `v2.html`…`v5.html`)
+Footage sama (karpet sahaja, tiada orang), klip sumber penuh di `assets/src/` (dipotong guna `data-media-start`). Setiap variasi berbeza susunan klip, gaya teks, transisi, grafik dan SFX (`sfx4.py`).
+
+| Variasi | Gaya teks | Transisi | Grafik khas | SFX teks / USP |
+|---|---|---|---|---|
+| **V2 Slide Clean** (19.5s) | garis menegak + teks luncur dari kiri | slide/whip, flash | split-screen 2 footage | glass_pluck / sparkle_tail |
+| **V3 Typewriter UI** (18s) | taip huruf demi huruf + kursor berkelip | zoom-through | phone mockup 3D senget + light streak | type_burst / bell_ding |
+| **V4 Kinetic Blur** (18.5s) | perkataan muncul dari blur, nombor mengira | iris bulatan | bingkai polaroid | chime_soft / ting2 |
+| **V5 Editorial Index** (17.8s) | indeks 01–08 + garis, mask reveal | wipe menegak + garis cahaya, frame break | intro letterbox, kolaj 2×2 | tick_index / sparkle_tail |
+
+Render satu variasi: salin `vN.html` jadi `index.html` dalam folder lain (symlink `assets/` & `sfx/`), kemudian `npx hyperframes render <folder> -q delivery --video-frame-format png -o Karpet_vN_FINAL.mp4`.
