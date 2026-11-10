@@ -1,0 +1,78 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Cormorant";src:url("assets/CormorantItalic.woff2") format("woff2");font-style:italic;font-weight:500;}
+@font-face{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}
+html,body{margin:0;background:#000;}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}
+#cam{position:absolute;inset:0;transform-origin:50% 40%;}
+video{width:100%;height:100%;object-fit:cover;display:block;}
+.broll{position:absolute;inset:0;z-index:3;opacity:0;}
+.broll .push{position:absolute;inset:0;}
+.sl{position:absolute;inset:0;}
+.s0{clip-path:inset(0 0 66.6% 0);} .s1{clip-path:inset(33.3% 0 33.3% 0);} .s2{clip-path:inset(66.6% 0 0 0);}
+.card{position:absolute;inset:0;border-radius:28px;overflow:hidden;outline:6px solid #fff;outline-offset:-6px;box-shadow:0 20px 60px rgba(0,0,0,.45);}
+.w{position:absolute;top:262px;left:0;right:0;text-align:center;z-index:6;}
+.w .box{position:relative;display:inline-block;padding:16px 26px;}
+.w .tx{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:26px;line-height:1.2;letter-spacing:-0.02em;color:#fff;
+  text-shadow:0 2px 6px rgba(0,0,0,.5),0 0 2px rgba(0,0,0,.35);opacity:0;white-space:nowrap;}
+.k{position:absolute;width:11px;height:11px;border:0 solid #fff;opacity:0;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4));}
+.tl{left:0;top:0;border-left-width:2px;border-top-width:2px;} .tr{right:0;top:0;border-right-width:2px;border-top-width:2px;}
+.bl{left:0;bottom:0;border-left-width:2px;border-bottom-width:2px;} .br{right:0;bottom:0;border-right-width:2px;border-bottom-width:2px;}
+#title{position:absolute;top:215px;left:0;right:0;text-align:center;z-index:7;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.45);}
+#t1{display:inline-block;font-family:"Cormorant",serif;font-style:italic;font-weight:500;font-size:64px;line-height:1;opacity:0;}
+#t2{display:block;font-family:"Lexend Mega",sans-serif;font-weight:400;font-size:17px;letter-spacing:.42em;margin-top:12px;opacity:0;}
+#line{display:block;width:120px;height:1.5px;background:#fff;margin:14px auto 0;transform:scaleX(0);}
+</style></head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="22.11" data-fps="30">
+  <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="22.11" data-has-audio="true" data-volume="1"></video></div>
+  <div id="title" class="clip" data-start="0" data-duration="3.3"><span id="t1">Baru</span><span id="t2">RESTOCK</span><i id="line"></i></div>
+  <div id="w0" class="clip w" data-start="3.54" data-duration="1.60"><div class="box"><i class="k tl"></i><i class="k tr"></i><i class="k bl"></i><i class="k br"></i><span class="tx">Takut Sold Out</span></div></div>
+  <div id="w1" class="clip w" data-start="13.8" data-duration="1.60"><div class="box"><i class="k tl"></i><i class="k tr"></i><i class="k bl"></i><i class="k br"></i><span class="tx">Masih Shiny</span></div></div>
+  <div id="w2" class="clip w" data-start="17.76" data-duration="1.60"><div class="box"><i class="k tl"></i><i class="k tr"></i><i class="k bl"></i><i class="k br"></i><span class="tx">Grab Sementara Ada</span></div></div>
+  <div id="b0" class="broll"><div class="push"><div class="card"><video id="vb0" src="assets/b1948.mp4" data-start="6.66" data-duration="1.25" data-playback-start="0.5" muted data-volume="0" data-has-audio="false"></video></div></div></div>
+  <audio id="bgm" src="sfx/bgm.wav" data-start="0" data-duration="22.11" data-volume="0.09"></audio>
+  <audio id="a_in" src="sfx/intro_pan.wav" data-start="0.05" data-duration="1.6" data-volume="0.45"></audio>
+  <audio id="a0" src="sfx/ding.wav" data-start="3.51" data-duration="1.2" data-volume="0.3"></audio>
+  <audio id="a1" src="sfx/sparkle.wav" data-start="13.77" data-duration="1.2" data-volume="0.25"></audio>
+  <audio id="a2" src="sfx/soft_impact.wav" data-start="17.73" data-duration="1.2" data-volume="0.5"></audio>
+  <audio id="fp0" src="sfx/pop.wav" data-start="6.66" data-duration=".3" data-volume=".35"></audio>
+  <audio id="fi0" src="sfx/soft_impact.wav" data-start="7.26" data-duration=".7" data-volume=".4"></audio>
+  <audio id="wo0" src="sfx/whoosh.wav" data-start="7.61" data-duration=".6" data-volume=".28"></audio>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.set("#cam",{scale:1},0);
+tl.fromTo("#t1",{opacity:0,y:18,filter:"blur(10px)"},{opacity:1,y:0,filter:"blur(0px)",duration:.7,ease:"expo.out"},0.1);
+tl.fromTo("#t2",{opacity:0,scaleX:1.35},{opacity:1,scaleX:1,duration:.8,ease:"expo.out"},0.45);
+tl.fromTo("#line",{scaleX:0},{scaleX:1,duration:.6,ease:"expo.out"},0.6);
+tl.fromTo("#cam",{scale:1.12},{scale:1.0,duration:1.2,ease:"power3.out"},0);
+tl.to("#cam",{scale:1.05,duration:2.0,ease:"sine.inOut"},1.2);
+tl.to("#title span,#line",{opacity:0,y:-10,filter:"blur(6px)",duration:.3,ease:"power2.in"},3.0);
+tl.to("#cam",{scale:1.0,duration:1.5,ease:"sine.inOut"},3.3);
+tl.fromTo("#w0 .tx",{opacity:0,filter:"blur(8px)",scale:1.18},{opacity:1,filter:"blur(0px)",scale:1,duration:.42,ease:"expo.out"},3.54);
+tl.fromTo("#w0 .k",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:.32,ease:"back.out(2)",stagger:.03},3.58);
+tl.to("#w0 .k",{opacity:0,duration:.25},4.29);
+tl.to("#w0 .tx",{opacity:0,filter:"blur(6px)",duration:.2,ease:"power2.in"},4.92);
+tl.fromTo("#cam",{scale:1.12},{scale:1.03,duration:.45,ease:"power3.out"},3.54);
+tl.fromTo("#w1 .tx",{opacity:0,filter:"blur(8px)",scale:1.18},{opacity:1,filter:"blur(0px)",scale:1,duration:.42,ease:"expo.out"},13.8);
+tl.fromTo("#w1 .k",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:.32,ease:"back.out(2)",stagger:.03},13.84);
+tl.to("#w1 .k",{opacity:0,duration:.25},14.55);
+tl.to("#w1 .tx",{opacity:0,filter:"blur(6px)",duration:.2,ease:"power2.in"},15.18);
+tl.to("#cam",{scale:1.0,duration:1.60,ease:"sine.inOut"},13.8);
+tl.fromTo("#w2 .tx",{opacity:0,filter:"blur(8px)",scale:1.18},{opacity:1,filter:"blur(0px)",scale:1,duration:.42,ease:"expo.out"},17.76);
+tl.fromTo("#w2 .k",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:.32,ease:"back.out(2)",stagger:.03},17.80);
+tl.to("#w2 .k",{opacity:0,duration:.25},18.51);
+tl.to("#w2 .tx",{opacity:0,filter:"blur(6px)",duration:.2,ease:"power2.in"},19.14);
+tl.fromTo("#cam",{scale:1.12},{scale:1.03,duration:.45,ease:"power3.out"},17.76);
+tl.fromTo("#b0 .card",{scale:.55,rotation:-5,opacity:0},{scale:.84,rotation:0,opacity:1,duration:.38,ease:"back.out(1.6)"},6.66);
+tl.to("#b0 .card",{scale:1,borderRadius:0,outlineColor:"rgba(255,255,255,0)",duration:.32,ease:"power3.inOut"},7.26);
+tl.set("#b0",{opacity:1},6.66);
+tl.fromTo("#b0 .push",{scale:1},{scale:1.08,duration:1.25,ease:"none"},6.66);
+tl.to("#b0",{opacity:0,duration:.16},7.75);
+tl.set({},{},22.11);
+window.__timelines=window.__timelines||{};window.__timelines["root"]=tl;
+</script>
+</body></html>

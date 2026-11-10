@@ -1,2 +1,5 @@
 assets/*.mp4
 .hyperframes/
+v*/assets/
+v*/sfx
+v*/.hyperframes/
