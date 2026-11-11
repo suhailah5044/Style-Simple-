@@ -1,0 +1,128 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}
+html,body{margin:0;background:#0a0d14;}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:linear-gradient(160deg,#1b2440 0%,#0d1222 60%,#05070d 100%);}
+#bgfx{position:absolute;inset:0;opacity:.16;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 1px,transparent 1px 22px);}
+#fb{position:absolute;inset:0;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 4px rgba(255,255,255,.92);}
+#cut,#cam{position:absolute;inset:0;transform-origin:50% 42%;}
+#cam video{width:100%;height:100%;object-fit:cover;display:block;}
+#crk{position:absolute;inset:0;z-index:4;opacity:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 47.6%,rgba(255,255,255,.95) 47.8%,transparent 48.1%),linear-gradient(64deg,transparent 60%,rgba(255,255,255,.7) 60.15%,transparent 60.4%);}
+.word{position:absolute;z-index:5;width:440px;}
+.word .tx,.word .sb{font-family:"Lexend Mega",sans-serif;color:#fff;opacity:0;}
+.word .tx{display:inline-block;font-weight:600;font-size:27px;line-height:1.3;letter-spacing:-0.045em;text-shadow:0 2px 10px rgba(0,0,0,.55),0 0 3px rgba(0,0,0,.5);}
+.word .sb{display:block;margin-top:7px;font-weight:400;font-size:16px;letter-spacing:-0.03em;text-shadow:0 1px 6px rgba(0,0,0,.7),0 0 2px rgba(0,0,0,.5);}
+.word .mk{opacity:0;}
+.word{top:165px;} .word.L{left:90px;text-align:left;} .word.R{right:90px;text-align:right;}
+.word .tx{padding:9px 18px 10px;border:1.5px solid rgba(255,255,255,.85);border-radius:999px;background:rgba(0,0,0,.22);}
+.word .sb{margin-top:9px;padding:0 6px;}
+#hook{top:190px;}
+#hook .tag{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:17px;letter-spacing:-0.02em;color:#fff;padding:7px 15px;border:1.3px solid rgba(255,255,255,.8);border-radius:999px;opacity:0;}
+#hook .box{display:block;width:max-content;margin:12px auto 0;padding:14px 26px 16px;border-radius:18px;background:rgba(8,10,18,.32);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;}
+#hook .hw{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:700;font-size:31px;letter-spacing:-0.05em;color:#fff;margin:0 5px;opacity:0;}
+#hook{position:absolute;left:0;right:0;text-align:center;z-index:6;}
+.pip{position:absolute;top:380px;width:270px;height:340px;border-radius:24px;overflow:hidden;z-index:5;border:4px solid #fff;box-shadow:0 18px 40px rgba(0,0,0,.45);opacity:0;}
+.pip.R{right:60px;} .pip.L{left:60px;}
+.pip video{width:100%;height:100%;object-fit:cover;display:block;}
+</style></head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="25.273" data-fps="30">
+  <div id="bgfx"></div>
+  <div id="fb"><div id="cut"><div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="25.273" data-has-audio="true" data-volume="1"></video></div></div><div id="crk"></div></div>
+  <div id="hook" class="clip" data-start="0" data-duration="3.0"><span class="tag">Tahan Lasak · 2 Tahun</span><span class="box"><span class="hw">Beg</span><span class="hw">Sekolah</span><span class="hw">Waterproof</span></span></div>
+  <div id="p0" class="pip L"><video id="pv0" src="assets/pip0.mp4" data-start="14.55" data-duration="1.8" data-has-audio="false" muted></video></div>
+  <div id="w0" class="clip word R" data-start="5.62" data-duration="0.69"><span class="mk"></span><span class="tx">Plain → Corak</span></div>
+  <div id="w1" class="clip word R" data-start="6.39" data-duration="1.7"><span class="mk"></span><span class="tx">Design Cantik</span></div>
+  <div id="w2" class="clip word R" data-start="8.66" data-duration="1.8"><span class="mk"></span><span class="tx">Jahitan Kemas</span></div>
+  <div id="w3" class="clip word R" data-start="11.24" data-duration="1.3"><span class="mk"></span><span class="tx">Internal Compartment</span><span class="sb">Front & Side Pocket</span></div>
+  <div id="w4" class="clip word R" data-start="13.24" data-duration="1.6"><span class="mk"></span><span class="tx">Combo + Pencil Box</span></div>
+  <div id="w5" class="clip word R" data-start="15.63" data-duration="1.9"><span class="mk"></span><span class="tx">Water Resistant</span><span class="sb">Water-Resistant Zipper</span></div>
+  <div id="w6" class="clip word R" data-start="18.92" data-duration="2.2"><span class="mk"></span><span class="tx">Span Tebal · Tak Nipis</span></div>
+  <audio id="a_hook" src="sfx/hook2.wav" data-start="0" data-duration="1.6" data-volume="0.5"></audio>
+  <audio id="a0" src="sfx/ui_prompt2.wav" data-start="5.59" data-duration="1.0" data-volume="0.34"></audio>
+  <audio id="a1" src="sfx/shimmer.wav" data-start="6.36" data-duration="1.0" data-volume="0.3"></audio>
+  <audio id="a2" src="sfx/ting2.wav" data-start="8.63" data-duration="1.0" data-volume="0.3"></audio>
+  <audio id="a3" src="sfx/zip.wav" data-start="11.21" data-duration="1.0" data-volume="0.32"></audio>
+  <audio id="a4" src="sfx/ding2.wav" data-start="13.21" data-duration="1.0" data-volume="0.3"></audio>
+  <audio id="a5" src="sfx/droplet.wav" data-start="15.60" data-duration="1.0" data-volume="0.4"></audio>
+  <audio id="a6" src="sfx/click2.wav" data-start="18.89" data-duration="1.0" data-volume="0.42"></audio>
+  <audio id="wh0" src="sfx/whoosh_a.wav" data-start="6.19" data-duration="0.5" data-volume="0.2"></audio>
+  <audio id="wh1" src="sfx/whoosh_b.wav" data-start="10.72" data-duration="0.5" data-volume="0.2"></audio>
+  <audio id="wh2" src="sfx/whoosh_a.wav" data-start="14.03" data-duration="0.5" data-volume="0.2"></audio>
+  <audio id="wh3" src="sfx/whoosh_b.wav" data-start="16.13" data-duration="0.5" data-volume="0.2"></audio>
+  <audio id="wh4" src="sfx/whoosh_a.wav" data-start="16.95" data-duration="0.5" data-volume="0.2"></audio>
+  <audio id="wh5" src="sfx/whoosh_b.wav" data-start="18.30" data-duration="0.5" data-volume="0.2"></audio>
+  <audio id="wh6" src="sfx/whoosh_a.wav" data-start="20.95" data-duration="0.5" data-volume="0.2"></audio>
+  <audio id="wh7" src="sfx/whoosh_b.wav" data-start="21.97" data-duration="0.5" data-volume="0.2"></audio>
+  <audio id="fb0" src="sfx/fbreak.wav" data-start="6.22" data-duration="0.6" data-volume="0.36"></audio>
+  <audio id="fb1" src="sfx/fbreak.wav" data-start="14.06" data-duration="0.6" data-volume="0.36"></audio>
+  <audio id="fb2" src="sfx/fbreak.wav" data-start="20.98" data-duration="0.6" data-volume="0.36"></audio>
+  <audio id="ps0" src="sfx/pip_swish.wav" data-start="14.55" data-duration="0.4" data-volume="0.26"></audio>
+  <audio id="acta" src="sfx/cta_rise.wav" data-start="21.03" data-duration="1.6" data-volume="0.26"></audio>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.set("#cam",{scale:1},0);tl.set("#cut",{scale:1},0);
+tl.fromTo("#cam",{scale:1.0},{scale:1.13,duration:.42,ease:"power2.in"},0.0);
+tl.to("#cam",{scale:1.04,duration:.5,ease:"power3.out"},0.45);
+tl.to("#cam",{scale:1.08,duration:2.0,ease:"sine.inOut"},1.0);
+tl.fromTo("#hook .tag",{opacity:0,y:-10},{opacity:1,y:0,duration:.35,ease:"expo.out"},0.3);
+tl.fromTo("#hook .box",{opacity:0,scale:.8},{opacity:1,scale:1,duration:.4,ease:"back.out(2)"},0.45);
+tl.fromTo("#hook .hw",{opacity:0,y:12},{opacity:1,y:0,duration:.3,ease:"expo.out",stagger:.12},0.55);
+tl.to("#hook .tag,#hook .box",{opacity:0,y:-10,duration:.22,ease:"power2.in"},2.76);
+tl.to("#cam",{scale:1.0,duration:.6,ease:"sine.inOut"},3.0);
+tl.fromTo("#w0 .tx",{opacity:0,scale:.82,y:8},{opacity:1,scale:1,y:0,duration:.36,ease:"back.out(2.4)"},5.62);tl.fromTo("#w0 .sb",{opacity:0,y:6},{opacity:.92,y:0,duration:.3,ease:"expo.out"},5.72);
+tl.to("#w0 > *",{opacity:0,y:-6,duration:.18,ease:"power2.in"},6.11);
+tl.to("#cam",{scale:1.07,duration:0.69,ease:"sine.inOut",overwrite:"auto"},5.62);
+tl.fromTo("#w1 .tx",{opacity:0,scale:.82,y:8},{opacity:1,scale:1,y:0,duration:.36,ease:"back.out(2.4)"},6.39);tl.fromTo("#w1 .sb",{opacity:0,y:6},{opacity:.92,y:0,duration:.3,ease:"expo.out"},6.49);
+tl.to("#w1 > *",{opacity:0,y:-6,duration:.18,ease:"power2.in"},7.89);
+tl.to("#cam",{scale:1.0,duration:1.7,ease:"sine.inOut",overwrite:"auto"},6.39);
+tl.fromTo("#w2 .tx",{opacity:0,scale:.82,y:8},{opacity:1,scale:1,y:0,duration:.36,ease:"back.out(2.4)"},8.66);tl.fromTo("#w2 .sb",{opacity:0,y:6},{opacity:.92,y:0,duration:.3,ease:"expo.out"},8.76);
+tl.to("#w2 > *",{opacity:0,y:-6,duration:.18,ease:"power2.in"},10.26);
+tl.fromTo("#cam",{scale:1.11},{scale:1.03,duration:.45,ease:"power3.out",overwrite:"auto"},8.66);
+tl.fromTo("#w3 .tx",{opacity:0,scale:.82,y:8},{opacity:1,scale:1,y:0,duration:.36,ease:"back.out(2.4)"},11.24);tl.fromTo("#w3 .sb",{opacity:0,y:6},{opacity:.92,y:0,duration:.3,ease:"expo.out"},11.34);
+tl.to("#w3 > *",{opacity:0,y:-6,duration:.18,ease:"power2.in"},12.34);
+tl.to("#cam",{scale:1.07,duration:1.3,ease:"sine.inOut",overwrite:"auto"},11.24);
+tl.fromTo("#w4 .tx",{opacity:0,scale:.82,y:8},{opacity:1,scale:1,y:0,duration:.36,ease:"back.out(2.4)"},13.24);tl.fromTo("#w4 .sb",{opacity:0,y:6},{opacity:.92,y:0,duration:.3,ease:"expo.out"},13.34);
+tl.to("#w4 > *",{opacity:0,y:-6,duration:.18,ease:"power2.in"},14.64);
+tl.fromTo("#cam",{scale:1.11},{scale:1.03,duration:.45,ease:"power3.out",overwrite:"auto"},13.24);
+tl.fromTo("#w5 .tx",{opacity:0,scale:.82,y:8},{opacity:1,scale:1,y:0,duration:.36,ease:"back.out(2.4)"},15.63);tl.fromTo("#w5 .sb",{opacity:0,y:6},{opacity:.92,y:0,duration:.3,ease:"expo.out"},15.73);
+tl.to("#w5 > *",{opacity:0,y:-6,duration:.18,ease:"power2.in"},17.33);
+tl.to("#cam",{scale:1.07,duration:1.9,ease:"sine.inOut",overwrite:"auto"},15.63);
+tl.fromTo("#w6 .tx",{opacity:0,scale:.82,y:8},{opacity:1,scale:1,y:0,duration:.36,ease:"back.out(2.4)"},18.92);tl.fromTo("#w6 .sb",{opacity:0,y:6},{opacity:.92,y:0,duration:.3,ease:"expo.out"},19.02);
+tl.to("#w6 > *",{opacity:0,y:-6,duration:.18,ease:"power2.in"},20.92);
+tl.to("#cam",{scale:1.0,duration:2.2,ease:"sine.inOut",overwrite:"auto"},18.92);
+tl.set("#cut",{scale:1.06},1.63);
+tl.set("#cut",{scale:1.0},3.64);
+tl.set("#cut",{scale:1.0},6.37);
+tl.set("#cut",{scale:1.0},8.18);
+tl.set("#cut",{scale:1.0},10.90);
+tl.set("#cut",{scale:1.0},12.15);
+tl.set("#cut",{scale:1.06},12.39);
+tl.set("#cut",{scale:1.0},14.21);
+tl.set("#cut",{scale:1.0},16.31);
+tl.set("#cut",{scale:1.0},17.13);
+tl.set("#cut",{scale:1.0},18.48);
+tl.set("#cut",{scale:1.0},20.06);
+tl.set("#cut",{scale:1.0},21.13);
+tl.set("#cut",{scale:1.0},22.15);
+tl.set("#cut",{scale:1.06},23.65);
+tl.to("#fb",{scale:.84,rotation:-1.5,borderRadius:44,duration:.16,ease:"power2.in"},6.21);
+tl.to("#fb",{scale:1,rotation:0,borderRadius:0,duration:.44,ease:"back.out(1.5)"},6.37);
+tl.fromTo("#crk",{opacity:.8},{opacity:0,duration:.28,ease:"power2.out",immediateRender:false},6.37);
+tl.to("#fb",{scale:.84,rotation:1.3,borderRadius:44,duration:.16,ease:"power2.in"},14.05);
+tl.to("#fb",{scale:1,rotation:0,borderRadius:0,duration:.44,ease:"back.out(1.5)"},14.21);
+tl.fromTo("#crk",{opacity:.8},{opacity:0,duration:.28,ease:"power2.out",immediateRender:false},14.21);
+tl.to("#fb",{scale:.84,rotation:-1.1,borderRadius:44,duration:.16,ease:"power2.in"},20.97);
+tl.to("#fb",{scale:1,rotation:0,borderRadius:0,duration:.44,ease:"back.out(1.5)"},21.13);
+tl.fromTo("#crk",{opacity:.8},{opacity:0,duration:.28,ease:"power2.out",immediateRender:false},21.13);
+tl.fromTo("#p0",{opacity:0,x:-60,scale:.85,rotation:-4.0},{opacity:1,x:0,scale:1,rotation:-2.0,duration:.4,ease:"back.out(1.8)"},14.55);
+tl.to("#p0",{opacity:0,scale:.9,duration:.2,ease:"power2.in"},16.13);
+tl.to("#cam",{scale:1.06,duration:4.15,ease:"sine.inOut",overwrite:"auto"},21.13);
+tl.set({},{},25.273);
+window.__timelines=window.__timelines||{};window.__timelines["root"]=tl;
+</script>
+</body></html>
