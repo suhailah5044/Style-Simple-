@@ -18,3 +18,7 @@ def cut_t(t):
 def out_t(t): return round(cut_t(t)/SPEED,3)
 TOTAL_CUT=sum(b-a for a,b in SEGS)
 DUR=round(TOTAL_CUT/SPEED,2)
+FPS=33  # 30fps x 1.1 -> 33fps: tiada frame dibuang (licin)
+def jump_cuts():
+    cs=[s for (s,e),_ in CUT]; ce=[e for (s,e),_ in CUT]
+    return [out_t(a) for a,b in SEGS[1:] if a not in cs and not any(abs(x-a)<0.3 for x in ce)]

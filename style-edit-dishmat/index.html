@@ -4,7 +4,7 @@
 @font-face{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}
 html,body{margin:0;background:#000;}
 #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}
-#cam{position:absolute;inset:0;transform-origin:50% 45%;}
+#jc,#cam{position:absolute;inset:0;transform-origin:50% 45%;}
 video{width:100%;height:100%;object-fit:cover;display:block;}
 .fb{position:absolute;inset:0;z-index:3;opacity:0;}
 .sub{position:absolute;top:255px;left:90px;right:90px;z-index:5;display:flex;align-items:center;justify-content:center;gap:14px;}
@@ -19,8 +19,8 @@ video{width:100%;height:100%;object-fit:cover;display:block;}
 #h2{font-weight:300;font-size:21px;letter-spacing:-0.02em;opacity:0;}
 </style></head>
 <body>
-<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="67.45" data-fps="30">
-  <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="67.45" data-has-audio="true" data-volume="1"></video>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="67.45" data-fps="33">
+  <div id="jc"><div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="67.45" data-has-audio="true" data-volume="1"></video>
     <div id="fb0_0" class="fb" style="clip-path:inset(0% 0 62% 0)"><video id="fbv0_0" src="assets/footage.mp4" data-start="0.0" data-duration="0.3" data-media-start="0.0" muted></video></div>
   <div id="fb0_1" class="fb" style="clip-path:inset(38% 0 30% 0)"><video id="fbv0_1" src="assets/footage.mp4" data-start="0.0" data-duration="0.3" data-media-start="0.0" muted></video></div>
   <div id="fb0_2" class="fb" style="clip-path:inset(70% 0 0% 0)"><video id="fbv0_2" src="assets/footage.mp4" data-start="0.0" data-duration="0.3" data-media-start="0.0" muted></video></div>
@@ -33,7 +33,7 @@ video{width:100%;height:100%;object-fit:cover;display:block;}
   <div id="fb3_0" class="fb" style="clip-path:inset(0% 0 62% 0)"><video id="fbv3_0" src="assets/footage.mp4" data-start="53.591" data-duration="0.3" data-media-start="53.591" muted></video></div>
   <div id="fb3_1" class="fb" style="clip-path:inset(38% 0 30% 0)"><video id="fbv3_1" src="assets/footage.mp4" data-start="53.591" data-duration="0.3" data-media-start="53.591" muted></video></div>
   <div id="fb3_2" class="fb" style="clip-path:inset(70% 0 0% 0)"><video id="fbv3_2" src="assets/footage.mp4" data-start="53.591" data-duration="0.3" data-media-start="53.591" muted></video></div>
-  </div>
+  </div></div>
   <div id="hook" class="clip" data-start="0" data-duration="2.9"><div id="h1"><span>S</span><span>i</span><span>l</span><span>i</span><span>c</span><span>o</span><span>n</span><span>e</span><span>&nbsp;</span><span>D</span><span>i</span><span>s</span><span>h</span><span>&nbsp;</span><span>M</span><span>a</span><span>t</span></div><div id="hl"></div><div id="h2">Cepat kering &amp; mudah guna</div></div>
     <div id="s0" class="clip sub" data-start="3.02" data-duration="2.3"><i class="dot"></i><span class="tx"><span class="w">Banyak</span> <span class="w">Kegunaan</span></span></div>
   <div id="s1" class="clip sub" data-start="5.409" data-duration="2.1"><i class="dot"></i><span class="tx"><span class="w">Lepas</span> <span class="w">Basuh</span> <span class="w">Pinggan</span></span></div>
@@ -207,6 +207,11 @@ tl.set("#fb2_2",{opacity:1},23.591);tl.fromTo("#fb2_2",{x:-34,scale:1.04},{x:0,s
 tl.set("#fb3_0",{opacity:1},53.591);tl.fromTo("#fb3_0",{x:-46,scale:1.04},{x:0,scale:1,duration:.26,ease:"expo.out"},53.591);tl.set("#fb3_0",{opacity:0},53.88);
 tl.set("#fb3_1",{opacity:1},53.591);tl.fromTo("#fb3_1",{x:52,scale:1.04},{x:0,scale:1,duration:.26,ease:"expo.out"},53.591);tl.set("#fb3_1",{opacity:0},53.88);
 tl.set("#fb3_2",{opacity:1},53.591);tl.fromTo("#fb3_2",{x:-34,scale:1.04},{x:0,scale:1,duration:.26,ease:"expo.out"},53.591);tl.set("#fb3_2",{opacity:0},53.88);
+tl.fromTo("#jc",{scale:1.05},{scale:1,duration:.4,ease:"power2.out"},4.545);
+tl.fromTo("#jc",{scale:1.05},{scale:1,duration:.4,ease:"power2.out"},10.909);
+tl.fromTo("#jc",{scale:1.05},{scale:1,duration:.4,ease:"power2.out"},27.773);
+tl.fromTo("#jc",{scale:1.05},{scale:1,duration:.4,ease:"power2.out"},36.682);
+tl.fromTo("#jc",{scale:1.05},{scale:1,duration:.4,ease:"power2.out"},44.682);
 tl.set({},{},67.45);
 window.__timelines=window.__timelines||{};window.__timelines["root"]=tl;
 </script>

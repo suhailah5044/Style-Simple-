@@ -22,6 +22,6 @@ fc.append(f"{''.join(al)}concat=n={len(al)}:v=0:a=1,atempo={SPEED},highpass=f=80
           "acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2,"
           "loudnorm=I=-13:TP=-1.2:LRA=7,aresample=48000[ao]")
 cmd=["ffmpeg","-v","error","-y","-i",MAIN,"-i",BROLL,"-filter_complex",";".join(fc),"-map","[vo]","-map","[ao]",
-     "-c:v","libx264","-preset","medium","-crf","15","-r","30","-g","30","-colorspace","bt709","-color_primaries","bt709","-color_trc","bt709","-color_range","tv",
+     "-c:v","libx264","-preset","medium","-crf","15","-threads","4","-r","33","-g","33","-colorspace","bt709","-color_primaries","bt709","-color_trc","bt709","-color_range","tv",
      "-c:a","aac","-b:a","256k","-movflags","+faststart",OUT]
 print(len(pieces),"pieces, dur",DUR); subprocess.run(cmd,check=True)

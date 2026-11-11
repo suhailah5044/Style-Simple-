@@ -58,7 +58,7 @@ html=f'''<!doctype html>
 @font-face{{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}}
 html,body{{margin:0;background:#000;}}
 #root{{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}}
-#cam{{position:absolute;inset:0;transform-origin:50% 45%;}}
+#jc,#cam{{position:absolute;inset:0;transform-origin:50% 45%;}}
 video{{width:100%;height:100%;object-fit:cover;display:block;}}
 .fb{{position:absolute;inset:0;z-index:3;opacity:0;}}
 .sub{{position:absolute;top:255px;left:90px;right:90px;z-index:5;display:flex;align-items:center;justify-content:center;gap:14px;}}
@@ -73,10 +73,10 @@ video{{width:100%;height:100%;object-fit:cover;display:block;}}
 #h2{{font-weight:300;font-size:21px;letter-spacing:-0.02em;opacity:0;}}
 </style></head>
 <body>
-<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
-  <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="{DUR}" data-has-audio="true" data-volume="1"></video>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="{FPS}">
+  <div id="jc"><div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="{DUR}" data-has-audio="true" data-volume="1"></video>
   {chr(10).join("  "+x for x in fb_html)}
-  </div>
+  </div></div>
   <div id="hook" class="clip" data-start="0" data-duration="{HOOK_END}"><div id="h1">{"".join(f"<span>{c if c!=' ' else '&nbsp;'}</span>" for c in "Silicone Dish Mat")}</div><div id="hl"></div><div id="h2">Cepat kering &amp; mudah guna</div></div>
   {chr(10).join("  "+x for x in ov)}
   <audio id="bgm" src="sfx/bgm_lofi.wav" data-start="0" data-duration="{DUR}" data-volume="0.15" data-fade-out="1.5"></audio>
@@ -95,6 +95,7 @@ tl.fromTo("#h2",{{opacity:0,y:10,filter:"blur(6px)"}},{{opacity:1,y:0,filter:"bl
 tl.to("#cam",{{scale:1.06,duration:2.4,ease:"sine.inOut"}},0.46);
 tl.to("#hook",{{opacity:0,y:-10,filter:"blur(6px)",duration:.25,ease:"power2.in"}},{HOOK_END-0.27});
 {chr(10).join(js)}
+{chr(10).join(f'tl.fromTo("#jc",{{scale:1.05}},{{scale:1,duration:.4,ease:"power2.out"}},{t});' for t in jump_cuts())}
 tl.set({{}},{{}},{DUR});
 window.__timelines=window.__timelines||{{}};window.__timelines["root"]=tl;
 </script>
