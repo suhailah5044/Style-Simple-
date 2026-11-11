@@ -3,6 +3,7 @@ import sys,json
 from videos import V
 def build(vid):
     O=V[vid]["O"]; H1,H2=V[vid]["hook"]
+    SH=V[vid].get('strong_shadow') and '0 2px 10px rgba(0,0,0,.75),0 0 4px rgba(0,0,0,.6)' or '0 2px 8px rgba(0,0,0,.45)'
     DUR=json.load(open(f"work/{vid}.mp4.map.json"))["dur"]
     VOL={"sub_boom":0.5,"swoosh":0.3,"riser_shimmer":0.4,"coin":0.35,"ui_tap":0.45}
     ov=[];au=[];js=[]
@@ -31,11 +32,11 @@ def build(vid):
     .word.L{{left:170px;text-align:left;}}
     .word.R{{right:170px;text-align:right;}}
     .word .tx{{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:600;font-size:30px;line-height:1.3;letter-spacing:-0.03em;color:#fff;
-      text-shadow:0 2px 6px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3);opacity:0;}}
+      text-shadow:{SH if SH.startswith('0 2px 10') else '0 2px 6px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3)'};opacity:0;}}
     .word .bar{{display:block;height:3px;width:56px;background:#fff;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}}
     .word.L .bar{{transform-origin:0 50%;}} .word.R .bar{{margin-left:auto;transform-origin:100% 50%;}}
     #title{{position:absolute;top:230px;left:0;right:0;text-align:center;z-index:6;color:#fff;font-family:"Italianno",cursive;font-size:78px;line-height:.95;
-      text-shadow:0 2px 8px rgba(0,0,0,.45);}}
+      text-shadow:{SH};}}
     #title span{{display:inline-block;opacity:0;}}
     </style></head>
     <body>
