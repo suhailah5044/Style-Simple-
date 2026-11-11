@@ -1,0 +1,6 @@
+v*/assets/footage.mp4
+v*/*.mp4
+v*/sfx/
+v*/assets/*.woff2
+__pycache__/
+v*/.hyperframes/
