@@ -1,0 +1,136 @@
+<!doctype html>
+    <html><head><meta charset="utf-8">
+    <style>
+    @font-face{font-family:"Italianno";src:url("assets/Italianno.woff2") format("woff2");}
+    @font-face{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}
+    html,body{margin:0;background:#000;}
+    #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}
+    #cam{position:absolute;inset:0;transform-origin:50% 45%;}
+    #cam video{width:100%;height:100%;object-fit:cover;display:block;}
+    .word{position:absolute;top:240px;width:420px;z-index:5;}
+    .word.L{left:170px;text-align:left;}
+    .word.R{right:170px;text-align:right;}
+    .word .tx{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:600;font-size:30px;line-height:1.3;letter-spacing:-0.03em;color:#fff;
+      text-shadow:0 2px 6px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3);opacity:0;}
+    .word .bar{display:block;height:3px;width:56px;background:#fff;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}
+    .word.L .bar{transform-origin:0 50%;} .word.R .bar{margin-left:auto;transform-origin:100% 50%;}
+    #title{position:absolute;top:230px;left:0;right:0;text-align:center;z-index:6;color:#fff;font-family:"Italianno",cursive;font-size:78px;line-height:.95;
+      text-shadow:0 2px 8px rgba(0,0,0,.45);}
+    #title span{display:inline-block;opacity:0;}
+    </style></head>
+    <body>
+    <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="42.048" data-fps="30">
+      <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="42.048" data-has-audio="true" data-volume="1"></video></div>
+      <div id="title" class="clip" data-start="0" data-duration="3.5"><span id="t1">Tak payah beli bateri</span><br><span id="t2">lagi dah lepas ni!</span></div>
+        <div id="w0" class="clip word L" data-start="3.45" data-duration="0.85"><span class="tx">Pakai Solar Je</span><i class="bar"></i></div>
+  <div id="w1" class="clip word L" data-start="4.35" data-duration="2.65"><span class="tx">Tengok Belakang</span><i class="bar"></i></div>
+  <div id="w2" class="clip word L" data-start="7.05" data-duration="2.25"><span class="tx">Tak Ada Bateri!</span><i class="bar"></i></div>
+  <div id="w3" class="clip word L" data-start="9.4" data-duration="2.5"><span class="tx">Butang Besar-Besar</span><i class="bar"></i></div>
+  <div id="w4" class="clip word L" data-start="12.0" data-duration="2.6"><span class="tx">Bila Kira-Kira</span><i class="bar"></i></div>
+  <div id="w5" class="clip word L" data-start="14.7" data-duration="1.25"><span class="tx">Best Gila Bunyi!</span><i class="bar"></i></div>
+  <div id="w6" class="clip word L" data-start="16.0" data-duration="1.4"><span class="tx">Perlukan Kalkulator?</span><i class="bar"></i></div>
+  <div id="w7" class="clip word L" data-start="17.5" data-duration="5.2"><span class="tx">Kedai · Ofis · Rumah</span><i class="bar"></i></div>
+  <div id="w8" class="clip word L" data-start="22.8" data-duration="1.5"><span class="tx">Tanpa Bateri</span><i class="bar"></i></div>
+  <div id="w9" class="clip word L" data-start="24.4" data-duration="1.9"><span class="tx">Harga Sangat Murah!</span><i class="bar"></i></div>
+  <div id="w10" class="clip word L" data-start="26.4" data-duration="3.4"><span class="tx">Screen Besar</span><i class="bar"></i></div>
+  <div id="w11" class="clip word L" data-start="29.9" data-duration="2.1"><span class="tx">Warna Purple</span><i class="bar"></i></div>
+  <div id="w12" class="clip word L" data-start="32.1" data-duration="3.2"><span class="tx">Banyak Pilihan Warna</span><i class="bar"></i></div>
+  <div id="w13" class="clip word L" data-start="35.4" data-duration="2.1"><span class="tx">Grab Cepat!</span><i class="bar"></i></div>
+  <div id="w14" class="clip word L" data-start="37.6" data-duration="2.2"><span class="tx">Bawah RM10!</span><i class="bar"></i></div>
+  <div id="w15" class="clip word L" data-start="39.9" data-duration="2.15"><span class="tx">Cek Harga Korang</span><i class="bar"></i></div>
+      <audio id="a_cork" src="sfx/cork.wav" data-start="0.15" data-duration="1.0" data-volume="0.55"></audio>
+      <audio id="a_t2" src="sfx/glass_ting.wav" data-start="0.6" data-duration="0.9" data-volume="0.3"></audio>
+        <audio id="a0" src="sfx/ui_tap.wav" data-start="3.43" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a1" src="sfx/swoosh.wav" data-start="4.33" data-duration="1.1" data-volume="0.3"></audio>
+  <audio id="a2" src="sfx/sub_boom.wav" data-start="7.03" data-duration="1.1" data-volume="0.5"></audio>
+  <audio id="a3" src="sfx/ui_blip.wav" data-start="9.38" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a4" src="sfx/ui_tap.wav" data-start="11.98" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a5" src="sfx/glass_ting.wav" data-start="14.68" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a6" src="sfx/ui_notif.wav" data-start="15.98" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a7" src="sfx/ui_confirm.wav" data-start="17.48" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a8" src="sfx/ui_blip.wav" data-start="22.78" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a9" src="sfx/coin.wav" data-start="24.38" data-duration="1.1" data-volume="0.35"></audio>
+  <audio id="a10" src="sfx/sub_boom.wav" data-start="26.38" data-duration="1.1" data-volume="0.5"></audio>
+  <audio id="a11" src="sfx/glass_ting.wav" data-start="29.88" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a12" src="sfx/ui_notif.wav" data-start="32.08" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a13" src="sfx/riser_shimmer.wav" data-start="35.38" data-duration="1.1" data-volume="0.4"></audio>
+  <audio id="a14" src="sfx/coin.wav" data-start="37.58" data-duration="1.1" data-volume="0.35"></audio>
+  <audio id="a15" src="sfx/ui_notif.wav" data-start="39.88" data-duration="1.1" data-volume="0.45"></audio>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+    const tl=gsap.timeline({paused:true});
+    tl.set("#cam",{scale:1},0);
+    tl.fromTo("#t1",{opacity:0,scale:.6,y:10},{opacity:1,scale:1,y:0,duration:.45,ease:"back.out(2.6)"},0.15);
+    tl.fromTo("#t2",{opacity:0,y:16},{opacity:1,y:0,duration:.45,ease:"expo.out"},0.6);
+    tl.fromTo("#cam",{scale:1.1},{scale:1.0,duration:1.0,ease:"power3.out"},0.15);
+    tl.to("#cam",{scale:1.06,duration:2.2,ease:"sine.inOut"},1.2);
+    tl.to("#title span",{opacity:0,y:-10,duration:.25,ease:"power2.in"},3.2);
+    tl.fromTo("#w0 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},3.45);
+tl.fromTo("#w0 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},3.53);
+tl.to("#w0 .tx,#w0 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},4.08);
+tl.to("#cam",{scale:1.0,duration:0.85,ease:"sine.inOut"},3.45);
+tl.fromTo("#w1 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},4.35);
+tl.fromTo("#w1 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},4.43);
+tl.to("#w1 .tx,#w1 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},6.78);
+tl.to("#cam",{scale:1.07,duration:2.65,ease:"sine.inOut"},4.35);
+tl.fromTo("#w2 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},7.05);
+tl.fromTo("#w2 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},7.13);
+tl.to("#w2 .tx,#w2 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},9.08);
+tl.fromTo("#cam",{scale:1.1},{scale:1.02,duration:0.45,ease:"power3.out"},7.05);
+tl.fromTo("#w3 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},9.4);
+tl.fromTo("#w3 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},9.48);
+tl.to("#w3 .tx,#w3 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},11.68);
+tl.to("#cam",{scale:1.0,duration:2.5,ease:"sine.inOut"},9.4);
+tl.fromTo("#w4 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},12.0);
+tl.fromTo("#w4 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},12.08);
+tl.to("#w4 .tx,#w4 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},14.38);
+tl.to("#cam",{scale:1.07,duration:2.6,ease:"sine.inOut"},12.0);
+tl.fromTo("#w5 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},14.7);
+tl.fromTo("#w5 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},14.78);
+tl.to("#w5 .tx,#w5 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},15.73);
+tl.fromTo("#cam",{scale:1.1},{scale:1.02,duration:0.45,ease:"power3.out"},14.7);
+tl.fromTo("#w6 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},16.0);
+tl.fromTo("#w6 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},16.08);
+tl.to("#w6 .tx,#w6 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},17.18);
+tl.to("#cam",{scale:1.0,duration:1.4,ease:"sine.inOut"},16.0);
+tl.fromTo("#w7 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},17.5);
+tl.fromTo("#w7 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},17.58);
+tl.to("#w7 .tx,#w7 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},22.48);
+tl.to("#cam",{scale:1.07,duration:5.2,ease:"sine.inOut"},17.5);
+tl.fromTo("#w8 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},22.8);
+tl.fromTo("#w8 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},22.88);
+tl.to("#w8 .tx,#w8 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},24.08);
+tl.to("#cam",{scale:1.0,duration:1.5,ease:"sine.inOut"},22.8);
+tl.fromTo("#w9 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},24.4);
+tl.fromTo("#w9 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},24.48);
+tl.to("#w9 .tx,#w9 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},26.08);
+tl.to("#cam",{scale:1.07,duration:1.9,ease:"sine.inOut"},24.4);
+tl.fromTo("#w10 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},26.4);
+tl.fromTo("#w10 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},26.48);
+tl.to("#w10 .tx,#w10 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},29.58);
+tl.fromTo("#cam",{scale:1.1},{scale:1.02,duration:0.45,ease:"power3.out"},26.4);
+tl.fromTo("#w11 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},29.9);
+tl.fromTo("#w11 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},29.98);
+tl.to("#w11 .tx,#w11 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},31.78);
+tl.to("#cam",{scale:1.0,duration:2.1,ease:"sine.inOut"},29.9);
+tl.fromTo("#w12 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},32.1);
+tl.fromTo("#w12 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},32.18);
+tl.to("#w12 .tx,#w12 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},35.08);
+tl.to("#cam",{scale:1.07,duration:3.2,ease:"sine.inOut"},32.1);
+tl.fromTo("#w13 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},35.4);
+tl.fromTo("#w13 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},35.48);
+tl.to("#w13 .tx,#w13 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},37.28);
+tl.to("#cam",{scale:1.0,duration:2.1,ease:"sine.inOut"},35.4);
+tl.fromTo("#w14 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},37.6);
+tl.fromTo("#w14 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},37.68);
+tl.to("#w14 .tx,#w14 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},39.58);
+tl.fromTo("#cam",{scale:1.1},{scale:1.02,duration:0.45,ease:"power3.out"},37.6);
+tl.fromTo("#w15 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},39.9);
+tl.fromTo("#w15 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},39.98);
+tl.to("#w15 .tx,#w15 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},41.83);
+tl.to("#cam",{scale:1.07,duration:2.15,ease:"sine.inOut"},39.9);
+    tl.set({},{},42.048);
+    window.__timelines=window.__timelines||{};window.__timelines["root"]=tl;
+    </script>
+    </body></html>

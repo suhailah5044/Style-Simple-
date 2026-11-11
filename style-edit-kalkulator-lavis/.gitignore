@@ -1,0 +1,7 @@
+*/assets/footage.mp4
+work/*.mp4
+work/*.wav
+work/*_words.json
+preview/
+.hyperframes/
+*/.hyperframes/
