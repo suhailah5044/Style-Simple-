@@ -1,0 +1,5 @@
+*/assets/footage.mp4
+*/assets/pip*.mp4
+*/.hyperframes/
+__pycache__/
+*/renders/
