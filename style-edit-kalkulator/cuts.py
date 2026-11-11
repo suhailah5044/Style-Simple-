@@ -30,6 +30,8 @@ V2=[
  ("f2",95.30,98.30,"Tak sampai RM10 rasanya. Cuba korang cek harga."),
 ]
 V3=[
+ ("f1",13.85,14.90,"Bila kita kira-kira tu,"),
+ ("f1",15.30,17.90,"tira-tira. Ya Allah. Best gila bunyi dia tau."),
  ("f2",6.55,9.85,"Kalkulator ni saya beli sebab teracun dekat TikTok."),
  ("f1",0.92,3.40,"Kalkulator tak perlukan bateri."),
  ("f1",4.05,5.80,"This one. Pakai solar je wak."),
@@ -38,8 +40,6 @@ V3=[
  ("f2",37.05,40.09,"sebab dia punya button ni besar-besar, memang"),
  ("f2",40.44,41.12,"besar sebesar"),
  ("f2",41.38,42.60,"jari kita ya."),
- ("f1",13.85,14.90,"Bila kita kira-kira tu,"),
- ("f1",15.30,17.90,"tira-tira. Ya Allah. Best gila bunyi dia tau."),
  ("f2",59.20,62.44,"yang saya beli ni warna purple. Sangat cute kan?"),
  ("f2",62.86,63.42,"Cantik."),
  ("f1",42.95,46.25,"Ada macam-macam pilihan warna. Putih, kuning, pink."),
