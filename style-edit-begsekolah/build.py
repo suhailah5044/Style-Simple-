@@ -11,7 +11,7 @@ O=[
  [17.60,18.50,"Design Bercorak","R","pop","out",""],
  [18.75,19.95,"Multiple Compartments","R","click","in","20L · Muat Laptop 16\""],
  [20.15,21.40,"Internal Compartment","R","pop","out",""],
- [22.00,23.20,"Combo + Pencil Case","R","ding","in",""],
+ [22.00,23.20,"Combo Dapat Pencil Box","R","ding","in",""],
  [24.40,25.80,"Design Cantik","R","sparkle","-",""],
  [26.10,28.20,"Jahitan Kemas","R","click","punch",""],
  [29.35,30.30,"Anak Pun Suka","R","pop","in",""],
