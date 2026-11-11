@@ -2,3 +2,5 @@ assets/footage.mp4
 .hyperframes/
 __pycache__/
 *.mp4
+.*.hf-transaction-*/
+work-*/
