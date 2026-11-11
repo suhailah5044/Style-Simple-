@@ -5,3 +5,4 @@ work/*_words.json
 preview/
 .hyperframes/
 */.hyperframes/
+__pycache__/
