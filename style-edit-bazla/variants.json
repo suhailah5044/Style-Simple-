@@ -1,0 +1,107 @@
+[
+ {
+  "name": "v3",
+  "bpm": 124,
+  "prog": 1,
+  "shots": "EFCBDKGHIJ",
+  "hook": [
+   "OUTFIT KERJA",
+   "TAK PANAS\nLANGSUNG"
+  ],
+  "facts": [
+   "MATERIAL\nCOTTON LINEN",
+   "RINGAN &\nBREATHABLE",
+   "SIDE SLIT\nKIRI KANAN",
+   "SESUAI\nOUTFIT KERJA",
+   "LOOSE CUTTING",
+   "FULL BUTTON",
+   "COLOUR LILAC"
+  ],
+  "double": []
+ },
+ {
+  "name": "v4",
+  "bpm": 110,
+  "prog": 2,
+  "shots": "JHFAGDEIBK",
+  "hook": [
+   "CARI KEMEJA",
+   "YANG TAK\nMELEKAT?"
+  ],
+  "facts": [
+   "TAK MELEKAT\nBADAN",
+   "LOOSE CUTTING",
+   "CUTTING LABUH",
+   "SIDE SLIT\nKIRI KANAN",
+   "FREE SIZE\nDADA ±50 INCI",
+   "DAILY WEAR",
+   "KEMEJA BAZLA"
+  ],
+  "double": []
+ },
+ {
+  "name": "v5",
+  "bpm": 128,
+  "prog": 3,
+  "shots": "JCFHIBDGAEK",
+  "hook": [
+   "POV:",
+   "JUMPA KEMEJA\nCUTTING CANTIK"
+  ],
+  "facts": [
+   "MATERIAL\nCOTTON LINEN",
+   "FULL BUTTON",
+   "COLOUR LILAC",
+   "SIDE SLIT\nKIRI KANAN",
+   "CUTTING LABUH",
+   "RINGAN &\nBREATHABLE",
+   "SENANG\nMIX & MATCH",
+   "KEMEJA BAZLA"
+  ],
+  "double": []
+ },
+ {
+  "name": "v6",
+  "bpm": 115,
+  "prog": 4,
+  "shots": "GADFHEICJ",
+  "hook": [
+   "1 KEMEJA",
+   "BANYAK GAYA"
+  ],
+  "facts": [
+   "SENANG\nMIX & MATCH",
+   "DAILY WEAR",
+   "OUTFIT KERJA",
+   "SIDE SLIT\nKIRI KANAN",
+   "COLOUR LILAC",
+   "FREE SIZE",
+   "TAK MELEKAT\nBADAN",
+   "COTTON LINEN",
+   "LOOSE CUTTING"
+  ],
+  "double": [
+   6
+  ]
+ },
+ {
+  "name": "v7",
+  "bpm": 120,
+  "prog": 0,
+  "shots": "AIHBFDEGJK",
+  "hook": [
+   "STUDENT & CREATOR",
+   "WAJIB ADA\nSATU"
+  ],
+  "facts": [
+   "KEMEJA BAZLA\nCOTTON LINEN",
+   "RINGAN &\nBREATHABLE",
+   "SIDE SLIT\nKIRI KANAN",
+   "LOOSE CUTTING\nCUTTING LABUH",
+   "FREE SIZE\nDADA ±50 INCI",
+   "SENANG\nMIX & MATCH",
+   "DAILY WEAR &\nOUTFIT KERJA"
+  ],
+  "double": []
+ }
+]

@@ -9,7 +9,7 @@ for i,(s,e) in enumerate(A):
 f.append("".join(f"[v{i}][a{i}]" for i in range(n))+f"concat=n={n}:v=1:a=1[av][aa]")
 last="av"
 for j,(fn,ss,o,d) in enumerate(B):
-    f.append(f"[{j+1}:v]trim={ss}:{ss+d},setpts=PTS-STARTPTS+{o}/TB,fps=30,zscale=t=linear:npl=203,format=gbrpf32le,zscale=p=bt709,tonemap=mobius:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,format=yuva420p,fade=t=in:st={o}:d=0.25:alpha=1,fade=t=out:st={o+d-0.25:.2f}:d=0.25:alpha=1[b{j}]")
+    f.append(f"[{j+1}:v]trim={ss}:{ss+d},setpts=PTS-STARTPTS+{o}/TB,fps=30,zscale=t=linear:npl=400,format=gbrpf32le,zscale=p=bt709,tonemap=mobius:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,format=yuva420p,fade=t=in:st={o}:d=0.25:alpha=1,fade=t=out:st={o+d-0.25:.2f}:d=0.25:alpha=1[b{j}]")
     f.append(f"[{last}][b{j}]overlay=eof_action=pass[o{j}]");last=f"o{j}"
 cmd=["ffmpeg","-v","error","-y","-i",S+"main.mov"]+sum([["-i",S+b[0]+".mov"] for b in B],[])+["-filter_complex",";".join(f),"-map",f"[{last}]","-map","[aa]","-c:v","libx264","-crf","16","-preset","fast","-pix_fmt","yuv420p","-colorspace","bt709","-color_primaries","bt709","-color_trc","bt709","-c:a","aac","-b:a","192k","base.mp4"]
 subprocess.run(cmd,check=True)
