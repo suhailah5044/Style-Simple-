@@ -32,7 +32,7 @@ for i,(s,e,t,side,top,sfx,z) in enumerate(O):
         js.append(f'tl.fromTo("#cam",{{scale:1.1}},{{scale:1.02,duration:0.45,ease:"power3.out"}},{s});')
 for c in CUTS:  # flash putih lembut tiap potongan + reset zoom
     js.append(f'tl.set("#cam",{{scale:1}},{c});')
-    js.append(f'tl.fromTo("#flash",{{opacity:.35}},{{opacity:0,duration:.25,ease:"power2.out"}},{c});')
+    js.append(f'tl.fromTo("#flash",{{opacity:.35}},{{opacity:0,duration:.25,ease:"power2.out",immediateRender:false}},{c});')
     au.append(f'<audio src="sfx/swoosh.wav" data-start="{c-0.12:.2f}" data-duration="0.6" data-volume="0.12"></audio>')
 html=f'''<!doctype html>
 <html><head><meta charset="utf-8">
