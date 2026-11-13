@@ -95,20 +95,21 @@ html,body{{margin:0;background:#000;}}
 .word.L{{left:150px;text-align:left;}}
 .word.R{{right:150px;text-align:right;}}
 .word.C{{left:150px;right:150px;width:auto;text-align:center;}}
-.word .tx{{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:600;font-size:30px;line-height:1.3;letter-spacing:-0.03em;color:#fff;
+.word .tx{{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:30px;line-height:1.45;letter-spacing:0;color:#fff;
   text-shadow:0 2px 6px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.4);opacity:0;}}
-.word .bar{{display:block;height:3px;width:56px;background:#ff8fd0;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}}
+.word .bar{{display:none;height:3px;width:56px;background:#ff8fd0;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}}
 .word.L .bar{{transform-origin:0 50%;}} .word.R .bar{{margin-left:auto;transform-origin:100% 50%;}}
 .word.C .bar{{margin:10px auto 0;}}
 #title{{position:absolute;top:250px;left:0;right:0;text-align:center;z-index:7;color:#fff;}}
-#title .k{{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:700;font-size:40px;letter-spacing:-0.04em;opacity:0;text-shadow:0 3px 10px rgba(0,0,0,.55);}}
+#title .kk{{display:block;font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:15px;letter-spacing:0.25em;margin-bottom:12px;opacity:0;text-shadow:0 2px 6px rgba(0,0,0,.55);}}
+#title .k{{display:block;font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:32px;line-height:1.45;letter-spacing:0;opacity:0;text-shadow:0 2px 8px rgba(0,0,0,.55);}}
 #title .k.pink{{color:#ff8fd0;margin-left:14px;}}
 #title .s{{display:block;margin-top:6px;font-family:"Italianno",cursive;font-size:62px;line-height:1;opacity:0;text-shadow:0 2px 8px rgba(0,0,0,.55);}}
 .pop{{position:absolute;z-index:6;}}
 .pop.notes{{top:255px;left:0;right:0;text-align:center;}}
-.pop.notes .kick{{font-family:"Lexend Mega",sans-serif;font-weight:600;font-size:26px;letter-spacing:-0.03em;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.55);margin-bottom:12px;opacity:0;}}
+.pop.notes .kick{{font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:28px;letter-spacing:0;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.55);margin-bottom:12px;opacity:0;}}
 .chip{{display:inline-flex;align-items:center;gap:8px;margin:0 6px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.92);
-  font-family:"Lexend Mega",sans-serif;font-weight:600;font-size:19px;letter-spacing:-0.03em;color:#3a0f2e;opacity:0;box-shadow:0 4px 14px rgba(0,0,0,.25);}}
+  font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:18px;letter-spacing:0;color:#3a0f2e;opacity:0;box-shadow:0 4px 14px rgba(0,0,0,.25);}}
 .chip i{{width:10px;height:10px;border-radius:50%;background:#c2187a;display:inline-block;}}
 .dot{{display:inline-block;width:34px;height:34px;border-radius:50%;margin:0 7px;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.3);opacity:0;}}
 #p1c0{{background:#c2187a;}} #p1c1{{background:#1d2b4f;}} #p1c2{{background:#f3b6c8;}}
@@ -117,10 +118,9 @@ html,body{{margin:0;background:#000;}}
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
   <div id="cam"><div id="cut"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="{DUR}" data-has-audio="true" data-volume="1"></video></div></div>
   {chr(10).join("  "+x for x in br)}
-  <div id="title" class="clip" data-start="0" data-duration="{HE}"><span class="k" id="t1">MENYESAL</span> <span class="k pink" id="t2">BELI SATU!</span><span class="s" id="t3">patutnya beli banyak lagi</span></div>
+  <div id="title" class="clip" data-start="0" data-duration="{HE}"><span class="kk" id="t0">REAL TALK</span><span class="k" id="t1">Menyesal Beli Satu</span><span class="k" id="t2">Patut Beli Banyak!</span></div>
   {chr(10).join("  "+x for x in ov)}
   {chr(10).join("  "+x for x in popd)}
-  <audio id="bgm" src="sfx/bgm_duck.wav" data-start="0" data-duration="{DUR}" data-volume="0.75"></audio>
   <audio id="a_h1" src="sfx/sub_boom.wav" data-start="{H1}" data-duration="1.0" data-volume="0.5"></audio>
   <audio id="a_h2" src="sfx/ui_notif.wav" data-start="{H2}" data-duration="0.9" data-volume="0.35"></audio>
   {chr(10).join("  "+x for x in au)}
@@ -129,10 +129,10 @@ html,body{{margin:0;background:#000;}}
 <script>
 const tl=gsap.timeline({{paused:true}});
 tl.set("#cam",{{scale:1}},0);tl.set("#cut",{{scale:1}},0);
-tl.fromTo("#t1",{{opacity:0,scale:1.8}},{{opacity:1,scale:1,duration:.35,ease:"expo.out"}},{H1});
+tl.fromTo("#t0",{{opacity:0,y:8}},{{opacity:1,y:0,duration:.3,ease:"expo.out"}},{H1});
+tl.fromTo("#t1",{{opacity:0,y:16}},{{opacity:1,y:0,duration:.4,ease:"expo.out"}},{H1+0.1:.2f});
 tl.fromTo("#cam",{{scale:1.14}},{{scale:1.03,duration:.5,ease:"power3.out"}},{H1});
-tl.fromTo("#t2",{{opacity:0,scale:.4,rotate:-10}},{{opacity:1,scale:1,rotate:0,duration:.4,ease:"back.out(3)"}},{H1+0.5:.2f});
-tl.fromTo("#t3",{{opacity:0,y:14}},{{opacity:1,y:0,duration:.4,ease:"expo.out"}},{H2});
+tl.fromTo("#t2",{{opacity:0,y:16}},{{opacity:1,y:0,duration:.4,ease:"expo.out"}},{H2});
 tl.fromTo("#cam",{{scale:1.1}},{{scale:1.02,duration:.45,ease:"power3.out"}},{H2});
 tl.to("#title > *",{{opacity:0,y:-10,duration:.22,ease:"power2.in"}},{HE-0.24:.2f});
 {chr(10).join(js)}
