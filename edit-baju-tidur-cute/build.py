@@ -65,12 +65,12 @@ popd=[]
 for n,(s0,e0,kind) in enumerate(POP):
     s,e=T(s0),T(e0)
     if kind=="set":
-        items=[("Seluar Panjang",T(16.56)),("Baju",T(19.68))]
+        items=[("+ Seluar Panjang",T(16.56)),("+ Baju",T(19.68))]
         inner="".join(f'<span class="chip" id="p{n}c{j}"><i></i>{w}</span>' for j,(w,_) in enumerate(items))
         popd.append(f'<div id="p{n}" class="clip pop notes" data-start="{s}" data-duration="{round(e-s,2)}"><div class="kick">Dapat</div>{inner}</div>')
     else:
-        items=[("",T(31.98)),("",T(32.14)),("",T(32.30))]
-        inner="".join(f'<span class="dot" id="p{n}c{j}"></span>' for j in range(3))
+        items=[]
+        inner=""
         popd.append(f'<div id="p{n}" class="clip pop notes" data-start="{s}" data-duration="{round(e-s,2)}"><div class="kick">Ada 2–3 Warna Lagi</div>{inner}</div>')
     for j,(w,t) in enumerate(items):
         js.append(f'tl.fromTo("#p{n}c{j}",{{opacity:0,scale:.4,y:14}},{{opacity:1,scale:1,y:0,duration:0.35,ease:"back.out(2.6)"}},{t});')
@@ -82,7 +82,6 @@ H1,H2,HE=T(41.6),T(43.22),T(44.80)
 html=f'''<!doctype html>
 <html><head><meta charset="utf-8">
 <style>
-@font-face{{font-family:"Italianno";src:url("assets/Italianno.woff2") format("woff2");}}
 @font-face{{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}}
 html,body{{margin:0;background:#000;}}
 #root{{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}}
@@ -97,22 +96,17 @@ html,body{{margin:0;background:#000;}}
 .word.C{{left:150px;right:150px;width:auto;text-align:center;}}
 .word .tx{{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:30px;line-height:1.45;letter-spacing:0;color:#fff;
   text-shadow:0 2px 6px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.4);opacity:0;}}
-.word .bar{{display:none;height:3px;width:56px;background:#ff8fd0;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}}
 .word.L .bar{{transform-origin:0 50%;}} .word.R .bar{{margin-left:auto;transform-origin:100% 50%;}}
 .word.C .bar{{margin:10px auto 0;}}
 #title{{position:absolute;top:250px;left:0;right:0;text-align:center;z-index:7;color:#fff;}}
 #title .kk{{display:block;font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:15px;letter-spacing:0.25em;margin-bottom:12px;opacity:0;text-shadow:0 2px 6px rgba(0,0,0,.55);}}
 #title .k{{display:block;font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:32px;line-height:1.45;letter-spacing:0;opacity:0;text-shadow:0 2px 8px rgba(0,0,0,.55);}}
-#title .k.pink{{color:#ff8fd0;margin-left:14px;}}
-#title .s{{display:block;margin-top:6px;font-family:"Italianno",cursive;font-size:62px;line-height:1;opacity:0;text-shadow:0 2px 8px rgba(0,0,0,.55);}}
 .pop{{position:absolute;z-index:6;}}
 .pop.notes{{top:255px;left:0;right:0;text-align:center;}}
 .pop.notes .kick{{font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:28px;letter-spacing:0;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.55);margin-bottom:12px;opacity:0;}}
-.chip{{display:inline-flex;align-items:center;gap:8px;margin:0 6px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.92);
-  font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:18px;letter-spacing:0;color:#3a0f2e;opacity:0;box-shadow:0 4px 14px rgba(0,0,0,.25);}}
-.chip i{{width:10px;height:10px;border-radius:50%;background:#c2187a;display:inline-block;}}
-.dot{{display:inline-block;width:34px;height:34px;border-radius:50%;margin:0 7px;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.3);opacity:0;}}
-#p1c0{{background:#c2187a;}} #p1c1{{background:#1d2b4f;}} #p1c2{{background:#f3b6c8;}}
+.chip{{display:inline-block;margin:0 10px;
+  font-family:"Lexend Mega",sans-serif;font-weight:500;font-size:24px;letter-spacing:0;color:#fff;opacity:0;text-shadow:0 2px 6px rgba(0,0,0,.55);}}
+.chip i{{display:none;}}
 </style></head>
 <body>
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
