@@ -1,7 +1,7 @@
 # Perfume — ikut gaya "style-edit-luggage-v4" (bag pack)
 import subprocess, numpy as np, math, wave, json
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-LUG="lug/style-edit-luggage-v4"; SFX=LUG+"/sfx/"
+SFX="sfx/"
 W,H,FPS=540,960,30; S=W/1080; SPEED=1.1
 import os
 A=(0.00,3.95,"botol kecil besar");B=(4.15,6.98,"price");C=(7.30,10.90,"100ml harga tak masuk akal")
