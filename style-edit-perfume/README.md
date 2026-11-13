@@ -4,7 +4,8 @@ Footage asal (Drive): https://drive.google.com/drive/folders/12FDQEIZZjftJfslPTh
 (`copy_6217E91F-4BAD-494C-957B-C9547604F4AF.mov`, 43s, 1080x1920)
 
 ## Status (latest)
-- 5 versi PREVIEW siap (540x960) dalam `preview/`. **Belum render final 1080x1920.**
+- 5 versi PREVIEW (540x960) dalam `preview/`.
+- **FINAL 1080x1920 siap untuk V1–V5 dalam `final/`** (`FINAL=1 VARIANT=Vx python3 build.py`).
 - Gaya ikut `style-edit-luggage-v4` (branch claude/dreamy-goodall-djn8tf): hook pill kaca kanan atas,
   teks putih kecil Lexend Mega (24px/15px + bar), zoom punch/in/out, SFX, whoosh setiap cut,
   frame break 2x, speed 1.1x, muzik 0.09. Warna footage asal tak diubah.
