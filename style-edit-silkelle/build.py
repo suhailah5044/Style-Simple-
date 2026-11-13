@@ -1,22 +1,26 @@
 # [start, end, text, side(L/R/C), top_px, sfx, zoom]  — masa ikut babak dalam cut.py
+from cut import SEG
+T=[];t=0
+for a,e in SEG: T.append(round(t,2)); t+=e-a
+DUR=round(t,2)
+CUTS=T[1:]
 O=[
- [3.45,6.3,"SILKELLE<br>Creator Exclusive 3.0","R",250,"ui_notif","in"],
- [6.45,9.7,"3D Fit Cup","R",250,"ui_blip","punch"],
- [9.85,12.9,"W-Shaped<br>Upper Support","L",250,"ui_confirm","in"],
- [13.05,16.1,"Push Up &amp;<br>Natural Lift","L",250,"sub_boom","punch"],
- [16.25,19.5,"Wide Anti-Slip<br>Shoulder Strap","L",250,"swoosh","in"],
- [19.65,22.5,"Soft &amp; Breathable<br>Material","R",250,"glass_ting","out"],
- [22.65,25.9,"4 Rows<br>Hook &amp; Eye","R",250,"ui_tap","punch"],
- [26.05,28.9,"Lightweight<br>&amp; Comfy","R",250,"ui_blip","in"],
- [29.05,32.1,"Perfect For<br>Everyday Wear","C",250,"ui_confirm","out"],
- [32.25,35.3,"More Comfort,<br>Better Support","R",250,"sub_boom","punch"],
- [35.45,38.3,"Available Size<br>M – 4XL","C",250,"coin","in"],
- [38.45,41.1,"5 Colours<br>Available","C",250,"ui_notif","out"],
- [41.25,44.6,"Your Everyday<br>Comfort Bra 🤎","C",250,"riser_shimmer","in"],
+ ["SILKELLE<br>Creator Exclusive 3.0","R",250,"ui_notif","S"],
+ ["3D Fit Cup","R",250,"ui_blip","P"],
+ ["W-Shaped<br>Upper Support","L",250,"ui_confirm","S"],
+ ["Push Up &amp;<br>Natural Lift","L",250,"sub_boom","P"],
+ ["Wide Anti-Slip<br>Shoulder Strap","R",250,"swoosh","S"],
+ ["Soft &amp; Breathable<br>Material","R",250,"glass_ting","S"],
+ ["4 Rows<br>Hook &amp; Eye","R",250,"ui_tap","P"],
+ ["Lightweight<br>&amp; Comfy","R",250,"ui_blip","S"],
+ ["Perfect For<br>Everyday Wear","C",250,"ui_confirm","S"],
+ ["More Comfort,<br>Better Support","R",250,"sub_boom","P"],
+ ["Available Size<br>M – 4XL","C",250,"coin","S"],
+ ["5 Colours<br>Available","C",250,"ui_notif","S"],
+ ["Your Everyday<br>Comfort Bra 🤎","C",250,"riser_shimmer","S"],
 ]
-CUTS=[3.4,6.4,9.8,13.0,16.2,19.6,22.6,26.0,29.0,32.2,35.4,38.4,41.2]
+O=[[T[i+1]+0.05,T[i+2]-0.1 if i+2<len(T) else DUR-0.15]+o for i,o in enumerate(O)]
 VOL={"sub_boom":0.45,"swoosh":0.3,"riser_shimmer":0.4,"coin":0.35,"ui_tap":0.45}
-DUR=44.8
 ov=[];au=[];js=[]
 for i,(s,e,t,side,top,sfx,z) in enumerate(O):
     ov.append(f'<div id="w{i}" class="clip word {side}" style="top:{top}px" data-start="{s}" data-duration="{round(e-s,2)}"><span class="tx">{t}</span><i class="bar"></i></div>')
@@ -24,13 +28,10 @@ for i,(s,e,t,side,top,sfx,z) in enumerate(O):
     js.append(f'tl.fromTo("#w{i} .tx",{{opacity:0,y:22,scale:.92}},{{opacity:1,y:0,scale:1,duration:0.38,ease:"back.out(2)"}},{s});')
     js.append(f'tl.fromTo("#w{i} .bar",{{scaleX:0}},{{scaleX:1,duration:0.4,ease:"expo.out"}},{s+0.08:.2f});')
     js.append(f'tl.to("#w{i} .tx,#w{i} .bar",{{opacity:0,y:-10,duration:0.2,ease:"power2.in"}},{e-0.22:.2f});')
-    if z=="punch":
+    if z=="P":
         js.append(f'tl.fromTo("#cam",{{scale:1.1}},{{scale:1.02,duration:0.45,ease:"power3.out"}},{s});')
-    elif z=="in":
-        js.append(f'tl.fromTo("#cam",{{scale:1.0}},{{scale:1.06,duration:{round(e-s,2)},ease:"sine.inOut"}},{s});')
-    else:
-        js.append(f'tl.fromTo("#cam",{{scale:1.06}},{{scale:1.0,duration:{round(e-s,2)},ease:"sine.inOut"}},{s});')
-for c in CUTS:  # flash putih lembut tiap potongan
+for c in CUTS:  # flash putih lembut tiap potongan + reset zoom
+    js.append(f'tl.set("#cam",{{scale:1}},{c});')
     js.append(f'tl.fromTo("#flash",{{opacity:.35}},{{opacity:0,duration:.25,ease:"power2.out"}},{c});')
     au.append(f'<audio src="sfx/swoosh.wav" data-start="{c-0.12:.2f}" data-duration="0.6" data-volume="0.12"></audio>')
 html=f'''<!doctype html>
@@ -59,7 +60,7 @@ html,body{{margin:0;background:#000;}}
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
   <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="{DUR}" data-has-audio="true" data-volume="0.35"></video></div>
   <div id="flash"></div>
-  <div id="title" class="clip" data-start="0" data-duration="3.4"><span id="t1">Wireless Bra</span><br><span id="t2">Takda Besi!</span></div>
+  <div id="title" class="clip" data-start="0" data-duration="2.8"><span id="t1">Wireless Bra</span><br><span id="t2">Takda Besi!</span></div>
   {chr(10).join("  "+x for x in ov)}
   <audio src="sfx/cork.wav" data-start="0.15" data-duration="1.0" data-volume="0.5"></audio>
   <audio src="sfx/sub_boom.wav" data-start="0.7" data-duration="1.0" data-volume="0.4"></audio>
@@ -72,8 +73,7 @@ tl.set("#cam",{{scale:1}},0);
 tl.fromTo("#t1",{{opacity:0,scale:.6,y:10}},{{opacity:1,scale:1,y:0,duration:.45,ease:"back.out(2.6)"}},0.15);
 tl.fromTo("#t2",{{opacity:0,y:16}},{{opacity:1,y:0,duration:.4,ease:"expo.out"}},0.7);
 tl.fromTo("#cam",{{scale:1.12}},{{scale:1.02,duration:.5,ease:"power3.out"}},0.7);
-tl.to("#cam",{{scale:1.07,duration:2.0,ease:"sine.inOut"}},1.2);
-tl.to("#t1,#t2",{{opacity:0,y:-10,duration:.22,ease:"power2.in"}},3.15);
+tl.to("#t1,#t2",{{opacity:0,y:-10,duration:.22,ease:"power2.in"}},2.55);
 {chr(10).join(js)}
 tl.set({{}},{{}},{DUR});
 window.__timelines=window.__timelines||{{}};window.__timelines["root"]=tl;
