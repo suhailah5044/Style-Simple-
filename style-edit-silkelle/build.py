@@ -61,7 +61,6 @@ html,body{{margin:0;background:#000;}}
   <div id="flash"></div>
   <div id="title" class="clip" data-start="0" data-duration="3.4"><span id="t1">Wireless Bra</span><br><span id="t2">Takda Besi!</span></div>
   {chr(10).join("  "+x for x in ov)}
-  <audio id="bgm" src="assets/music.wav" data-start="0" data-duration="{DUR}" data-volume="0.22"></audio>
   <audio src="sfx/cork.wav" data-start="0.15" data-duration="1.0" data-volume="0.5"></audio>
   <audio src="sfx/sub_boom.wav" data-start="0.7" data-duration="1.0" data-volume="0.4"></audio>
   {chr(10).join("  "+x for x in au)}
