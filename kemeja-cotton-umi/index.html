@@ -1,0 +1,102 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}
+@font-face{font-family:"Noto Color Emoji";src:url("assets/NotoColorEmoji.ttf") format("truetype");}
+html,body{margin:0;background:#000;}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}
+#cam{position:absolute;inset:0;transform-origin:50% 40%;}
+#cam video{width:100%;height:100%;object-fit:cover;display:block;}
+/* safe zone TikTok/Reels: atas >=250px, tepi >=120px, jauh dari ikon kanan & caption bawah.
+   Teks duduk atas kepala (ruang dinding kosong), tak sentuh baju. */
+.word{position:absolute;top:270px;width:400px;z-index:5;}
+.word.L{left:130px;text-align:left;}
+.word.R{right:130px;text-align:right;}
+.word .tx{font-family:"Lexend Mega","Noto Color Emoji",sans-serif;font-weight:600;font-size:28px;line-height:1.35;letter-spacing:-0.03em;color:#fff;
+  text-shadow:0 2px 10px rgba(0,0,0,.55),0 0 3px rgba(0,0,0,.45);}
+.wd{display:inline-block;white-space:nowrap;}
+.ch{display:inline-block;opacity:0;}
+.word .bar{display:block;height:3px;width:52px;background:#fff;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}
+.word.L .bar{transform-origin:0 50%;} .word.R .bar{margin-left:auto;transform-origin:100% 50%;}
+</style></head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="44.96" data-fps="30">
+  <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="44.96" data-has-audio="true" data-volume="1"></video></div>
+    <div id="w0" class="clip word R" data-start="0.1" data-duration="1.8"><div class="tx"><span class="wd"><span class="ch">O</span><span class="ch">N</span><span class="ch">E</span></span> <span class="wd"><span class="ch">S</span><span class="ch">I</span><span class="ch">Z</span><span class="ch">E</span></span> <span class="wd"><span class="ch">F</span><span class="ch">I</span><span class="ch">T</span></span></div><i class="bar"></i></div>
+  <div id="w1" class="clip word L" data-start="2.0" data-duration="2.4"><div class="tx"><span class="wd"><span class="ch">B</span><span class="ch">A</span><span class="ch">G</span><span class="ch">G</span><span class="ch">Y</span></span> <span class="wd"><span class="ch">G</span><span class="ch">I</span><span class="ch">R</span><span class="ch">L</span></span> <span class="wd"><span class="ch">E</span><span class="ch">R</span><span class="ch">A</span></span></div><i class="bar"></i></div>
+  <div id="w2" class="clip word R" data-start="12.5" data-duration="1.6"><div class="tx"><span class="wd"><span class="ch">C</span><span class="ch">O</span><span class="ch">M</span><span class="ch">F</span><span class="ch">Y</span></span> <span class="wd"><span class="ch">F</span><span class="ch">I</span><span class="ch">T</span></span> <span class="wd"><span class="ch">C</span><span class="ch">H</span><span class="ch">E</span><span class="ch">C</span><span class="ch">K</span></span></div><i class="bar"></i></div>
+  <div id="w3" class="clip word L" data-start="14.2" data-duration="1.3"><div class="tx"><span class="wd"><span class="ch">L</span><span class="ch">O</span><span class="ch">O</span><span class="ch">S</span><span class="ch">E</span></span> <span class="wd"><span class="ch">B</span><span class="ch">U</span><span class="ch">T</span></span> <span class="wd"><span class="ch">S</span><span class="ch">T</span><span class="ch">I</span><span class="ch">L</span><span class="ch">L</span></span> <span class="wd"><span class="ch">C</span><span class="ch">U</span><span class="ch">T</span><span class="ch">E</span></span></div><i class="bar"></i></div>
+  <div id="w4" class="clip word R" data-start="15.6" data-duration="1.3"><div class="tx"><span class="wd"><span class="ch">C</span><span class="ch">O</span><span class="ch">T</span><span class="ch">T</span><span class="ch">O</span><span class="ch">N</span></span> <span class="wd"><span class="ch">T</span><span class="ch">O</span><span class="ch">P</span></span> <span class="wd"><span class="ch">🤎</span></span></div><i class="bar"></i></div>
+  <div id="w5" class="clip word L" data-start="17.2" data-duration="2.7"><div class="tx"><span class="wd"><span class="ch">S</span><span class="ch">I</span><span class="ch">M</span><span class="ch">P</span><span class="ch">L</span><span class="ch">E</span></span> <span class="wd"><span class="ch">B</span><span class="ch">U</span><span class="ch">T</span></span> <span class="wd"><span class="ch">C</span><span class="ch">L</span><span class="ch">A</span><span class="ch">S</span><span class="ch">S</span><span class="ch">Y</span></span></div><i class="bar"></i></div>
+  <div id="w6" class="clip word R" data-start="21.1" data-duration="3.3"><div class="tx"><span class="wd"><span class="ch">E</span><span class="ch">A</span><span class="ch">S</span><span class="ch">Y</span></span> <span class="wd"><span class="ch">O</span><span class="ch">O</span><span class="ch">T</span><span class="ch">D</span></span></div><i class="bar"></i></div>
+  <div id="w7" class="clip word L" data-start="25.4" data-duration="1.7"><div class="tx"><span class="wd"><span class="ch">H</span><span class="ch">A</span><span class="ch">L</span><span class="ch">F</span></span> <span class="wd"><span class="ch">B</span><span class="ch">U</span><span class="ch">T</span><span class="ch">T</span><span class="ch">O</span><span class="ch">N</span></span> <span class="wd"><span class="ch">D</span><span class="ch">E</span><span class="ch">T</span><span class="ch">A</span><span class="ch">I</span><span class="ch">L</span></span></div><i class="bar"></i></div>
+  <div id="w8" class="clip word R" data-start="31.9" data-duration="2.7"><div class="tx"><span class="wd"><span class="ch">B</span><span class="ch">L</span><span class="ch">A</span><span class="ch">C</span><span class="ch">K</span></span> <span class="wd"><span class="ch">T</span><span class="ch">O</span><span class="ch">P</span></span> <span class="wd"><span class="ch">N</span><span class="ch">E</span><span class="ch">V</span><span class="ch">E</span><span class="ch">R</span></span> <span class="wd"><span class="ch">F</span><span class="ch">A</span><span class="ch">I</span><span class="ch">L</span><span class="ch">S</span></span></div><i class="bar"></i></div>
+  <div id="w9" class="clip word L" data-start="39.1" data-duration="3.9"><div class="tx"><span class="wd"><span class="ch">D</span><span class="ch">A</span><span class="ch">I</span><span class="ch">L</span><span class="ch">Y</span></span> <span class="wd"><span class="ch">O</span><span class="ch">U</span><span class="ch">T</span><span class="ch">F</span><span class="ch">I</span><span class="ch">T</span></span> <span class="wd"><span class="ch">A</span><span class="ch">P</span><span class="ch">P</span><span class="ch">R</span><span class="ch">O</span><span class="ch">V</span><span class="ch">E</span><span class="ch">D</span></span></div><i class="bar"></i></div>
+    <audio id="a0" src="sfx/sub_boom.wav" data-start="0.08" data-duration="1.1" data-volume="0.4"></audio>
+  <audio id="a1" src="sfx/ui_blip.wav" data-start="1.98" data-duration="1.1" data-volume="0.35"></audio>
+  <audio id="a2" src="sfx/ui_notif.wav" data-start="12.48" data-duration="1.1" data-volume="0.35"></audio>
+  <audio id="a3" src="sfx/ui_tap.wav" data-start="14.18" data-duration="1.1" data-volume="0.35"></audio>
+  <audio id="a4" src="sfx/glass_ting.wav" data-start="15.58" data-duration="1.1" data-volume="0.35"></audio>
+  <audio id="a5" src="sfx/ui_confirm.wav" data-start="17.18" data-duration="1.1" data-volume="0.35"></audio>
+  <audio id="a6" src="sfx/swoosh.wav" data-start="21.08" data-duration="1.1" data-volume="0.25"></audio>
+  <audio id="a7" src="sfx/ui_blip.wav" data-start="25.38" data-duration="1.1" data-volume="0.35"></audio>
+  <audio id="a8" src="sfx/sub_boom.wav" data-start="31.88" data-duration="1.1" data-volume="0.4"></audio>
+  <audio id="a9" src="sfx/riser_shimmer.wav" data-start="39.08" data-duration="1.1" data-volume="0.3"></audio>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.set("#cam",{scale:1},0);
+tl.fromTo("#w0 .ch",{opacity:0,y:18,scale:.6},{opacity:1,y:0,scale:1,duration:0.32,ease:"back.out(2.2)",stagger:0.022},0.1);
+tl.fromTo("#cam",{scale:1.09},{scale:1.02,duration:0.45,ease:"power3.out"},0.1);
+tl.fromTo("#w0 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},0.25);
+tl.to("#w0 .tx,#w0 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},1.68);
+tl.fromTo("#w1 .ch",{opacity:0,y:18,scale:.6},{opacity:1,y:0,scale:1,duration:0.32,ease:"back.out(2.2)",stagger:0.022},2.0);
+tl.fromTo("#cam",{scale:1.09},{scale:1.02,duration:0.45,ease:"power3.out"},2.0);
+tl.fromTo("#w1 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},2.15);
+tl.to("#w1 .tx,#w1 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},4.18);
+tl.fromTo("#cam",{scale:1.06},{scale:1.0,duration:0.4,ease:"power3.out"},6.56);
+tl.fromTo("#cam",{scale:1.06},{scale:1.0,duration:0.4,ease:"power3.out"},11.11);
+tl.fromTo("#w2 .ch",{opacity:0,y:18,scale:.6},{opacity:1,y:0,scale:1,duration:0.32,ease:"back.out(2.2)",stagger:0.022},12.5);
+tl.fromTo("#cam",{scale:1.09},{scale:1.02,duration:0.45,ease:"power3.out"},12.5);
+tl.fromTo("#w2 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},12.65);
+tl.to("#w2 .tx,#w2 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},13.88);
+tl.fromTo("#w3 .ch",{opacity:0,y:18,scale:.6},{opacity:1,y:0,scale:1,duration:0.32,ease:"back.out(2.2)",stagger:0.022},14.2);
+tl.fromTo("#cam",{scale:1.09},{scale:1.02,duration:0.45,ease:"power3.out"},14.2);
+tl.fromTo("#w3 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},14.35);
+tl.fromTo("#cam",{scale:1.06},{scale:1.0,duration:0.4,ease:"power3.out"},14.77);
+tl.to("#w3 .tx,#w3 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},15.28);
+tl.fromTo("#w4 .ch",{opacity:0,y:18,scale:.6},{opacity:1,y:0,scale:1,duration:0.32,ease:"back.out(2.2)",stagger:0.022},15.6);
+tl.fromTo("#cam",{scale:1.09},{scale:1.02,duration:0.45,ease:"power3.out"},15.6);
+tl.fromTo("#w4 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},15.75);
+tl.to("#w4 .tx,#w4 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},16.68);
+tl.fromTo("#w5 .ch",{opacity:0,y:18,scale:.6},{opacity:1,y:0,scale:1,duration:0.32,ease:"back.out(2.2)",stagger:0.022},17.2);
+tl.fromTo("#cam",{scale:1.09},{scale:1.02,duration:0.45,ease:"power3.out"},17.2);
+tl.fromTo("#w5 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},17.35);
+tl.to("#w5 .tx,#w5 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},19.68);
+tl.fromTo("#w6 .ch",{opacity:0,y:18,scale:.6},{opacity:1,y:0,scale:1,duration:0.32,ease:"back.out(2.2)",stagger:0.022},21.1);
+tl.fromTo("#cam",{scale:1.09},{scale:1.02,duration:0.45,ease:"power3.out"},21.1);
+tl.fromTo("#w6 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},21.25);
+tl.to("#w6 .tx,#w6 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},24.18);
+tl.fromTo("#cam",{scale:1.06},{scale:1.0,duration:0.4,ease:"power3.out"},24.54);
+tl.fromTo("#w7 .ch",{opacity:0,y:18,scale:.6},{opacity:1,y:0,scale:1,duration:0.32,ease:"back.out(2.2)",stagger:0.022},25.4);
+tl.fromTo("#cam",{scale:1.09},{scale:1.02,duration:0.45,ease:"power3.out"},25.4);
+tl.fromTo("#w7 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},25.55);
+tl.to("#w7 .tx,#w7 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},26.88);
+tl.fromTo("#cam",{scale:1.06},{scale:1.0,duration:0.4,ease:"power3.out"},27.21);
+tl.fromTo("#cam",{scale:1.06},{scale:1.0,duration:0.4,ease:"power3.out"},29.11);
+tl.fromTo("#w8 .ch",{opacity:0,y:18,scale:.6},{opacity:1,y:0,scale:1,duration:0.32,ease:"back.out(2.2)",stagger:0.022},31.9);
+tl.fromTo("#cam",{scale:1.09},{scale:1.02,duration:0.45,ease:"power3.out"},31.9);
+tl.fromTo("#w8 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},32.05);
+tl.to("#w8 .tx,#w8 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},34.38);
+tl.fromTo("#cam",{scale:1.06},{scale:1.0,duration:0.4,ease:"power3.out"},35.79);
+tl.fromTo("#cam",{scale:1.06},{scale:1.0,duration:0.4,ease:"power3.out"},37.56);
+tl.fromTo("#w9 .ch",{opacity:0,y:18,scale:.6},{opacity:1,y:0,scale:1,duration:0.32,ease:"back.out(2.2)",stagger:0.022},39.1);
+tl.fromTo("#cam",{scale:1.09},{scale:1.02,duration:0.45,ease:"power3.out"},39.1);
+tl.fromTo("#w9 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},39.25);
+tl.to("#w9 .tx,#w9 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},42.78);
+tl.fromTo("#cam",{scale:1.06},{scale:1.0,duration:0.4,ease:"power3.out"},43.16);
+tl.set({},{},44.96);
+window.__timelines=window.__timelines||{};window.__timelines["root"]=tl;
+</script>
+</body></html>
