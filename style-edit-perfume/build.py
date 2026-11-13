@@ -1,8 +1,9 @@
 # Perfume — ikut gaya "style-edit-luggage-v4" (bag pack)
-import subprocess, numpy as np, math, wave, json
+import os, subprocess, numpy as np, math, wave, json
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 SFX="sfx/"
-W,H,FPS=540,960,30; S=W/1080; SPEED=1.1
+FINAL=os.environ.get('FINAL')=='1'
+W,H,FPS=(1080,1920,30) if FINAL else (540,960,30); S=W/1080; SPEED=1.1
 import os
 A=(0.00,3.95,"botol kecil besar");B=(4.15,6.98,"price");C=(7.30,10.90,"100ml harga tak masuk akal")
 D=(10.95,16.25,"sweet fruity feminine");E=(16.28,19.15,"kerja/dating");F_=(19.38,22.95,"daily")
@@ -171,7 +172,7 @@ def fbreak(t):
 if AUDIO_ONLY: dec=None
 else: dec=subprocess.Popen(["ffmpeg","-v","error","-i",f"footage_{VN}.mov","-f","rawvideo","-pix_fmt","rgb24","-"],stdout=subprocess.PIPE)
 if not AUDIO_ONLY: enc=subprocess.Popen(["ffmpeg","-v","error","-y","-f","rawvideo","-pix_fmt","rgb24","-s",f"{W}x{H}","-r","30","-i","-",
-  "-c:v","libx264","-crf","20","-preset","fast","-pix_fmt","yuv420p",f"vid_{VN}.mp4"],stdin=subprocess.PIPE)
+  "-c:v","libx264","-crf","18" if FINAL else "20","-preset","medium" if FINAL else "fast","-pix_fmt","yuv420p",f"vid_{VN}.mp4"],stdin=subprocess.PIPE)
 fi=0
 while not AUDIO_ONLY:
     buf=dec.stdout.read(W*H*3)
@@ -213,6 +214,6 @@ for i,(nm,st,vol,d) in enumerate(ev):
 fl.append("[1:a]aformat=channel_layouts=stereo[vo]")
 fl.append("[vo]"+"".join(f"[s{i}]" for i in range(len(ev)))+f"amix=inputs={len(ev)+1}:duration=first:normalize=0,alimiter=limit=0.95[aout]")
 subprocess.run(["ffmpeg","-v","error","-y","-i",f"vid_{VN}.mp4"]+inp+["-filter_complex",";".join(fl),"-map","0:v","-map","[aout]",
-  "-c:v","copy","-c:a","aac","-b:a","160k","-shortest","-movflags","+faststart",f"PREVIEW_{VN}.mp4"],check=True)
+  "-c:v","copy","-c:a","aac","-b:a","256k" if FINAL else "160k","-shortest","-movflags","+faststart",(f"final/FINAL_{VN}.mp4" if FINAL else f"PREVIEW_{VN}.mp4")],check=True)
 print("DUR",DUR,"frames",fi)
 for s,e,tx,*_ in O:print(f"{s:6.2f}-{e:6.2f} {tx}")
