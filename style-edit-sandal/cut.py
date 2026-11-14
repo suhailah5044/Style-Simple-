@@ -1,6 +1,6 @@
 # Source-time segments [start,end] from main.mov (take terbaik, pause & ulang dibuang)
 import json,subprocess,sys
-SEG=[(37.85,41.05),(11.75,18.96),(96.55,102.55),(105.65,116.75),(140.15,141.95),(155.40,162.30),
+SEG=[(37.85,41.05),(96.55,102.55),(105.65,116.75),(140.15,141.95),(155.40,162.30),
      (163.65,167.05),(197.00,200.50),(205.40,205.95),(206.30,211.25),(217.25,222.30),(226.90,228.95)]
 SEG=[(a,round(a+round((b-a)*30)/30,4)) for a,b in SEG]  # tepat ikut frame 30fps
 def out_t(src):

@@ -4,17 +4,17 @@ from cut import SEG
 DUR=round(sum(y-x for x,y in SEG),2)
 # Teks ciri: [src_time, tempoh, teks, sisi, sfx, zoom]  — kecil, putih, ruang kosong atas (tak tutup produk/tangan/baju)
 O=[
- (17.30,2.0,"Soft &amp; Flexible","R","ui_blip","punch"),
  (96.60,2.6,"Simple &amp; Stylish","R","glass_ting","in"),
  (99.75,2.6,"Budget Friendly","L","coin","punch"),
- (106.00,2.2,"Lightweight Design","L","ui_notif","out"),
+ (106.00,1.5,"Lightweight Design","L","ui_notif","out"),
+ (107.55,1.9,"Soft &amp; Flexible","R","ui_blip","punch"),
  (109.60,2.6,"Anti-Slip Sole","R","sub_boom","punch"),
  (112.70,3.5,"Waterproof","L","swoosh",None),
  (158.40,3.0,"Everyday Sandals","R","ui_tap","in"),
  (163.75,3.1,"Comfortable Fit","L","riser_shimmer",None),
  (197.30,2.9,"Easy to Clean","R","ui_confirm","punch"),
 ]
-B=[(13.60,4.0,"broll1.mp4",0.3),(112.50,3.9,"broll2.mp4",0.8),(163.65,3.4,"broll2.mp4",8.5)]
+B=[(96.60,3.9,"broll1.mp4",0.3),(112.50,3.9,"broll2.mp4",0.8),(163.65,3.4,"broll2.mp4",8.5)]
 HOOK=["Kalau","tak","best,","takkan","ada","sampai 3!"]
 VOL={"sub_boom":0.45,"swoosh":0.3,"riser_shimmer":0.35,"coin":0.35,"ui_tap":0.4}
 ov=[];au=[];js=[];br=[]
