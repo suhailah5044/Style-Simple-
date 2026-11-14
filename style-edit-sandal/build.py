@@ -1,21 +1,17 @@
 import json
 # Teks overlay: [mula, tamat, "Teks", "sfx"]  (masa ikut footage yang dah dipotong)
 O=[
- [11.3,13.95,"Budget Friendly","coin"],
- [19.85,22.1,"Soft &amp; Flexible","ui_blip"],
- [22.15,23.7,"Comfortable Fit","ui_confirm"],
- [26.3,29.3,"Lightweight Design","ui_tap"],
- [31.3,32.95,"Everyday Sandals","ui_notif"],
- [33.0,34.25,"Waterproof","ui_blip"],
- [34.3,37.0,"Anti-Slip Sole","glass_ting"],
- [43.6,45.6,"Simple &amp; Stylish","ui_confirm"],
+ [5.0,7.75,"Anti-Slip Sole","glass_ting"],
+ [8.0,10.3,"Comfortable Fit","ui_confirm"],
+ [10.35,12.2,"Simple &amp; Stylish","ui_blip"],
+ [23.9,26.2,"Budget Friendly","coin"],
 ]
 # B-roll full screen 4s: [mula, fail]
-B=[[14.2,"broll0"],[19.85,"broll1"],[30.0,"broll3"],[43.6,"broll2"]]
-PUNCH=[3.6,13.56,34.36,38.94]
+B=[[5.0,"broll2"],[15.4,"broll0"],[23.9,"broll3"]]
+PUNCH=[10.36,13.3,27.58]
 VOL={"sub_boom":0.45,"coin":0.35,"ui_tap":0.4,"swoosh":0.25}
 EDL=json.load(open("edl.json"))
-DUR=49.7
+DUR=30.67
 ov=[];au=[];js=[];br=[]
 for i,(s,e,t,sfx) in enumerate(O):
     ov.append(f'<div id="w{i}" class="clip word" data-start="{s}" data-duration="{round(e-s,2)}"><span class="tx">{t}</span><i class="bar"></i></div>')
@@ -56,7 +52,7 @@ html,body{{margin:0;background:#000;}}
   {chr(10).join("  "+x for x in br)}
   <div id="h0" class="clip hook" data-start="0.1" data-duration="1.75"><span>RACUN SANDAL<br>HARI NI!</span></div>
   <div id="h1" class="clip hook" data-start="1.85" data-duration="1.75"><span>LOOK MAHAL,<br>HARGA BAJET!</span></div>
-  <div id="h2" class="clip hook" data-start="3.6" data-duration="1.85"><span>HARGA<br>TAK SANGKA!</span></div>
+  <div id="h2" class="clip hook" data-start="3.6" data-duration="1.35"><span>HARGA<br>TAK SANGKA!</span></div>
   {chr(10).join("  "+x for x in ov)}
   <audio id="a_cork" src="sfx/ui_blip.wav" data-start="0.1" data-duration="1.0" data-volume="0.35"></audio>
   <audio id="a_t3" src="sfx/glass_ting.wav" data-start="3.58" data-duration="0.9" data-volume="0.25"></audio>
@@ -72,7 +68,7 @@ tl.to("#h0 span",{{opacity:0,y:-12,duration:.22,ease:"power2.in"}},1.61);
 tl.fromTo("#h1 span",{{opacity:0,y:18,scale:.96}},{{opacity:1,y:0,scale:1,duration:.4,ease:"expo.out"}},1.85);
 tl.to("#h1 span",{{opacity:0,y:-12,duration:.22,ease:"power2.in"}},3.36);
 tl.fromTo("#h2 span",{{opacity:0,y:18,scale:.96}},{{opacity:1,y:0,scale:1,duration:.4,ease:"expo.out"}},3.6);
-tl.to("#h2 span",{{opacity:0,y:-12,duration:.22,ease:"power2.in"}},5.21);
+tl.to("#h2 span",{{opacity:0,y:-12,duration:.22,ease:"power2.in"}},4.71);
 {chr(10).join(js)}
 tl.set({{}},{{}},{DUR});
 window.__timelines=window.__timelines||{{}};window.__timelines["root"]=tl;

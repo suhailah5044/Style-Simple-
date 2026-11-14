@@ -3,9 +3,7 @@
 import subprocess,sys,json
 SRC=sys.argv[1]
 F={"A":"10OOMKGa_pmPillbprIcGOxYurIiuUHir","B":"1Sf4y1GUM5VA57OxTK8Yzu5kKX_kmlX67","C":"1WjczG8ICgiP68pfT1AOo4WAhw5EWZJVk","D":"1wNTB8uK78Tt4wdcLureW522Et2Ah-fol","E":"1zTGiPwrS4hr5TFxpn7MzpFj61G6APyGI"}
-CUTS=[("B",9.1,14.75),("B",23.1,25.85),("B",27.75,33.9),
-      ("E",17.45,20.75),("D",12.25,18.65),("C",24.15,25.3),("C",29.0,34.9),("C",36.3,38.6),
-      ("A",9.2,11.05),("A",14.85,21.0),("A",52.1,62.2)]
+CUTS=[("A",9.2,11.05),("A",14.85,20.92),("A",23.3,29.65),("A",43.8,50.9),("A",52.1,62.2)]
 BROLL=[("E",26.5,30.5),("A",3.5,7.5),("E",43.0,47.0),("C",65.0,68.9)]
 VF="scale=1080:1920:flags=lanczos,setsar=1,fps=30"
 X=0.2  # crossfade antara cut (smooth)
