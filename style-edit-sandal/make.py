@@ -6,8 +6,8 @@ import numpy as np
 SRC=sys.argv[1]; NAME=sys.argv[2]
 F={"A":"10OOMKGa_pmPillbprIcGOxYurIiuUHir","B":"1Sf4y1GUM5VA57OxTK8Yzu5kKX_kmlX67","C":"1WjczG8ICgiP68pfT1AOo4WAhw5EWZJVk","D":"1wNTB8uK78Tt4wdcLureW522Et2Ah-fol","E":"1zTGiPwrS4hr5TFxpn7MzpFj61G6APyGI"}
 # B-roll produk sahaja (crop 9:16 penuh skrin, tiada muka)
-K={"hitam":("C",15.1,"675:1200:202:720"),"kaki":("C",64.0,"432:768:330:1152"),
-   "maroon":("E",26.9,"450:800:630:790"),"beige":("E",26.5,"450:800:0:790")}
+K={"hitam":("C",15.1,"675:1200:202:720",4.0),"kaki":("C",64.0,"432:768:330:1152",4.0),
+   "maroon":("E",21.1,"512:910:134:1010",2.9)}  # crop center pada sandal, tiada muka
 CONF={
  "v2_selesa":dict(clip="C",
    cuts=[(8.5,11.15),(29.4,34.25),(35.1,35.98),(45.9,52.55),(57.35,66.15)],
@@ -18,7 +18,7 @@ CONF={
    cuts=[(9.6,14.72),(20.45,22.6),(24.1,26.02),(28.05,34.2)],
    hook="MURAH TAPI<br>CANTIK!",anim="scale",
    texts=[(28.1,30.7,"Simple &amp; Stylish"),(31.1,34.1,"Budget Friendly")],
-   broll=[(24.75,"hitam"),(30.2,"beige")]),
+   broll=[(24.75,"hitam")]),
  "v4_antirugi":dict(clip="E",
    cuts=[(17.6,23.05),(23.35,25.0),(40.4,50.8)],
    hook="SANDAL<br>ANTI RUGI!",anim="words",
@@ -55,14 +55,14 @@ def T(src):  # masa klip asal -> masa timeline
         if s-0.05<=src<=e+0.05: return round(t0+max(0,src-s),2)
     raise SystemExit(f"masa {src} tiada dalam potongan")
 for j,(src,key) in enumerate(C["broll"]):
-    k,s,cr=K[key]
-    run(["-ss",str(s),"-t","4","-i",f"{SRC}/{F[k]}.mov","-vf",f"scale=1080:1920,crop={cr},scale=1080:1920:flags=lanczos,setsar=1,fps=30","-an","-c:v","libx264","-crf","15","-pix_fmt","yuv420p",f"{OUT}/assets/broll{j}.mp4"])
+    k,s,cr,bd=K[key]
+    run(["-ss",str(s),"-t",str(bd),"-i",f"{SRC}/{F[k]}.mov","-vf",f"scale=1080:1920,crop={cr},scale=1080:1920:flags=lanczos,setsar=1,fps=30","-an","-c:v","libx264","-crf","15","-pix_fmt","yuv420p",f"{OUT}/assets/broll{j}.mp4"])
 # --- HTML ---
 el=[];js=[]
 for j,(src,key) in enumerate(C["broll"]):
-    s=min(T(src),DUR-4.0)
-    el.append(f'<video id="b{j}" class="broll" src="assets/broll{j}.mp4" data-start="{s}" data-duration="4" muted playsinline></video>')
-    js.append(f'tl.fromTo("#b{j}",{{opacity:0}},{{opacity:1,duration:0.6,ease:"sine.inOut"}},{s});tl.to("#b{j}",{{opacity:0,duration:0.6,ease:"sine.inOut"}},{s+3.4:.2f});')
+    bd=K[key][3]; s=min(T(src),round(DUR-bd,2))
+    el.append(f'<video id="b{j}" class="broll" src="assets/broll{j}.mp4" data-start="{s}" data-duration="{bd}" muted playsinline></video>')
+    js.append(f'tl.fromTo("#b{j}",{{opacity:0}},{{opacity:1,duration:0.5,ease:"sine.inOut"}},{s});tl.to("#b{j}",{{opacity:0,duration:0.5,ease:"sine.inOut"}},{s+bd-0.5:.2f});')
 for j,(a,b,txt) in enumerate(C["texts"]):
     s,e=T(a),T(b); e=max(e,s+1.4)
     el.append(f'<div id="w{j}" class="clip word" data-start="{s}" data-duration="{round(e-s,2)}"><span class="tx">{txt}</span><i class="bar"></i></div>')

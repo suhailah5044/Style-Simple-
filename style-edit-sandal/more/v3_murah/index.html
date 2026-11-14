@@ -18,8 +18,7 @@ html,body{margin:0;background:#000;}
 <body>
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="15.08" data-fps="30">
   <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="15.08" data-has-audio="true" data-volume="1"></video></div>
-    <video id="b0" class="broll" src="assets/broll0.mp4" data-start="7.77" data-duration="4" muted playsinline></video>
-  <video id="b1" class="broll" src="assets/broll1.mp4" data-start="11.08" data-duration="4" muted playsinline></video>
+    <video id="b0" class="broll" src="assets/broll0.mp4" data-start="7.77" data-duration="4.0" muted playsinline></video>
   <div id="w0" class="clip word" data-start="8.98" data-duration="2.6"><span class="tx">Simple &amp; Stylish</span><i class="bar"></i></div>
   <div id="w1" class="clip word" data-start="11.98" data-duration="3.0"><span class="tx">Budget Friendly</span><i class="bar"></i></div>
   <div id="hook" class="clip" data-start="0" data-duration="2.8"><span class="hw">MURAH TAPI<br>CANTIK!</span></div>
@@ -30,8 +29,7 @@ html,body{margin:0;background:#000;}
 const tl=gsap.timeline({paused:true});
 tl.fromTo("#cam",{scale:1.0},{scale:1.04,duration:15.08,ease:"none"},0);
 tl.fromTo("#hook .hw",{opacity:0,scale:0.92},{opacity:1,scale:1,duration:0.6,ease:"power2.out"},0.1);tl.to("#hook",{opacity:0,duration:0.3},2.5);
-tl.fromTo("#b0",{opacity:0},{opacity:1,duration:0.6,ease:"sine.inOut"},7.77);tl.to("#b0",{opacity:0,duration:0.6,ease:"sine.inOut"},11.17);
-tl.fromTo("#b1",{opacity:0},{opacity:1,duration:0.6,ease:"sine.inOut"},11.08);tl.to("#b1",{opacity:0,duration:0.6,ease:"sine.inOut"},14.48);
+tl.fromTo("#b0",{opacity:0},{opacity:1,duration:0.5,ease:"sine.inOut"},7.77);tl.to("#b0",{opacity:0,duration:0.5,ease:"sine.inOut"},11.27);
 tl.fromTo("#w0 .tx",{opacity:0,y:14},{opacity:1,y:0,duration:0.45,ease:"power2.out"},8.98);tl.fromTo("#w0 .bar",{scaleX:0},{scaleX:1,duration:0.45,ease:"power2.out"},9.06);tl.to("#w0 .tx,#w0 .bar",{opacity:0,duration:0.25},11.33);
 tl.fromTo("#w1 .tx",{opacity:0,y:14},{opacity:1,y:0,duration:0.45,ease:"power2.out"},11.98);tl.fromTo("#w1 .bar",{scaleX:0},{scaleX:1,duration:0.45,ease:"power2.out"},12.06);tl.to("#w1 .tx,#w1 .bar",{opacity:0,duration:0.25},14.73);
 tl.set({},{},15.08);
