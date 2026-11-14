@@ -22,7 +22,7 @@ ov=[];au=[];js=[];br=[]
 for n,s in BR:
     br.append(f'<div id="br{n}" class="broll"><video id="vbr{n}" src="assets/broll{n}.mp4" data-start="{s}" data-duration="4" muted></video></div>')
     js.append(f'tl.fromTo("#br{n}",{{opacity:0}},{{opacity:1,duration:0.35,ease:"sine.out"}},{s});')
-    js.append(f'tl.fromTo("#br{n} video",{{scale:1.0}},{{scale:1.06,duration:4,ease:"none"}},{s});')
+    js.append(f'tl.fromTo("#br{n} video",{{scale:1.0}},{{scale:1.02,duration:4,ease:"none"}},{s});')
     js.append(f'tl.to("#br{n}",{{opacity:0,duration:0.35,ease:"sine.in"}},{s+3.65:.2f});')
 for i,(s,e,t,sfx,z) in enumerate(O):
     ov.append(f'<div id="w{i}" class="clip word" data-start="{s}" data-duration="{round(e-s,2)}"><div class="tx">{words(t)}</div><i class="bar"></i></div>')
@@ -30,8 +30,8 @@ for i,(s,e,t,sfx,z) in enumerate(O):
     js.append(f'tl.fromTo("#w{i} .k",{{opacity:0,y:26,scale:.7}},{{opacity:1,y:0,scale:1,duration:0.34,ease:"back.out(2.2)",stagger:0.07}},{s});')
     js.append(f'tl.fromTo("#w{i} .bar",{{scaleX:0}},{{scaleX:1,duration:0.4,ease:"expo.out"}},{s+0.12:.2f});')
     js.append(f'tl.to("#w{i} .tx,#w{i} .bar",{{opacity:0,y:-10,duration:0.2,ease:"power2.in"}},{e-0.22:.2f});')
-    if z=="punch": js.append(f'tl.fromTo("#cam",{{scale:1.1}},{{scale:1.02,duration:0.45,ease:"power3.out"}},{s});')
-    elif z=="in": js.append(f'tl.to("#cam",{{scale:1.06,duration:{round(e-s,2)},ease:"sine.inOut"}},{s});')
+    if z=="punch": js.append(f'tl.fromTo("#cam",{{scale:1.035}},{{scale:1.0,duration:0.5,ease:"power2.out"}},{s});')
+    elif z=="in": js.append(f'tl.to("#cam",{{scale:1.02,duration:{round(e-s,2)},ease:"sine.inOut"}},{s});')
     elif z=="out": js.append(f'tl.to("#cam",{{scale:1.0,duration:{round(e-s,2)},ease:"sine.inOut"}},{s});')
 html=f'''<!doctype html>
 <html><head><meta charset="utf-8">
@@ -73,7 +73,7 @@ const tl=gsap.timeline({{paused:true}});
 tl.set("#cam",{{scale:1}},0);
 tl.fromTo("#title .l1 .k",{{opacity:0,y:20}},{{opacity:1,y:0,duration:.35,ease:"expo.out",stagger:.08}},0.1);
 tl.fromTo("#title .l2 .k",{{opacity:0,scale:.4}},{{opacity:1,scale:1,duration:.4,ease:"back.out(2.8)",stagger:.1}},1.3);
-tl.fromTo("#cam",{{scale:1.12}},{{scale:1.02,duration:.5,ease:"power3.out"}},1.3);
+tl.fromTo("#cam",{{scale:1.035}},{{scale:1.0,duration:.5,ease:"power2.out"}},1.3);
 tl.to("#title .k",{{opacity:0,y:-10,duration:.22,ease:"power2.in"}},2.95);
 tl.to("#cam",{{scale:1.0,duration:.8,ease:"sine.inOut"}},3.1);
 tl.fromTo("#halal",{{opacity:0,scale:.3,rotate:-25}},{{opacity:1,scale:1,rotate:0,duration:.45,ease:"back.out(2.4)"}},{HALAL[0]});
@@ -81,7 +81,7 @@ tl.to("#halal",{{opacity:0,scale:.8,duration:.22}},{HALAL[1]-0.22:.2f});
 tl.fromTo("#w_h .k",{{opacity:0,y:26,scale:.7}},{{opacity:1,y:0,scale:1,duration:.34,ease:"back.out(2.2)",stagger:.07}},{HALAL[0]+0.1});
 tl.fromTo("#w_h .bar",{{scaleX:0}},{{scaleX:1,duration:.4,ease:"expo.out"}},{HALAL[0]+0.2});
 tl.to("#w_h .tx,#w_h .bar",{{opacity:0,y:-10,duration:.2}},{HALAL[1]-0.22:.2f});
-tl.fromTo("#cam",{{scale:1.1}},{{scale:1.02,duration:.45,ease:"power3.out"}},{HALAL[0]});
+tl.fromTo("#cam",{{scale:1.035}},{{scale:1.0,duration:.5,ease:"power2.out"}},{HALAL[0]});
 {chr(10).join(js)}
 tl.set({{}},{{}},{DUR});
 window.__timelines=window.__timelines||{{}};window.__timelines["root"]=tl;
