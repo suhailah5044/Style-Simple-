@@ -68,9 +68,9 @@ html,body{{margin:0;background:#000;}}
   text-shadow:0 2px 6px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3);opacity:0;}}
 .word .bar{{display:block;height:4px;width:60px;background:#fff;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}}
 .word.L .bar{{transform-origin:0 50%;}} .word.R .bar{{margin-left:auto;transform-origin:100% 50%;}}
-#title{{position:absolute;top:230px;left:0;right:0;text-align:center;z-index:6;color:#fff;font-family:"Italianno",cursive;font-size:78px;line-height:.95;
+#title{{position:absolute;top:230px;left:0;right:0;text-align:center;z-index:6;color:#fff;font-family:"Lexend Mega",sans-serif;font-weight:800;font-size:46px;line-height:1.25;letter-spacing:-0.03em;
   text-shadow:0 2px 8px rgba(0,0,0,.45);}}
-#title span{{display:inline-block;opacity:0;}}
+#title span{{display:inline-block;opacity:0;}} #t2{{font-size:32px;}}
 </style></head>
 <body>
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
