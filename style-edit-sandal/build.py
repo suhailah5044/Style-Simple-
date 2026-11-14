@@ -1,17 +1,17 @@
 import json
 # Teks overlay: [mula, tamat, "Teks", "sfx"]  (masa ikut footage yang dah dipotong)
 O=[
- [5.0,7.75,"Anti-Slip Sole","glass_ting"],
- [8.0,10.3,"Comfortable Fit","ui_confirm"],
- [10.35,12.2,"Simple &amp; Stylish","ui_blip"],
- [23.9,26.2,"Budget Friendly","coin"],
+ [5.4,7.95,"Anti-Slip Sole","glass_ting"],
+ [8.2,10.6,"Comfortable Fit","ui_confirm"],
+ [10.7,12.5,"Simple &amp; Stylish","ui_blip"],
+ [24.2,26.6,"Budget Friendly","coin"],
 ]
-# B-roll full screen 4s: [mula, fail]
-B=[[4.9,"broll0"],[10.4,"broll1"],[23.9,"broll2"]]
-PUNCH=[10.36,13.3,27.58]
+# B-roll produk penuh skrin 4s (tiada muka): [mula, fail]
+B=[[5.3,"broll0"],[10.6,"broll1"],[24.0,"broll2"]]
+PUNCH=[15.84,20.3,28.1]
 VOL={"sub_boom":0.45,"coin":0.35,"ui_tap":0.4,"swoosh":0.25}
 EDL=json.load(open("edl.json"))
-DUR=30.67
+DUR=30.93
 ov=[];au=[];js=[];br=[]
 for i,(s,e,t,sfx) in enumerate(O):
     ov.append(f'<div id="w{i}" class="clip word" data-start="{s}" data-duration="{round(e-s,2)}"><span class="tx">{t}</span><i class="bar"></i></div>')
