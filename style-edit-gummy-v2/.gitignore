@@ -3,3 +3,5 @@ audio.wav
 .hyperframes/
 render.log
 FINAL.mp4
+.*.hf-transaction-*/
+work-*/
