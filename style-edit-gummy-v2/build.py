@@ -1,7 +1,7 @@
 # [start, end, text, side, sfx, zoom]
 # [start, end, text, side, sfx, zoom, (optional) top px]
 O=[
- [3.6,5.7,"Gummy Turkey","R","ui_blip","out"],
+ [3.6,5.7,"Turkish Gummies","R","ui_blip","out"],
  [5.8,7.7,"Ramai Kata Sedap!","R","glass_ting","in"],
  [8.9,11.6,"Anak Dah Habis Separuh","R","ui_notif","out"],
  [12.3,14.9,"Buat Terliur","R","ui_tap","in"],
@@ -75,7 +75,7 @@ html,body{{margin:0;background:#000;}}
 <body>
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
   <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="{DUR}" data-has-audio="true" data-volume="1"></video></div>
-  <div id="title" class="clip" data-start="0" data-duration="3.5"><span id="t1">Gummy Turkey</span><br><span id="t2">masam tapi sedap!</span></div>
+  <div id="title" class="clip" data-start="0" data-duration="3.5"><span id="t1">Turkish Gummies</span><br><span id="t2">masam tapi sedap!</span></div>
   {chr(10).join("  "+x for x in ov)}
   <audio id="a_cork" src="sfx/cork.wav" data-start="0.15" data-duration="1.0" data-volume="0.55"></audio>
   <audio id="a_t2" src="sfx/glass_ting.wav" data-start="0.6" data-duration="0.9" data-volume="0.3"></audio>

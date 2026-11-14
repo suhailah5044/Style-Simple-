@@ -1,9 +1,9 @@
-# Style Edit v2 — Gummy Turkey
+# Style Edit v2 — Turkish Gummies
 
 Sama gaya dengan `style-edit-standphone-v2/` (intro Italianno + subtitle kata kunci Lexend Mega + garis putih, zoom, SFX UI). Footage 9:16 1080x1920, 113.6s, tiada filter warna.
 
 ## Beza dari v2 asal
-- Intro (hook): "Gummy Turkey / masam tapi sedap!" guna Lexend Mega 800 (46px + 32px), bukan Italianno.
+- Intro (hook): "Turkish Gummies / masam tapi sedap!" guna Lexend Mega 800 (46px + 32px), bukan Italianno.
 - 34 overlay kata kunci dari transkrip (lihat senarai `O` dalam `build.py`).
 - Medan ke-7 pilihan dalam `O` = `top` px. Shot close-up 87–107s guna `top:120px` supaya teks tak kena muka.
 - Subtitle lebih tebal: Lexend Mega 800, 34px, garis 60x4px.
