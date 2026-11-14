@@ -6,6 +6,7 @@ Sama gaya dengan `style-edit-standphone-v2/` (intro Italianno + subtitle kata ku
 - Intro: "Gummy Turkey / masam tapi sedap!".
 - 34 overlay kata kunci dari transkrip (lihat senarai `O` dalam `build.py`).
 - Medan ke-7 pilihan dalam `O` = `top` px. Shot close-up 87–107s guna `top:120px` supaya teks tak kena muka.
+- Subtitle lebih tebal: Lexend Mega 800, 34px, garis 60x4px.
 - Zoom keluar intro dipendekkan (0.2s) supaya tak bertindih dengan overlay pertama.
 
 ## Cara guna

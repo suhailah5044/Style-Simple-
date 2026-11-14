@@ -64,9 +64,9 @@ html,body{{margin:0;background:#000;}}
 .word{{position:absolute;top:240px;width:420px;z-index:5;}}
 .word.L{{left:170px;text-align:left;}}
 .word.R{{right:170px;text-align:right;}}
-.word .tx{{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:600;font-size:30px;line-height:1.3;letter-spacing:-0.03em;color:#fff;
+.word .tx{{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:800;font-size:34px;line-height:1.3;letter-spacing:-0.03em;color:#fff;
   text-shadow:0 2px 6px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3);opacity:0;}}
-.word .bar{{display:block;height:3px;width:56px;background:#fff;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}}
+.word .bar{{display:block;height:4px;width:60px;background:#fff;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}}
 .word.L .bar{{transform-origin:0 50%;}} .word.R .bar{{margin-left:auto;transform-origin:100% 50%;}}
 #title{{position:absolute;top:230px;left:0;right:0;text-align:center;z-index:6;color:#fff;font-family:"Italianno",cursive;font-size:78px;line-height:.95;
   text-shadow:0 2px 8px rgba(0,0,0,.45);}}
