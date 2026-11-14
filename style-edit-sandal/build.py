@@ -1,21 +1,21 @@
 from cut import out_t
 T=out_t
-DUR=56.0
+from cut import SEG
+DUR=round(sum(y-x for x,y in SEG),2)
 # Teks ciri: [src_time, tempoh, teks, sisi, sfx, zoom]  — kecil, putih, ruang kosong atas (tak tutup produk/tangan/baju)
 O=[
- (17.25,2.0,"Soft &amp; Flexible","R","ui_blip","punch"),
- (85.05,2.6,"Budget Friendly","L","coin","punch"),
- (88.10,2.4,"Simple &amp; Stylish","R","glass_ting","in"),
- (106.05,2.2,"Lightweight Design","L","ui_notif","out"),
+ (17.30,2.0,"Soft &amp; Flexible","R","ui_blip","punch"),
+ (96.60,2.6,"Simple &amp; Stylish","R","glass_ting","in"),
+ (99.75,2.6,"Budget Friendly","L","coin","punch"),
+ (106.00,2.2,"Lightweight Design","L","ui_notif","out"),
  (109.60,2.6,"Anti-Slip Sole","R","sub_boom","punch"),
  (112.70,3.5,"Waterproof","L","swoosh",None),
- (155.20,3.0,"Everyday Sandals","R","ui_tap","in"),
- (176.00,3.6,"Comfortable Fit","L","riser_shimmer",None),
- (196.80,3.0,"Easy to Clean","R","ui_confirm","punch"),
+ (158.40,3.0,"Everyday Sandals","R","ui_tap","in"),
+ (163.75,3.1,"Comfortable Fit","L","riser_shimmer",None),
+ (197.30,2.9,"Easy to Clean","R","ui_confirm","punch"),
 ]
-# B-roll fullscreen ~4s: [src_time_mula, tempoh, fail, offset_dalam_broll]
-B=[(13.00,4.0,"broll1.mp4",0.3),(112.50,3.9,"broll2.mp4",0.8),(175.85,3.9,"broll2.mp4",8.5)]
-HOOK=["Kalau","tak","best,","takkan","grab","3 pasang!"]
+B=[(13.60,4.0,"broll1.mp4",0.3),(112.50,3.9,"broll2.mp4",0.8),(163.65,3.4,"broll2.mp4",8.5)]
+HOOK=["Kalau","tak","best,","takkan","ada","sampai 3!"]
 VOL={"sub_boom":0.45,"swoosh":0.3,"riser_shimmer":0.35,"coin":0.35,"ui_tap":0.4}
 ov=[];au=[];js=[];br=[]
 for i,(s0,d,t,side,sfx,z) in enumerate(O):
@@ -71,7 +71,7 @@ html,body{{margin:0;background:#000;}}
 const tl=gsap.timeline({{paused:true}});
 tl.set("#cam",{{scale:1}},0);
 tl.fromTo("#cam",{{scale:1.12}},{{scale:1.03,duration:0.5,ease:"power3.out"}},0.05);
-'''+"\n".join(f'tl.fromTo("#hook .k:nth-child({k+1})",{{opacity:0,y:30,scale:1.4}},{{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2.5)"}},{[0.05,0.3,0.5,0.95,1.5,2.0][k]});' for k in range(len(HOOK)))+f'''
+'''+"\n".join(f'tl.fromTo("#hook .k:nth-child({k+1})",{{opacity:0,y:30,scale:1.4}},{{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2.5)"}},{[0.05,0.3,0.55,1.0,1.45,1.85][k]});' for k in range(len(HOOK)))+f'''
 tl.fromTo("#cam",{{scale:1.09}},{{scale:1.0,duration:0.4,ease:"power3.out"}},2.0);
 tl.to("#hook .k",{{opacity:0,y:-12,duration:.22,stagger:.02,ease:"power2.in"}},2.62);
 {chr(10).join(js)}
