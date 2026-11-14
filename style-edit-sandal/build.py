@@ -31,9 +31,9 @@ for i,(s0,d,t,side,sfx,z) in enumerate(O):
 for j,(s0,d,f,off) in enumerate(B):
     s=T(s0)
     br.append(f'<video id="b{j}" class="broll" src="assets/{f}" data-start="{s}" data-duration="{d}" data-media-start="{off}" data-volume="0" muted></video>')
-    js.append(f'tl.fromTo("#b{j}",{{opacity:0}},{{opacity:1,duration:0.35,ease:"sine.out"}},{s});')
+    js.append(f'tl.fromTo("#b{j}",{{opacity:0}},{{opacity:1,duration:0.12,ease:"sine.out"}},{s});')
     js.append(f'tl.fromTo("#b{j}",{{scale:1.0}},{{scale:1.05,duration:{d},ease:"none"}},{s});')
-    js.append(f'tl.to("#b{j}",{{opacity:0,duration:0.35,ease:"sine.in"}},{s+d-0.35:.2f});')
+    js.append(f'tl.to("#b{j}",{{opacity:0,duration:0.12,ease:"sine.in"}},{s+d-0.12:.2f});')
 hk="".join(f'<span class="k">{w}</span> ' for w in HOOK)
 html=f'''<!doctype html>
 <html><head><meta charset="utf-8">
