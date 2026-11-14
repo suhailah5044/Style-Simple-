@@ -7,7 +7,7 @@ O=[
  [23.9,26.2,"Budget Friendly","coin"],
 ]
 # B-roll full screen 4s: [mula, fail]
-B=[[5.0,"broll2"],[15.4,"broll0"],[23.9,"broll3"]]
+B=[[4.9,"broll0"],[10.4,"broll1"],[23.9,"broll2"]]
 PUNCH=[10.36,13.3,27.58]
 VOL={"sub_boom":0.45,"coin":0.35,"ui_tap":0.4,"swoosh":0.25}
 EDL=json.load(open("edl.json"))

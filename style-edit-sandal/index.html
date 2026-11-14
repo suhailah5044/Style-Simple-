@@ -18,9 +18,9 @@ html,body{margin:0;background:#000;}
 <body>
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="30.67" data-fps="30">
   <div id="pz"><div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="30.67" data-has-audio="true" data-volume="1"></video></div></div>
-    <video id="b0" class="broll" src="assets/broll2.mp4" data-start="5.0" data-duration="4" muted playsinline></video>
-  <video id="b1" class="broll" src="assets/broll0.mp4" data-start="15.4" data-duration="4" muted playsinline></video>
-  <video id="b2" class="broll" src="assets/broll3.mp4" data-start="23.9" data-duration="4" muted playsinline></video>
+    <video id="b0" class="broll" src="assets/broll0.mp4" data-start="4.9" data-duration="4" muted playsinline></video>
+  <video id="b1" class="broll" src="assets/broll1.mp4" data-start="10.4" data-duration="4" muted playsinline></video>
+  <video id="b2" class="broll" src="assets/broll2.mp4" data-start="23.9" data-duration="4" muted playsinline></video>
   <div id="h0" class="clip hook" data-start="0.1" data-duration="1.75"><span>RACUN SANDAL<br>HARI NI!</span></div>
   <div id="h1" class="clip hook" data-start="1.85" data-duration="1.75"><span>LOOK MAHAL,<br>HARGA BAJET!</span></div>
   <div id="h2" class="clip hook" data-start="3.6" data-duration="1.35"><span>HARGA<br>TAK SANGKA!</span></div>
@@ -35,8 +35,8 @@ html,body{margin:0;background:#000;}
   <audio id="a1" src="sfx/ui_confirm.wav" data-start="7.98" data-duration="1.1" data-volume="0.4"></audio>
   <audio id="a2" src="sfx/ui_blip.wav" data-start="10.33" data-duration="1.1" data-volume="0.4"></audio>
   <audio id="a3" src="sfx/coin.wav" data-start="23.88" data-duration="1.1" data-volume="0.35"></audio>
-  <audio id="ab0" src="sfx/swoosh.wav" data-start="4.90" data-duration="1.1" data-volume="0.22"></audio>
-  <audio id="ab1" src="sfx/swoosh.wav" data-start="15.30" data-duration="1.1" data-volume="0.22"></audio>
+  <audio id="ab0" src="sfx/swoosh.wav" data-start="4.80" data-duration="1.1" data-volume="0.22"></audio>
+  <audio id="ab1" src="sfx/swoosh.wav" data-start="10.30" data-duration="1.1" data-volume="0.22"></audio>
   <audio id="ab2" src="sfx/swoosh.wav" data-start="23.80" data-duration="1.1" data-volume="0.22"></audio>
   <audio id="p1036" src="sfx/sub_boom.wav" data-start="10.34" data-duration="1.1" data-volume="0.2"></audio>
   <audio id="p1330" src="sfx/sub_boom.wav" data-start="13.28" data-duration="1.1" data-volume="0.2"></audio>
@@ -64,12 +64,12 @@ tl.to("#w2 .tx,#w2 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},11.98);
 tl.fromTo("#w3 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},23.9);
 tl.fromTo("#w3 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},23.98);
 tl.to("#w3 .tx,#w3 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},25.98);
-tl.fromTo("#b0",{opacity:0},{opacity:1,duration:0.6,ease:"sine.inOut"},5.0);
-tl.fromTo("#b0",{scale:1.03},{scale:1.0,duration:4,ease:"none"},5.0);
-tl.to("#b0",{opacity:0,duration:0.6,ease:"sine.inOut"},8.40);
-tl.fromTo("#b1",{opacity:0},{opacity:1,duration:0.6,ease:"sine.inOut"},15.4);
-tl.fromTo("#b1",{scale:1.03},{scale:1.0,duration:4,ease:"none"},15.4);
-tl.to("#b1",{opacity:0,duration:0.6,ease:"sine.inOut"},18.80);
+tl.fromTo("#b0",{opacity:0},{opacity:1,duration:0.6,ease:"sine.inOut"},4.9);
+tl.fromTo("#b0",{scale:1.03},{scale:1.0,duration:4,ease:"none"},4.9);
+tl.to("#b0",{opacity:0,duration:0.6,ease:"sine.inOut"},8.30);
+tl.fromTo("#b1",{opacity:0},{opacity:1,duration:0.6,ease:"sine.inOut"},10.4);
+tl.fromTo("#b1",{scale:1.03},{scale:1.0,duration:4,ease:"none"},10.4);
+tl.to("#b1",{opacity:0,duration:0.6,ease:"sine.inOut"},13.80);
 tl.fromTo("#b2",{opacity:0},{opacity:1,duration:0.6,ease:"sine.inOut"},23.9);
 tl.fromTo("#b2",{scale:1.03},{scale:1.0,duration:4,ease:"none"},23.9);
 tl.to("#b2",{opacity:0,duration:0.6,ease:"sine.inOut"},27.30);
