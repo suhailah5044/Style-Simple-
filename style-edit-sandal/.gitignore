@@ -1,0 +1,4 @@
+assets/*.mp4
+*.mp4
+.hyperframes/
+__pycache__/
