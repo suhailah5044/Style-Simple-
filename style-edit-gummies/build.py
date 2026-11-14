@@ -1,22 +1,22 @@
 # Teks: [mula, tamat, "teks", sfx, zoom]  (masa dalam footage yang dah dipotong)
 O=[
  [3.9,5.5,"Gummy Turkey","ui_blip","in"],
- [5.6,6.75,"Ramai Kata Sedap","ui_notif","out"],
- [8.2,9.6,"Confirm Masam!","sub_boom","punch"],
- [9.85,13.55,"Macam-Macam Bentuk","glass_ting",None],
- [17.3,19.1,"Confirm Ketagih!","sub_boom","punch"],
- [20.2,22.9,"Lagi Masam Lagi Sedap","ui_confirm","in"],
- [24.3,26.85,"Wajib Bawa Travel","swoosh","out"],
- [27.3,28.65,"1KG Puas Makan","sub_boom","punch"],
- [30.0,33.7,"Siap Penutup & Pengepit","ui_tap",None],
- [34.5,37.55,"Mix · 3 Pilihan","ui_notif","in"],
- [38.45,41.55,"1KG Lebih Jimat","coin",None],
- [41.95,43.45,"Sangat Recommend!","riser_shimmer","punch"],
+ [5.6,6.85,"Ramai Kata Sedap","ui_notif","out"],
+ [8.3,9.04,"Confirm Masam!","sub_boom","punch"],
+ [9.25,12.85,"Macam-Macam Bentuk","glass_ting",None],
+ [17.1,18.95,"Confirm Ketagih!","sub_boom","punch"],
+ [19.1,20.5,"Lagi Masam Lagi Sedap","ui_confirm","in"],
+ [21.2,23.7,"Wajib Bawa Travel","swoosh","out"],
+ [23.8,25.1,"1KG Puas Makan","sub_boom","punch"],
+ [25.92,29.5,"Siap Penutup & Pengepit","ui_tap",None],
+ [30.07,32.55,"Mix · 3 Pilihan","ui_notif","in"],
+ [34.85,36.6,"1KG Lebih Jimat","coin",None],
+ [37.2,39.7,"Sangat Recommend!","riser_shimmer","punch"],
 ]
-BR=[["A",9.69],["B",29.85],["D",38.25]]   # B-roll 4s penuh skrin, produk sahaja
-HALAL=[14.8,17.1]
+BR=[["A",9.06],["B",25.72],["D",32.72]]   # B-roll 4s penuh skrin, produk sahaja
+HALAL=[14.15,16.6]
 VOL={"sub_boom":0.45,"swoosh":0.3,"riser_shimmer":0.38,"coin":0.35,"ui_tap":0.45,"glass_ting":0.35}
-DUR=43.54
+DUR=39.75
 def words(t): return " ".join(f'<span class="k">{w}</span>' for w in t.split(" "))
 ov=[];au=[];js=[];br=[]
 for n,s in BR:
