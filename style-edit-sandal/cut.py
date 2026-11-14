@@ -9,10 +9,10 @@ def out_t(src):
         if a<=src<=b: return round(o+src-a,2)
         o+=b-a
     raise ValueError(src)
-if __name__=="__main__":
+def make_footage(src,SEG,out):
+    import os,wave,shutil,numpy as np
     # Video & audio diproses berasingan supaya tiada drift AAC (lip-sync tepat)
-    import os,wave,numpy as np
-    src=sys.argv[1]; os.makedirs("seg",exist_ok=True); L=[]; SR=48000
+    os.makedirs("seg",exist_ok=True); L=[]; SR=48000
     subprocess.run(["ffmpeg","-v","error","-y","-i",src,"-vn","-ac","2","-ar",str(SR),"seg/src.wav"],check=True)
     ast=float(subprocess.run(["ffprobe","-v","error","-select_streams","a","-show_entries","stream=start_time","-of","csv=p=0",src],capture_output=True,text=True).stdout or 0)
     w=wave.open("seg/src.wav"); A=np.frombuffer(w.readframes(w.getnframes()),np.int16).reshape(-1,2).astype(np.float32)
@@ -25,8 +25,11 @@ if __name__=="__main__":
         s0=round((a-ast)*SR); seg=A[s0:s0+round(n/30*SR)].copy()
         r=np.linspace(0,1,fd)[:,None]; seg[:fd]*=r; seg[-fd:]*=r[::-1]; parts.append(seg)
     open("seg/list.txt","w").write("\n".join(L))
-    out=np.concatenate(parts).clip(-32768,32767).astype(np.int16)
-    w=wave.open("seg/aud.wav","w"); w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(out.tobytes()); w.close()
+    pcm=np.concatenate(parts).clip(-32768,32767).astype(np.int16)
+    w=wave.open("seg/aud.wav","w"); w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes()); w.close()
     subprocess.run(["ffmpeg","-v","error","-y","-f","concat","-safe","0","-i","seg/list.txt","-i","seg/aud.wav","-map","0:v","-map","1:a",
-      "-c:v","copy","-c:a","aac","-b:a","192k","assets/footage.mp4"],check=True)
-    print("DUR",round(sum(b-a for a,b in SEG),2))
+      "-c:v","copy","-c:a","aac","-b:a","192k",out],check=True)
+    shutil.rmtree("seg"); return round(sum(b-a for a,b in SEG),2)
+
+if __name__=="__main__":
+    print("DUR",make_footage(sys.argv[1],SEG,"assets/footage.mp4"))
