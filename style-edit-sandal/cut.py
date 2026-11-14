@@ -3,7 +3,7 @@
 import subprocess,sys,json
 SRC=sys.argv[1]
 F={"A":"10OOMKGa_pmPillbprIcGOxYurIiuUHir","B":"1Sf4y1GUM5VA57OxTK8Yzu5kKX_kmlX67","C":"1WjczG8ICgiP68pfT1AOo4WAhw5EWZJVk","D":"1wNTB8uK78Tt4wdcLureW522Et2Ah-fol","E":"1zTGiPwrS4hr5TFxpn7MzpFj61G6APyGI"}
-CUTS=[("A",8.92,10.86),("A",14.6,20.94),("A",23.53,29.65),("A",44.15,51.05),("A",52.25,62.2)]  # titik potong dalam celah senyap
+CUTS=[("A",8.92,10.86),("A",14.6,20.94),("A",23.53,29.65),("A",44.15,51.05),("A",53.14,62.2)]  # titik potong dalam celah senyap
 # B-roll produk sahaja, penuh skrin 9:16 (crop tanpa muka): (klip, mula, tamat, crop w:h:x:y)
 BROLL=[("C",14.5,18.5,"540:960:270:640"),("C",64.0,68.0,"432:768:330:1152"),("E",26.5,30.5,"480:853:600:900")]
 VF="scale=1080:1920:flags=lanczos,setsar=1,fps=30"
