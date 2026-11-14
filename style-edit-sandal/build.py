@@ -12,7 +12,7 @@ O=[
 ]
 # B-roll full screen 4s: [mula, fail]
 B=[[14.2,"broll0"],[19.85,"broll1"],[30.0,"broll3"],[43.6,"broll2"]]
-PUNCH=[2.3,13.56,34.36,38.94]
+PUNCH=[3.6,13.56,34.36,38.94]
 VOL={"sub_boom":0.45,"coin":0.35,"ui_tap":0.4,"swoosh":0.25}
 EDL=json.load(open("edl.json"))
 DUR=49.7
@@ -46,28 +46,33 @@ html,body{{margin:0;background:#000;}}
 .word .tx{{display:inline-block;font-family:"Lexend Mega",sans-serif;font-weight:600;font-size:30px;line-height:1.3;letter-spacing:-0.03em;color:#fff;
   text-shadow:0 2px 6px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3);opacity:0;}}
 .word .bar{{display:block;height:3px;width:56px;background:#fff;border-radius:2px;margin:10px auto 0;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}}
-#title{{position:absolute;top:240px;left:0;right:0;text-align:center;z-index:6;color:#fff;font-family:"Lexend Mega",sans-serif;font-weight:600;letter-spacing:-0.03em;line-height:1.35;
-  text-shadow:0 2px 8px rgba(0,0,0,.45);}}
-#title span{{display:inline-block;opacity:0;}} #t1{{font-size:22px;font-weight:500;}} #t2{{font-size:36px;}}
+.hook{{position:absolute;top:235px;left:120px;right:120px;text-align:center;z-index:6;color:#fff;font-family:"Lexend Mega",sans-serif;font-weight:700;
+  font-size:46px;line-height:1.2;letter-spacing:-0.04em;text-shadow:0 2px 8px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3);}}
+.hook span{{display:inline-block;opacity:0;}}
 </style></head>
 <body>
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
   <div id="pz"><div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="{DUR}" data-has-audio="true" data-volume="1"></video></div></div>
   {chr(10).join("  "+x for x in br)}
-  <div id="title" class="clip" data-start="0" data-duration="3.2"><span id="t1">Rupa ala brand C,</span><br><span id="t2">harga budget!</span></div>
+  <div id="h0" class="clip hook" data-start="0.1" data-duration="1.75"><span>RACUN SANDAL<br>HARI NI!</span></div>
+  <div id="h1" class="clip hook" data-start="1.85" data-duration="1.75"><span>LOOK MAHAL,<br>HARGA BAJET!</span></div>
+  <div id="h2" class="clip hook" data-start="3.6" data-duration="1.85"><span>HARGA<br>TAK SANGKA!</span></div>
   {chr(10).join("  "+x for x in ov)}
   <audio id="a_cork" src="sfx/ui_blip.wav" data-start="0.1" data-duration="1.0" data-volume="0.35"></audio>
-  <audio id="a_t2" src="sfx/glass_ting.wav" data-start="0.55" data-duration="0.9" data-volume="0.28"></audio>
+  <audio id="a_t3" src="sfx/glass_ting.wav" data-start="3.58" data-duration="0.9" data-volume="0.25"></audio>
+  <audio id="a_t2" src="sfx/ui_blip.wav" data-start="1.83" data-duration="0.9" data-volume="0.28"></audio>
   {chr(10).join("  "+x for x in au)}
 </div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script>
 const tl=gsap.timeline({{paused:true}});
 tl.set("#pz",{{scale:1}},0);
-tl.fromTo("#t1",{{opacity:0,y:14}},{{opacity:1,y:0,duration:.4,ease:"expo.out"}},0.1);
-tl.fromTo("#t2",{{opacity:0,y:16}},{{opacity:1,y:0,duration:.45,ease:"expo.out"}},0.55);
-
-tl.to("#title span",{{opacity:0,y:-10,duration:.25,ease:"power2.in"}},2.9);
+tl.fromTo("#h0 span",{{opacity:0,y:18,scale:.96}},{{opacity:1,y:0,scale:1,duration:.4,ease:"expo.out"}},0.1);
+tl.to("#h0 span",{{opacity:0,y:-12,duration:.22,ease:"power2.in"}},1.61);
+tl.fromTo("#h1 span",{{opacity:0,y:18,scale:.96}},{{opacity:1,y:0,scale:1,duration:.4,ease:"expo.out"}},1.85);
+tl.to("#h1 span",{{opacity:0,y:-12,duration:.22,ease:"power2.in"}},3.36);
+tl.fromTo("#h2 span",{{opacity:0,y:18,scale:.96}},{{opacity:1,y:0,scale:1,duration:.4,ease:"expo.out"}},3.6);
+tl.to("#h2 span",{{opacity:0,y:-12,duration:.22,ease:"power2.in"}},5.21);
 {chr(10).join(js)}
 tl.set({{}},{{}},{DUR});
 window.__timelines=window.__timelines||{{}};window.__timelines["root"]=tl;
