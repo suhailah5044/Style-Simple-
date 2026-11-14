@@ -1,3 +1,5 @@
 snaps/
 .hyperframes/
 PREVIEW_draft.mp4
+variants/*/assets/footage.mp4
+variants/*/PREVIEW_*.mp4

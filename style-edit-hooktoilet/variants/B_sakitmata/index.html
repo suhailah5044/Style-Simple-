@@ -1,0 +1,118 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}
+html,body{margin:0;background:#000;}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}
+#cam{position:absolute;inset:0;transform-origin:50% 40%;}
+#cam video{width:100%;height:100%;object-fit:cover;display:block;}
+.broll{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;z-index:3;opacity:0;}
+.word{position:absolute;top:250px;z-index:5;}
+.word.C{left:140px;right:140px;text-align:center;}
+.word.L{left:120px;width:430px;text-align:left;}
+.word span{display:block;font-family:"Lexend Mega",sans-serif;color:#fff;letter-spacing:-0.03em;opacity:0;text-shadow:0 2px 6px rgba(0,0,0,.5),0 0 2px rgba(0,0,0,.35);}
+.word .tx{font-weight:600;font-size:30px;line-height:1.3;}
+.word .sb{font-weight:400;font-size:19px;line-height:1.4;margin-top:6px;letter-spacing:-0.04em;}
+.word .bar{display:block;height:3px;width:56px;background:#fff;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}
+.word.C .bar{margin:10px auto 0;} .word.L .bar{transform-origin:0 50%;}
+.hook{position:absolute;top:250px;z-index:6;font-family:"Lexend Mega",sans-serif;font-weight:600;color:#fff;font-size:32px;line-height:1.4;letter-spacing:-0.03em;text-shadow:0 2px 8px rgba(0,0,0,.5);}
+.hook.C{left:0;right:0;text-align:center;} .hook.L{left:110px;width:560px;text-align:left;}
+.hook .kw{display:inline-block;opacity:0;}
+.hook .big{font-size:50px;font-weight:800;letter-spacing:-0.04em;}
+</style></head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="41.43" data-fps="30">
+  <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="41.43" data-has-audio="true" data-volume="1"></video></div>
+  <video id="b0" class="clip broll" src="assets/broll1.mp4" data-start="12.3" data-duration="4.00" data-has-audio="false" muted></video>
+  <video id="b1" class="clip broll" src="assets/broll2.mp4" data-start="29.15" data-duration="4.00" data-has-audio="false" muted></video>
+  <div id="hg0" class="clip hook C" data-start="0.11" data-duration="1.94"><span id="k0" class="kw">Sangkut macam ni…</span><br><span id="k1" class="kw big">sakit mata</span></div>
+  <div id="hg1" class="clip hook C" data-start="2.05" data-duration="3.17"><span id="k2" class="kw">Bila dah sangkut,</span><br><span id="k3" class="kw">barulah</span> <span id="k4" class="kw big">cantik!</span></div>
+  <div id="w0" class="clip word C" data-start="7.45" data-duration="2.2"><span class="tx">Budget-Friendly</span><span class="sb">Bawah RM3, lagi murah dari teh ais</span><i class="bar"></i></div>
+  <div id="w1" class="clip word C" data-start="10.0" data-duration="2.0"><span class="tx">Stainless Steel</span><span class="sb">Silver clean, vibe minimalist</span><i class="bar"></i></div>
+  <div id="w2" class="clip word C" data-start="12.55" data-duration="3.45"><span class="tx">Grip Dia Ketat</span><span class="sb">Batang mop tak melurut jatuh</span><i class="bar"></i></div>
+  <div id="w3" class="clip word C" data-start="18.95" data-duration="2.65"><span class="tx">Pilihan 2–5 Hook</span><span class="sb">Ikut berapa batang nak sangkut</span><i class="bar"></i></div>
+  <div id="w4" class="clip word C" data-start="21.8" data-duration="1.65"><span class="tx">No Drill, No Drama</span><span class="sb">Lekat je, dinding tak rosak</span><i class="bar"></i></div>
+  <div id="w5" class="clip word C" data-start="23.6" data-duration="2.9"><span class="tx">Hygiene Level Up</span><span class="sb">Berus tak kena lantai, cepat kering</span><i class="bar"></i></div>
+  <div id="w6" class="clip word C" data-start="29.4" data-duration="3.53"><span class="tx">Gam Super Kuat</span><span class="sb">Confirm tak tercabut</span><i class="bar"></i></div>
+  <div id="w7" class="clip word L" data-start="34.5" data-duration="3.88"><span class="tx">Tekan Beg Kuning</span><span class="sb">Hook stainless toilet</span><i class="bar"></i></div>
+  <audio id="a0" src="sfx/coin.wav" data-start="7.43" data-duration="1.1" data-volume="0.35"></audio>
+  <audio id="a1" src="sfx/glass_ting.wav" data-start="9.98" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a2" src="sfx/ui_tap.wav" data-start="12.53" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a3" src="sfx/ui_blip.wav" data-start="18.93" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a4" src="sfx/sub_boom.wav" data-start="21.78" data-duration="1.1" data-volume="0.5"></audio>
+  <audio id="a5" src="sfx/ui_confirm.wav" data-start="23.58" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a6" src="sfx/sub_boom.wav" data-start="29.38" data-duration="1.1" data-volume="0.5"></audio>
+  <audio id="a7" src="sfx/riser_shimmer.wav" data-start="34.48" data-duration="1.1" data-volume="0.4"></audio>
+  <audio id="ab0" src="sfx/swoosh.wav" data-start="12.25" data-duration="1.0" data-volume="0.25"></audio>
+  <audio id="ab1" src="sfx/swoosh.wav" data-start="29.10" data-duration="1.0" data-volume="0.25"></audio>
+  <audio id="h10" src="sfx/swoosh.wav" data-start="0.07" data-duration="1.0" data-volume="0.3"></audio>
+  <audio id="h11" src="sfx/sub_boom.wav" data-start="0.83" data-duration="1.0" data-volume="0.45"></audio>
+  <audio id="h12" src="sfx/ui_notif.wav" data-start="2.03" data-duration="1.0" data-volume="0.4"></audio>
+  <audio id="h13" src="sfx/glass_ting.wav" data-start="3.21" data-duration="1.0" data-volume="0.4"></audio>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.set("#cam",{scale:1},0);
+tl.fromTo("#w0 .tx",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},7.45);
+tl.fromTo("#w0 .sb",{opacity:0,y:12},{opacity:.92,y:0,duration:0.38,ease:"expo.out"},7.57);
+tl.fromTo("#w0 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},7.53);
+tl.to("#w0 .tx,#w0 .sb,#w0 .bar",{opacity:0,y:-10,duration:0.22,ease:"power2.in"},9.41);
+tl.fromTo("#cam",{scale:1.1},{scale:1.02,duration:0.45,ease:"power3.out"},7.45);
+tl.fromTo("#w1 .tx",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},10.0);
+tl.fromTo("#w1 .sb",{opacity:0,y:12},{opacity:.92,y:0,duration:0.38,ease:"expo.out"},10.12);
+tl.fromTo("#w1 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},10.08);
+tl.to("#w1 .tx,#w1 .sb,#w1 .bar",{opacity:0,y:-10,duration:0.22,ease:"power2.in"},11.76);
+tl.to("#cam",{scale:1.06,duration:1.9,ease:"sine.inOut"},10.0);
+tl.to("#cam",{scale:1.0,duration:0.4,ease:"sine.inOut"},11.90);
+tl.fromTo("#w2 .tx",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},12.55);
+tl.fromTo("#w2 .sb",{opacity:0,y:12},{opacity:.92,y:0,duration:0.38,ease:"expo.out"},12.67);
+tl.fromTo("#w2 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},12.63);
+tl.to("#w2 .tx,#w2 .sb,#w2 .bar",{opacity:0,y:-10,duration:0.22,ease:"power2.in"},15.76);
+tl.fromTo("#w3 .tx",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},18.95);
+tl.fromTo("#w3 .sb",{opacity:0,y:12},{opacity:.92,y:0,duration:0.38,ease:"expo.out"},19.07);
+tl.fromTo("#w3 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},19.03);
+tl.to("#w3 .tx,#w3 .sb,#w3 .bar",{opacity:0,y:-10,duration:0.22,ease:"power2.in"},21.36);
+tl.to("#cam",{scale:1.06,duration:2.55,ease:"sine.inOut"},18.95);
+tl.to("#cam",{scale:1.0,duration:0.4,ease:"sine.inOut"},21.50);
+tl.fromTo("#w4 .tx",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},21.8);
+tl.fromTo("#w4 .sb",{opacity:0,y:12},{opacity:.92,y:0,duration:0.38,ease:"expo.out"},21.92);
+tl.fromTo("#w4 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},21.88);
+tl.to("#w4 .tx,#w4 .sb,#w4 .bar",{opacity:0,y:-10,duration:0.22,ease:"power2.in"},23.21);
+tl.fromTo("#cam",{scale:1.1},{scale:1.02,duration:0.45,ease:"power3.out"},21.8);
+tl.fromTo("#w5 .tx",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},23.6);
+tl.fromTo("#w5 .sb",{opacity:0,y:12},{opacity:.92,y:0,duration:0.38,ease:"expo.out"},23.72);
+tl.fromTo("#w5 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},23.68);
+tl.to("#w5 .tx,#w5 .sb,#w5 .bar",{opacity:0,y:-10,duration:0.22,ease:"power2.in"},26.26);
+tl.fromTo("#w6 .tx",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},29.4);
+tl.fromTo("#w6 .sb",{opacity:0,y:12},{opacity:.92,y:0,duration:0.38,ease:"expo.out"},29.52);
+tl.fromTo("#w6 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},29.48);
+tl.to("#w6 .tx,#w6 .sb,#w6 .bar",{opacity:0,y:-10,duration:0.22,ease:"power2.in"},32.69);
+tl.fromTo("#w7 .tx",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},34.5);
+tl.fromTo("#w7 .sb",{opacity:0,y:12},{opacity:.92,y:0,duration:0.38,ease:"expo.out"},34.62);
+tl.fromTo("#w7 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},34.58);
+tl.to("#w7 .tx,#w7 .sb,#w7 .bar",{opacity:0,y:-10,duration:0.22,ease:"power2.in"},38.14);
+tl.to("#cam",{scale:1.06,duration:3.78,ease:"sine.inOut"},34.5);
+tl.to("#cam",{scale:1.0,duration:0.4,ease:"sine.inOut"},38.28);
+tl.fromTo("#cam",{scale:1.07},{scale:1.0,duration:0.4,ease:"power3.out"},2.05);
+tl.fromTo("#cam",{scale:1.07},{scale:1.0,duration:0.4,ease:"power3.out"},5.22);
+tl.fromTo("#cam",{scale:1.07},{scale:1.0,duration:0.4,ease:"power3.out"},23.50);
+tl.fromTo("#b0",{opacity:0,scale:1.08},{opacity:1,scale:1.04,duration:0.35,ease:"sine.out"},12.3);
+tl.to("#b0",{scale:1.0,duration:3.65,ease:"sine.out"},12.65);
+tl.to("#b0",{opacity:0,duration:0.35,ease:"sine.in"},15.95);
+tl.fromTo("#b1",{opacity:0,scale:1.08},{opacity:1,scale:1.04,duration:0.35,ease:"sine.out"},29.15);
+tl.to("#b1",{scale:1.0,duration:3.65,ease:"sine.out"},29.50);
+tl.to("#b1",{opacity:0,duration:0.35,ease:"sine.in"},32.80);
+tl.fromTo("#k0",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},0.11);
+tl.fromTo("#k1",{opacity:0,scale:1.8},{opacity:1,scale:1,duration:0.45,ease:"back.out(2)"},0.87);
+tl.fromTo("#cam",{scale:1.12},{scale:1.02,duration:0.5,ease:"power3.out"},0.87);
+tl.to("#hg0 .kw",{opacity:0,y:-12,duration:.22,stagger:.03,ease:"power2.in"},1.75);
+tl.fromTo("#k2",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},2.05);
+tl.fromTo("#k3",{opacity:0,x:-40},{opacity:1,x:0,duration:0.45,ease:"expo.out"},2.95);
+tl.fromTo("#k4",{opacity:0,scale:1.8},{opacity:1,scale:1,duration:0.45,ease:"back.out(2)"},3.25);
+tl.fromTo("#cam",{scale:1.12},{scale:1.02,duration:0.5,ease:"power3.out"},3.25);
+tl.to("#hg1 .kw",{opacity:0,y:-12,duration:.22,stagger:.03,ease:"power2.in"},4.92);
+tl.set({},{},41.43);
+window.__timelines=window.__timelines||{};window.__timelines["root"]=tl;
+</script>
+</body></html>
