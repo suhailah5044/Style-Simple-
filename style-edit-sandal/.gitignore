@@ -2,3 +2,6 @@ assets/footage.mp4
 assets/broll*.mp4
 PREVIEW_draft.mp4
 .hyperframes/
+more/*/assets/*.mp4
+more/*/.hyperframes/
+more/PREVIEW_*.mp4
