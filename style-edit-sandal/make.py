@@ -6,8 +6,8 @@ import numpy as np
 SRC=sys.argv[1]; NAME=sys.argv[2]
 F={"A":"10OOMKGa_pmPillbprIcGOxYurIiuUHir","B":"1Sf4y1GUM5VA57OxTK8Yzu5kKX_kmlX67","C":"1WjczG8ICgiP68pfT1AOo4WAhw5EWZJVk","D":"1wNTB8uK78Tt4wdcLureW522Et2Ah-fol","E":"1zTGiPwrS4hr5TFxpn7MzpFj61G6APyGI"}
 # B-roll produk sahaja (crop 9:16 penuh skrin, tiada muka)
-K={"hitam":("C",14.5,"540:960:270:640"),"kaki":("C",64.0,"432:768:330:1152"),
-   "maroon":("E",26.5,"480:853:600:900"),"beige":("E",26.5,"480:853:0:900")}
+K={"hitam":("C",15.1,"675:1200:202:720"),"kaki":("C",64.0,"432:768:330:1152"),
+   "maroon":("E",26.9,"450:800:630:790"),"beige":("E",26.5,"450:800:0:790")}
 CONF={
  "v2_selesa":dict(clip="C",
    cuts=[(8.5,11.15),(29.4,34.25),(35.1,35.98),(45.9,52.55),(57.35,66.15)],
