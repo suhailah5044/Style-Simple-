@@ -34,7 +34,7 @@
 | 11.5–13.0 | Dalam kotak | Dalam kotak siap / ear tips spare | IMG_2637 |
 | 13.0–14.5 | Dalam kotak | + kabel cas / boleh wireless charging | IMG_2638 |
 | 14.5–16.0 | Bukti, ding | ★ 4.6 rating / 12.7K terjual | IMG_2632 (1.2–3.7s, slow-mo halus) |
-| 16.0–18.0 | CTA, punch-in | Tekan beg kuning 🛍 / ada 5 warna tau! | IMG_2632 |
+| 16.0–18.0 | CTA tanpa tulisan: ikon beg kuning + tangan tekan 3x (pop + ripple), punch-in | (ikon beg kuning + tangan) / ada 5 warna tau! | IMG_2632 |
 
 Semua teks duduk kat jalur atas (y ≈ 13–24%), satu-satunya ruang kosong dalam setiap shot. Teks tak tutup produk, tangan atau muka, tak masuk tepi kanan, dan tak masuk 20% bawah.
 
