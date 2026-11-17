@@ -3,18 +3,18 @@ STAR='<svg class="ico" viewBox="0 0 24 24" width="0.9em" height="0.9em"><path fi
 BAG='<svg class="ico" viewBox="0 0 24 24" width="1.05em" height="1.05em"><path fill="#FFC21A" d="M5 7.5h14l-1.1 12.2a2 2 0 0 1-2 1.8H8.1a2 2 0 0 1-2-1.8z"/><path d="M8.6 9.5V7a3.4 3.4 0 0 1 6.8 0v2.5" fill="none" stroke="#FFC21A" stroke-width="1.8" stroke-linecap="round"/></svg>'
 TAP='<span class="tapwrap"><span id="ripple"></span><svg id="bagbig" viewBox="0 0 24 24" width="128" height="128"><path fill="#FFC21A" d="M5 7.5h14l-1.1 12.2a2 2 0 0 1-2 1.8H8.1a2 2 0 0 1-2-1.8z"/><path d="M8.6 9.5V7a3.4 3.4 0 0 1 6.8 0v2.5" fill="none" stroke="#FFC21A" stroke-width="1.8" stroke-linecap="round"/></svg><svg id="hand" viewBox="0 0 24 24" width="104" height="104"><path fill="#fff" stroke="rgba(0,0,0,.35)" stroke-width="0.6" d="M10 7.5c0-.83.67-1.5 1.5-1.5S13 6.67 13 7.5v6h.76c.19 0 .37.04.54.11l4.54 2.26c.53.22.91.76.91 1.38 0 .06-.01.13-.02.2l-.75 5.27c-.11.73-.69 1.28-1.44 1.28h-6.79c-.41 0-.79-.17-1.06-.44L4.75 18.62l.79-.8c.2-.2.48-.33.79-.33.09 0 .16.02.24.03l3.43.72z"/></svg></span>'
 G=[ # start,end,line1,line2,big
- (0.10,1.42,"Earbuds ni tahan","100 JAM?!",True),
- (1.55,2.92,"8 jam sekali cas,","100 jam + casing",False),
- (3.05,4.18,"Call selalu bising?","",False),
- (4.25,5.42,"Quad-Mic ENC","suara jelas, bising hilang",False),
- (5.55,6.95,"Bluetooth 5.4","pair laju & stabil",False),
- (7.05,8.42,"Gaming mode","main game tak lag",False),
- (8.55,9.95,"Ringan 3.0g sebelah","selesa pakai lama",False),
- (10.05,11.42,"IPX5","kalis peluh & hujan",False),
- (11.55,12.92,"Dalam kotak siap","ear tips spare",False),
- (13.05,14.42,"+ kabel cas","boleh wireless charging",False),
- (14.55,15.95,"[STAR] 4.6 rating","12.7K terjual",False),
- (16.05,18.0,"[TAP]","ada 5 warna tau!",False),
+ (0.10,1.42,"POV: earbuds tahan","100 JAM?!",True),
+ (1.55,2.92,"8 jam per charge,","+ case = 100 jam, legit",False),
+ (3.05,4.18,"Call asyik noisy?","",False),
+ (4.25,5.42,"Quad-Mic ENC","voice clear, bising gone",False),
+ (5.55,6.95,"Bluetooth 5.4","connect laju, no drama",False),
+ (7.05,8.42,"Gaming mode ON","zero lag, sumpah",False),
+ (8.55,9.95,"Ringan gila, 3.0g","comfy pakai lama",False),
+ (10.05,11.42,"IPX5","peluh & hujan? no hal",False),
+ (11.55,12.92,"In the box ada","spare ear tips",False),
+ (13.05,14.42,"+ cable cas","wireless charging? boleh!",False),
+ (14.55,15.95,"[STAR] 4.6 rating","12.7K sold, legit",False),
+ (16.05,18.0,"[TAP]","5 colours, pilih vibe kau",False),
 ]
 CUTS=[0,1.5,3.0,5.5,8.5,11.5,13.0,14.5,18.0]
 PUNCH=[0.60,4.25,16.05]
