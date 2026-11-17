@@ -9,7 +9,7 @@ Template HyperFrames 9:16 (1080x1920). Warna footage asal tak diubah.
   - Guna untuk hook (0–7s) dan penekanan: *Sangat Cantik*, *Chiffon*, *Soft Brocade*, *Bawah RM100*, *Cepat-Cepat grab!*
 - **Perkataan putih kecil condong** di sisi (46px) — pop `scale .55→1` + bunyi **pop**.
 - **Kapsyen putih kecil** frasa demi frasa, diletak **ATAS** (`top:205px`) supaya tak tutup baju.
-- **Kamera**: potongan zoom serta-merta (1.0 ↔ 1.1–1.15) + **transisi blur** (blur 16px→0, zoom 1.12→1) + **whoosh** pada tukar bahagian.
+- **Kamera**: statik — tiada zoom / blur / potongan laju (atas permintaan).
 - **Muzik latar** lofi lembut (Rhodes + bass + hat, 78 BPM) volume 0.14, berhenti bila cakap habis.
 - **Penutup**: video gelap 70%, senyap sekejap → **boom** dalam, tajuk "cepat grab!" berkelip putih/kuning + "sebelum sold out".
 - Tiada ikon IG / nama brand (atas permintaan).

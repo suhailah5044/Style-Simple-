@@ -73,9 +73,8 @@ P=[
 starts=sorted([p[0] for p in P]+[g["s"] for g in G])
 
 # ---------- KAMERA: potongan zoom (skala serta-merta) + transisi blur ----------
-CUT=[(0,1.0),(2.98,1.1),(5.42,1.0),(9.6,1.15),(13.22,1.0),(16.9,1.15),(19.98,1.0),(22.36,1.15),
-     (28.9,1.15),(31.66,1.0),(34.94,1.12),(37.62,1.0),(40.9,1.15),(46.3,1.15),(50.0,1.0),(55.26,1.12),(57.84,1.0)]
-BLUR=[(7.02,1.0),(25.54,1.0),(43.6,1.0),(53.44,1.0)]
+CUT=[]   # tiada potongan zoom (permintaan)
+BLUR=[]  # tiada transisi blur (permintaan)
 
 LETTER_GAP=0.045
 html_items=[];js=[];au=[]
