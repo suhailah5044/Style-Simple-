@@ -68,6 +68,32 @@ P=[
  [50.0,"tinggi kakak"],[50.6,"165"],[51.74,"cantik"],[52.88,"ngam-ngam je"],
  [55.26,"korang akan dapat"],[56.16,"kurung yang cantik"],[56.92,"macam ni"],
 ]
+# ---------- VARIAN HOOK (HOOK=A|B python3 build.py) ----------
+# A/B: "cold open" — klip paling kuat diletak DEPAN, kemudian video penuh dari mula.
+import os
+V=os.environ.get("HOOK","v2")
+OFF=0.0; COLDV=""
+if V in ("A","B"):
+    G=G[4:]   # buang hook v2; bahagian awal guna kapsyen biasa
+    P=[[0.0,"jangan jadi macam"],[0.68,"tahun lepas ya"],[1.48,"tengah fikir-fikir"],[2.4,"fikir..."],
+       [2.98,"tup-tup"],[3.74,"baju raya kita"],[5.42,"punyalah berkenan"]]+P
+    G=[dict(s=4.54,e=5.42,items=[[4.54,"y","Sold Out",540,250,-3,140,36]])]+G
+    if V=="A":   # HARGA: "sangat-sangat murah, bawah RM100 je ... kurung yang cantik macam ni"
+        CS,CD=53.44,4.4
+        CG=[dict(s=0,e=0.92,items=[[0,"w","sangat-sangat",300,190,-14,50,0],[0.52,"y","Murah!",560,300,-6,170,0]]),
+            dict(s=0.92,e=1.82,items=[[0.92,"w","baju raya",240,180,-16,48,0],[1.12,"y","Bawah RM100",540,290,-3,125,40]]),
+            dict(s=1.82,e=4.4,items=[[1.82,"w","tapi dapat kurung",540,150,-3,46,0],[2.72,"y","Secantik",330,280,-10,150,0],[3.3,"y","Ini!",820,370,8,165,0]])]
+    else:        # BADAN KURUS: "cutting dia memang sangat-sangat cantik sebab dia bagi kita efek yang kurus"
+        CS,CD=22.36,3.18
+        CG=[dict(s=0,e=1.42,items=[[0,"w","cutting dia",260,190,-14,50,0],[0.62,"y","Cantik gila!",540,300,-3,130,40]]),
+            dict(s=1.42,e=3.18,items=[[1.42,"w","sebab buat badan",540,150,-3,46,0],[2.12,"y","Nampak",320,285,-10,150,0],[2.78,"y","Kurus!",800,380,6,165,0]])]
+    OFF=CD
+    sh=lambda t: round(t+OFF,2)
+    G=CG+[dict(s=sh(g["s"]),e=sh(g["e"]),items=[[sh(it[0])]+it[1:] for it in g["items"]]) for g in G]
+    P=[[sh(a),b] for a,b in P]
+    COLDV=f'<video id="cold" class="clip" src="assets/footage.mp4" data-start="0" data-duration="{CD}" data-media-start="{CS}" data-has-audio="true" data-volume="1"></video>'
+FEND=round(OFF+FOOT,2)
+DUR=round(FEND+END,2)
 starts=sorted([p[0] for p in P]+[g["s"] for g in G])
 
 # ---------- KAMERA: potongan zoom (skala serta-merta) + transisi blur ----------
@@ -108,7 +134,7 @@ for gi,g in enumerate(G):
     html_items.append(f'<div id="g{gi}" class="clip grp" data-start="{g["s"]}" data-duration="{d}">{"".join(inner)}</div>')
 
 for i,(s,t) in enumerate(P):
-    nxt=min([x for x in starts if x>s+0.001],default=FOOT)
+    nxt=min([x for x in starts if x>s+0.001],default=FEND)
     e=min(nxt,s+2.4); d=round(e-s,2)
     html_items.append(f'<div id="c{i}" class="clip cap" data-start="{s}" data-duration="{d}"><b>{esc(t)}</b></div>')
     js.append(f'tl.fromTo("#c{i} b",{{opacity:0,scale:.86,y:6}},{{opacity:1,scale:1,y:0,duration:.16,ease:"back.out(2)"}},{s});')
@@ -119,11 +145,11 @@ for t0,sc in BLUR:
     audio("whoosh",t0-0.2,0.35,0.6)
 
 # penutup gelap
-audio("boom",FOOT+0.3,0.85,END-0.3)
-js.append(f'tl.fromTo("#endY b",{{opacity:0,scale:.4}},{{opacity:1,scale:1,duration:.35,ease:"back.out(2.4)",stagger:.03}},{FOOT+0.3:.2f});')
-js.append(f'tl.fromTo("#endW",{{opacity:0,y:14}},{{opacity:1,y:0,duration:.3,ease:"expo.out"}},{FOOT+0.55:.2f});')
+audio("boom",FEND+0.3,0.85,END-0.3)
+js.append(f'tl.fromTo("#endY b",{{opacity:0,scale:.4}},{{opacity:1,scale:1,duration:.35,ease:"back.out(2.4)",stagger:.03}},{FEND+0.3:.2f});')
+js.append(f'tl.fromTo("#endW",{{opacity:0,y:14}},{{opacity:1,y:0,duration:.3,ease:"expo.out"}},{FEND+0.55:.2f});')
 for k,c in enumerate(["#fff","#F5DE6E","#fff","#F5DE6E"]):
-    js.append(f'tl.set("#endY",{{color:"{c}"}},{FOOT+0.3+0.35*k:.2f});')
+    js.append(f'tl.set("#endY",{{color:"{c}"}},{FEND+0.3+0.35*k:.2f});')
 
 endY="".join(f'<b>{"&nbsp;" if ch==" " else ch}</b>' for ch in "cepat grab!")
 html=f'''<!doctype html>
@@ -157,13 +183,14 @@ b{{font-weight:400;display:inline-block;}}
 <feComposite in="d" in2="d" operator="over"/></filter></svg>
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
   <div id="cam">
-    <video id="footage" src="assets/footage.mp4" data-start="0" data-duration="{FOOT}" data-has-audio="true" data-volume="1"></video>
-    <video id="endv" class="clip" src="assets/footage.mp4" data-start="{FOOT}" data-duration="{END}" data-media-start="51.0" data-has-audio="true" data-volume="0"></video>
+    {COLDV}
+    <video id="footage" class="clip" src="assets/footage.mp4" data-start="{OFF}" data-duration="{FOOT}" data-has-audio="true" data-volume="1"></video>
+    <video id="endv" class="clip" src="assets/footage.mp4" data-start="{FEND}" data-duration="{END}" data-media-start="51.0" data-has-audio="true" data-volume="0"></video>
   </div>
 {chr(10).join("  "+x for x in html_items)}
-  <div id="dark" class="clip" data-start="{FOOT}" data-duration="{END}"></div>
-  <div id="endbox" class="clip" data-start="{FOOT}" data-duration="{END}"><div id="endY">{endY}</div><div id="endW">sebelum sold out</div></div>
-  <audio id="music" src="sfx/music.wav" data-start="0" data-duration="{FOOT}" data-volume="0.14"></audio>
+  <div id="dark" class="clip" data-start="{FEND}" data-duration="{END}"></div>
+  <div id="endbox" class="clip" data-start="{FEND}" data-duration="{END}"><div id="endY">{endY}</div><div id="endW">sebelum sold out</div></div>
+  <audio id="music" src="sfx/music.wav" data-start="0" data-duration="{FEND}" data-volume="0.14"></audio>
 {chr(10).join("  "+x for x in au)}
 </div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -175,4 +202,5 @@ window.__timelines=window.__timelines||{{}};window.__timelines["root"]=tl;
 </script>
 </body></html>'''
 open("index.html","w").write(html)
+open(f"index_{V}.html","w").write(html)
 print("ok",DUR,len(au),"audio")

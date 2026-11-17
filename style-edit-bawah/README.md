@@ -23,3 +23,9 @@ Template HyperFrames 9:16 (1080x1920). Warna footage asal tak diubah.
 4. `npx hyperframes snapshot . --at 1,7.1,30` untuk semak → `npx hyperframes render . -q delivery --video-frame-format png -o FINAL.mp4`.
 
 Lesen font: Gochi Hand — SIL OFL (Google Fonts). SFX & muzik dijana sendiri (`sfx3.py`), bebas guna.
+
+## Varian hook "cold open" (momen paling kuat di depan)
+`HOOK=A python3 build.py` / `HOOK=B python3 build.py` (tanpa `HOOK` = v2). Salinan disimpan `index_A.html`, `index_B.html`.
+- **A — Harga**: klip 53.44–57.84s diletak depan ("sangat-sangat murah, bawah RM100 je… kurung yang cantik macam ni") → *Murah!* · *Bawah RM100* · *Secantik Ini!* → video penuh dari 0s.
+- **B — Badan kurus**: klip 22.36–25.54s di depan ("cutting dia memang sangat-sangat cantik sebab dia bagi kita efek yang kurus") → *Cantik gila!* · *Nampak Kurus!* → video penuh.
+- Dalam A/B, 0–7s video asal guna kapsyen biasa + tajuk kuning *Sold Out*.
