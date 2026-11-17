@@ -1,18 +1,25 @@
-# Style Bawah — Kapsyen Tulisan Tangan (Baju Kurung)
+# Style Bawah v2 — Tiru Penuh Gaya Rujukan (Baju Kurung)
 
-Template HyperFrames 9:16 (1080x1920). Footage asal tak diubah warna, tiada filter, tiada zoom, tiada SFX — gaya minimal ikut rujukan.
+Template HyperFrames 9:16 (1080x1920). Warna footage asal tak diubah.
 
 ## Gaya
-- **Kapsyen bawah-tengah**: font *Gochi Hand* 50px, putih, huruf kecil, `letter-spacing:.06em` (rupa tulisan tangan jarang macam rujukan).
-- Garis luar hitam nipis (`-webkit-text-stroke 1.5px`) + bayang lembut supaya jelas atas corak bunga.
-- Letak `top:1330px` (~70% tinggi), tengah, kiri/kanan 90px.
-- **Frasa demi frasa** 2–4 perkataan ikut timing suara (whisper medium, `words_m.json`).
-- Masuk: pop kecil `scale .86→1`, `back.out(2)`, 0.16s. Keluar: potong terus bila frasa seterusnya masuk (maks 2.4s atas skrin).
+- **Tajuk kuning besar** (`#F5DE6E`, *Gochi Hand* 110–175px, tekstur kasar guna SVG `feTurbulence`):
+  - Muncul **huruf demi huruf** (`stagger .045s`, `scale .3→1`, `back.out(2.2)`), ada yang **melengkung** (`arc`) atau **condong** (`rotate`).
+  - Diletak keliling kepala / ruang kosong atas. Bunyi **scribble** (pen menulis) setiap kali keluar.
+  - Guna untuk hook (0–7s) dan penekanan: *Sangat Cantik*, *Chiffon*, *Soft Brocade*, *Bawah RM100*, *Cepat-Cepat grab!*
+- **Perkataan putih kecil condong** di sisi (46px) — pop `scale .55→1` + bunyi **pop**.
+- **Kapsyen putih kecil** frasa demi frasa, diletak **ATAS** (`top:205px`) supaya tak tutup baju.
+- **Kamera**: potongan zoom serta-merta (1.0 ↔ 1.1–1.15) + **transisi blur** (blur 16px→0, zoom 1.12→1) + **whoosh** pada tukar bahagian.
+- **Muzik latar** lofi lembut (Rhodes + bass + hat, 78 BPM) volume 0.14, berhenti bila cakap habis.
+- **Penutup**: video gelap 70%, senyap sekejap → **boom** dalam, tajuk "cepat grab!" berkelip putih/kuning + "sebelum sold out".
+- Tiada ikon IG / nama brand (atas permintaan).
+
+> Huruf besar "G" dalam Gochi Hand nampak macam "6" — guna "g" kecil.
 
 ## Cara guna
-1. `ffmpeg -i in.mov -vn -ac 1 -ar 16000 audio.wav` → `python3 tr.py` (tukar model ke `medium` untuk ketepatan lebih baik).
-2. Edit senarai `P` dalam `build.py`: `[mula, "teks"]`. Betulkan ejaan whisper secara manual.
-3. Letak footage di `assets/footage.mp4`, set `DUR` → `python3 build.py`.
-4. `npx hyperframes snapshot . --at 1,10,30` untuk semak → `npx hyperframes render . -q delivery --video-frame-format png -o FINAL.mp4`.
+1. Audio → `python3 tr.py` (model `medium`) → `words_m.json`.
+2. Edit dalam `build.py`: `G` (kumpulan tajuk: `[masa, "y"|"w", teks, x, y, rotate, saiz, arc]`), `P` (kapsyen), `CUT`, `BLUR`.
+3. `python3 sfx3.py` (jana SFX + muzik) → `python3 build.py`.
+4. `npx hyperframes snapshot . --at 1,7.1,30` untuk semak → `npx hyperframes render . -q delivery --video-frame-format png -o FINAL.mp4`.
 
-Lesen font: Gochi Hand — SIL OFL (Google Fonts).
+Lesen font: Gochi Hand — SIL OFL (Google Fonts). SFX & muzik dijana sendiri (`sfx3.py`), bebas guna.
