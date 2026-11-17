@@ -1,6 +1,6 @@
 # Video ke-2: TWS Earbuds (gaya Style 1 + Style 2)
 
-**Fail:** `TWS_earbuds_video2_9x16.mp4`: 1080x1920, 30fps, 24 saat, H.264/AAC, -14 LUFS
+**Fail:** `TWS_earbuds_video2_9x16.mp4`: 1080x1920, 30fps, 21 saat, H.264/AAC, -14 LUFS
 **Cover:** `cover_video2_9x16.png` (frame tajuk "tws *earbuds*" + casing terbuka)
 
 ## Font (versi kemas Gen Z aesthetic)
@@ -24,7 +24,7 @@ Muzik asal Style 2 tak boleh disalin (hak cipta). Aku buat track baru dengan vib
 - IMG_2629: casing tertutup
 - IMG_2625: kotak depan
 - IMG_2639: belakang kotak (spec + 5 warna)
-- Gambar `Picture/` (screenshot TikTok Shop) dicrop ketat pada produk je. Semua harga, "-62%", "Flash Sale", badge dan tulisan seller dibuang. Yang digunakan: IMG_2911, 2909, 2914, 2912, 2907. Tak digunakan: 2908 (model orang), 2910, 2913, 2915 (tulisan seller terlalu banyak)
+- Gambar `Picture/`: **Semua gambar dah dibuang** atas permintaan, video guna footage je.
 - Dari folder Raw Earbud: IMG_2628 (manual), 2637 (ear tips), 2638 (kabel), 2632 (casing hero)
 - Tak digunakan: IMG_2627 dan 2635 (kotak depan, sama macam 2625)
 
@@ -39,8 +39,7 @@ Muzik asal Style 2 tak boleh disalin (hak cipta). Aku buat track baru dengan vib
 | 7.2–10.8 | Caption karaoke merentas 3 klip | dalam box siap manual, / spare ear tips, cable semua ada | IMG_2628 → 2637 → 2638 |
 | 10.8–15.0 | Hero casing, bullet keluar satu-satu + ting | ♡ battery tahan *100 jam* / ♡ quad-mic enc, call *clear* / ♡ bluetooth 5.4, *laju & stable* | IMG_2632 (slow-mo halus) |
 | 15.0–17.4 | Kanta pembesar pop-in + swell | *ringan gila, 3.0g je ›* | IMG_2631 + zoom |
-| 17.4–20.4 | Montaj gambar produk, 0.6s setiap satu ikut beat (tiada teks sebab gambar penuh produk) | – | IMG_2911, 2909, 2914, 2912, 2907 |
-| 20.4–24.0 | CTA: beg kuning + tangan tekan 3x (pop) | you all kena grab ni! | IMG_2630 |
+| 17.4–21.0 | CTA: beg kuning + tangan tekan 3x (pop) | you all kena grab ni! | IMG_2630 |
 
 Semua teks putih, duduk kat ruang kosong atas (y ≈ 13–35%). Tak tutup produk/tangan, tak masuk tepi kanan, tak masuk 20% bawah. Tiada harga di mana-mana.
 

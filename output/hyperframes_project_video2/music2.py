@@ -1,5 +1,5 @@
 import numpy as np, wave, sys, json
-SR=48000; BPM=100; B=60/BPM; DUR=24.0
+SR=48000; BPM=100; B=60/BPM; DUR=21.0
 N=int(SR*(DUR+3)); rng=np.random.default_rng(11)
 L=np.zeros(N); R=np.zeros(N)
 def T(d): return np.arange(int(SR*d))/SR
