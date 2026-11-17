@@ -53,9 +53,9 @@ G=[
 # ---------- KAPSYEN PUTIH (atas, frasa demi frasa) ----------
 P=[
  [7.02,"tak ada rezeki"],[7.56,"nak grab tahun ni"],[8.32,"kakak grab"],[8.66,"awal-awal"],
- [9.6,"yang ini kakak grab"],[10.82,"daripada Sunzet Clozette"],[12.48,"korang tengok sendiri"],
+ [9.6,"yang ini kakak grab"],[12.48,"korang tengok sendiri"],
  [14.84,"memang love"],[15.44,"sangat-sangat"],
- [16.04,"baju kurung"],[16.9,"daripada Sunzet Clozette"],[18.24,"dia punya koleksi"],
+ [16.04,"baju kurung"],[18.24,"dia punya koleksi"],
  [19.0,"semuanya cantik tau"],[19.98,"baju kurung"],[20.36,"yang kakak pakai ni"],
  [21.18,"cutting real"],[21.72,"korang tengok sendiri"],[22.36,"cutting dia"],
  [22.78,"memang sangat-sangat cantik"],[23.78,"sebab dia bagi kita"],[24.48,"efek yang kurus"],
