@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
     <style>
-      @font-face { font-family: "VibesX"; src: url("assets/script.woff2") format("woff2"); }
-      @font-face { font-family: "CormorantX"; src: url("assets/serif500.woff2") format("woff2"); font-weight: 500; }
-      @font-face { font-family: "CormorantX"; src: url("assets/serif600i.woff2") format("woff2"); font-weight: 600; font-style: italic; }
-      @font-face { font-family: "MontX"; src: url("assets/mont800i.woff2") format("woff2"); font-weight: 800; font-style: italic; }
-      @font-face { font-family: "MontX"; src: url("assets/mont600.woff2") format("woff2"); font-weight: 600; font-style: normal; }
+      @font-face { font-family: "InstrX"; src: url("assets/instr400i.woff2") format("woff2"); font-weight: 400; font-style: italic; }
+      @font-face { font-family: "InstrX"; src: url("assets/instr400.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+      @font-face { font-family: "DMX"; src: url("assets/dm500.woff2") format("woff2"); font-weight: 500; }
+      @font-face { font-family: "DMX"; src: url("assets/dm700.woff2") format("woff2"); font-weight: 700; }
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
-      body { font-family: "MontX", sans-serif; color: #fff; }
+      body { font-family: "DMX", sans-serif; color: #fff; }
+      .em { font-family: "InstrX"; font-style: italic; font-weight: 400; font-size: 1.2em; letter-spacing: 0; }
       #cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
       #base { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
       #topshade { position: absolute; left: 0; right: 0; top: 0; height: 900px; pointer-events: none;
@@ -21,24 +21,28 @@
 
       /* Style 2: script title */
       #title { position: absolute; left: 0; right: 0; top: 270px; text-align: center; }
-      #title .logo { font-family: "VibesX"; font-size: 150px; line-height: 1; }
-      #title .sub { font-family: "MontX"; font-weight: 600; font-size: 34px; letter-spacing: 1px; margin-top: 4px; }
+      #title .logo { font-size: 116px; line-height: 1; letter-spacing: -3px; }
+      #title .logo .sans { font-family: "DMX"; font-weight: 700; }
+      #title .logo .em { font-size: 1.12em; letter-spacing: -1px; }
+      #title .sub { font-family: "DMX"; font-weight: 500; font-size: 27px; letter-spacing: 5px; margin-top: 14px; opacity: .92; }
 
       /* Style 1: karaoke captions */
       .cap { position: absolute; left: 90px; right: 90px; top: 300px; text-align: center;
-        font-family: "MontX"; font-weight: 800; font-style: italic; font-size: 52px; line-height: 1.22; }
+        font-family: "DMX"; font-weight: 700; font-size: 50px; line-height: 1.25; letter-spacing: -1px; }
       .cap .w { display: inline-block; opacity: 0; }
 
       /* Style 2: heart bullets */
-      #bul { position: absolute; left: 0; right: 0; top: 270px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-      #bul .b { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; font-family: "CormorantX"; font-weight: 500; font-size: 48px; opacity: 0; display: flex; align-items: center; gap: 14px; }
-      #bul svg { width: 34px; height: 34px; }
+      #bul { position: absolute; left: 0; right: 0; top: 260px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+      #bul .b { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; font-family: "DMX"; font-weight: 500; font-size: 39px; letter-spacing: -0.3px; opacity: 0; display: flex; align-items: center; gap: 12px;
+        padding: 12px 30px 13px 24px; border-radius: 999px; background: rgba(255,255,255,.16); border: 1.5px solid rgba(255,255,255,.45);
+        backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 8px 26px rgba(0,0,0,.18); }
+      #bul svg { width: 28px; height: 28px; }
 
       /* Style 2: magnifier */
       #lens { position: absolute; left: 230px; top: 760px; width: 620px; height: 620px; border-radius: 50%; overflow: hidden;
         border: 5px solid rgba(255,255,255,.9); box-shadow: 0 18px 50px rgba(0,0,0,.45); transform-origin: 50% 50%; opacity: 0; }
       #lensvid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-      #lenslabel { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; position: absolute; left: 0; right: 0; top: 640px; text-align: center; font-family: "CormorantX"; font-weight: 600; font-style: italic; font-size: 54px; }
+      #lenslabel { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; position: absolute; left: 0; right: 0; top: 640px; text-align: center; font-family: "DMX"; font-weight: 500; font-size: 48px; letter-spacing: -0.5px; }
 
       /* CTA */
       #cta { position: absolute; left: 0; right: 0; top: 250px; text-align: center; }
@@ -58,21 +62,21 @@
       <audio id="music" class="clip" src="assets/music.wav" data-start="0" data-duration="24" data-track-index="1"></audio>
 
       <div id="title" class="clip sh" data-start="0" data-duration="4.75" data-track-index="2">
-        <div class="logo">TWS Earbuds</div>
-        <div class="sub">true wireless · quad-mic ENC</div>
+        <div class="logo"><span class="sans">tws</span> <span class="em">earbuds</span></div>
+        <div class="sub">true wireless · quad-mic enc</div>
       </div>
 
-      <div id="c1" class="cap sh clip" data-start="4.8" data-duration="1.15" data-track-index="3">you all, ni tahan 100 jam tau</div>
-      <div id="c2" class="cap sh clip" data-start="6.0" data-duration="1.15" data-track-index="3">ada 5 colours, pilih je</div>
-      <div id="c3" class="cap sh clip" data-start="7.2" data-duration="3.55" data-track-index="3">dalam box siap manual,<br>spare ear tips, cable semua ada</div>
+      <div id="c1" class="cap sh clip" data-start="4.8" data-duration="1.15" data-track-index="3">you all, ni tahan *100 jam* tau</div>
+      <div id="c2" class="cap sh clip" data-start="6.0" data-duration="1.15" data-track-index="3">ada *5 colours,* pilih je</div>
+      <div id="c3" class="cap sh clip" data-start="7.2" data-duration="3.55" data-track-index="3">dalam box siap *manual,*<br>spare ear tips, cable *semua ada*</div>
 
       <div id="bul" class="clip sh" data-start="10.8" data-duration="4.15" data-track-index="4">
-        <div class="b"><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.4 2.5h1.8c.8-1.3 2.3-2.5 4.4-2.5 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg>Battery tahan 100 jam</div>
-        <div class="b"><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.4 2.5h1.8c.8-1.3 2.3-2.5 4.4-2.5 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg>Quad-mic ENC, call clear</div>
-        <div class="b"><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.4 2.5h1.8c.8-1.3 2.3-2.5 4.4-2.5 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg>Bluetooth 5.4, laju &amp; stable</div>
+        <div class="b"><svg viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-width="2" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.4 2.5h1.8c.8-1.3 2.3-2.5 4.4-2.5 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg>battery tahan <span class="em">100 jam</span></div>
+        <div class="b"><svg viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-width="2" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.4 2.5h1.8c.8-1.3 2.3-2.5 4.4-2.5 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg>quad-mic enc, call <span class="em">clear</span></div>
+        <div class="b"><svg viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-width="2" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.4 2.5h1.8c.8-1.3 2.3-2.5 4.4-2.5 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg>bluetooth 5.4, <span class="em">laju &amp; stable</span></div>
       </div>
 
-      <div id="lenslabel" class="clip sh" data-start="15.0" data-duration="2.35" data-track-index="5">ringan gila, 3.0g je ›</div>
+      <div id="lenslabel" class="clip sh" data-start="15.0" data-duration="2.35" data-track-index="5">ringan gila, <span class="em">3.0g</span> je ›</div>
       <div id="lens">
         <video id="lensvid" class="clip" src="assets/zoom.mp4" playsinline muted data-start="15.0" data-duration="2.35" data-track-index="7"></video>
       </div>
@@ -82,7 +86,7 @@
           <svg id="bagbig" viewBox="0 0 24 24" width="128" height="128"><path fill="#FFC21A" d="M5 7.5h14l-1.1 12.2a2 2 0 0 1-2 1.8H8.1a2 2 0 0 1-2-1.8z"/><path d="M8.6 9.5V7a3.4 3.4 0 0 1 6.8 0v2.5" fill="none" stroke="#FFC21A" stroke-width="1.8" stroke-linecap="round"/></svg>
           <svg id="hand" viewBox="0 0 24 24" width="104" height="104"><path fill="#fff" stroke="rgba(0,0,0,.35)" stroke-width="0.6" d="M10 7.5c0-.83.67-1.5 1.5-1.5S13 6.67 13 7.5v6h.76c.19 0 .37.04.54.11l4.54 2.26c.53.22.91.76.91 1.38 0 .06-.01.13-.02.2l-.75 5.27c-.11.73-.69 1.28-1.44 1.28h-6.79c-.41 0-.79-.17-1.06-.44L4.75 18.62l.79-.8c.2-.2.48-.33.79-.33.09 0 .16.02.24.03l3.43.72z"/></svg>
         </span>
-        <div id="c4" class="cap sh">you all kena grab ni!</div>
+        <div id="c4" class="cap sh">you all kena *grab* ni!</div>
       </div>
     </div>
     <script>
@@ -90,9 +94,9 @@
       const tl = gsap.timeline({ paused: true });
       // split captions into words (deterministic, runs once at load)
       function split(id) {
-        const el = document.getElementById(id);
+        const el = document.getElementById(id); let emOn = false;
         el.innerHTML = el.innerHTML.split(/(<br>)/).map(part => part === "<br>" ? part :
-          part.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(" ")).join("");
+          part.trim().split(/\s+/).map(w => { const st = w.startsWith('*'); if (st) emOn = true; const cls = emOn ? 'w em' : 'w'; if (w.endsWith('*')) emOn = false; return `<span class="${cls}">${w.replace(/\*/g,'')}</span>`; }).join(" ")).join("");
         return Array.from(el.querySelectorAll(".w"));
       }
       // Style 1 karaoke: newest word comes in dim, turns full white when the next word lands

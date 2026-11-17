@@ -1,7 +1,13 @@
 # Video ke-2: TWS Earbuds (gaya Style 1 + Style 2)
 
 **Fail:** `TWS_earbuds_video2_9x16.mp4`: 1080x1920, 30fps, 24 saat, H.264/AAC, -14 LUFS
-**Cover:** `cover_video2_9x16.png` (frame tajuk "TWS Earbuds" + casing terbuka)
+**Cover:** `cover_video2_9x16.png` (frame tajuk "tws *earbuds*" + casing terbuka)
+
+## Font (versi kemas Gen Z aesthetic)
+- **DM Sans** (huruf kecil, bold/medium): ayat utama, subtajuk (jarak huruf lebar)
+- **Instrument Serif italic**: perkataan penting dalam setiap ayat (contoh: *100 jam*, *grab*, *clear*), tajuk "*earbuds*"
+- Bullet jadi pill kaca lembut (frosted glass) dengan ♡ outline
+- Semua teks masih putih, karaoke perkataan demi perkataan kekal
 
 ## Apa yang aku tiru dari rujukan
 | Rujukan | Diambil |
@@ -25,13 +31,13 @@ Muzik asal Style 2 tak boleh disalin (hak cipta). Aku buat track baru dengan vib
 ## Timestamp
 | Masa | Apa jadi | Teks | Klip |
 |---|---|---|---|
-| 0.0–2.4 | Intro, chime sparkle, tajuk blur-in | *TWS Earbuds* / true wireless · quad-mic ENC | IMG_2631 |
+| 0.0–2.4 | Intro, chime sparkle, tajuk blur-in | tws *earbuds* / true wireless · quad-mic enc | IMG_2631 |
 | 2.4–3.6 | Klik casing | (tajuk) | IMG_2630 |
 | 3.6–4.8 | | (tajuk) | IMG_2629 |
 | 4.8–6.0 | Caption karaoke | you all, ni tahan 100 jam tau | IMG_2625 |
 | 6.0–7.2 | Caption karaoke | ada 5 colours, pilih je | IMG_2639 |
 | 7.2–10.8 | Caption karaoke merentas 3 klip | dalam box siap manual, / spare ear tips, cable semua ada | IMG_2628 → 2637 → 2638 |
-| 10.8–15.0 | Hero casing, bullet keluar satu-satu + ting | ❤ Battery tahan 100 jam / ❤ Quad-mic ENC, call clear / ❤ Bluetooth 5.4, laju & stable | IMG_2632 (slow-mo halus) |
+| 10.8–15.0 | Hero casing, bullet keluar satu-satu + ting | ♡ battery tahan *100 jam* / ♡ quad-mic enc, call *clear* / ♡ bluetooth 5.4, *laju & stable* | IMG_2632 (slow-mo halus) |
 | 15.0–17.4 | Kanta pembesar pop-in + swell | *ringan gila, 3.0g je ›* | IMG_2631 + zoom |
 | 17.4–20.4 | Montaj gambar produk, 0.6s setiap satu ikut beat (tiada teks sebab gambar penuh produk) | – | IMG_2911, 2909, 2914, 2912, 2907 |
 | 20.4–24.0 | CTA: beg kuning + tangan tekan 3x (pop) | you all kena grab ni! | IMG_2630 |
