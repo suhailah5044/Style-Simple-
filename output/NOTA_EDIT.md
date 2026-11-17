@@ -1,8 +1,8 @@
 # TWS Earbuds (Quad-Mic ENC): nota edit TikTok
 
 **Fail:** `TWS_earbuds_tiktok_9x16.mp4`: 1080x1920, 30fps, H.264/AAC, 18 saat, audio -14 LUFS
-**Cover:** `cover_9x16.png` (headline: POV: earbuds tahan / 100 JAM?!)
-**Gaya teks:** Gen Z rojak (English + Malay), tiada voice, cuma visual + muzik + SFX
+**Cover:** `cover_9x16.png` (headline: You all, earbuds ni / tahan 100 JAM?!)
+**Gaya teks:** Gen Z rojak, macam bercakap dengan penonton ("you all"), tiada voice, cuma visual + muzik + SFX
 
 ## Senarai fail dalam folder Drive (7 fail, tiada subfolder)
 
@@ -24,25 +24,25 @@
 
 | Masa | Apa jadi | Teks atas skrin | Klip |
 |---|---|---|---|
-| 0.0–1.5 | HOOK, slow-mo 0.6x, punch-in pada "100 JAM", ding | POV: earbuds tahan / **100 JAM?!** | IMG_2626 (kotak "100 Hours") |
-| 1.5–3.0 | Cut + whoosh + flash, casing terbuka | 8 jam per charge, / + case = 100 jam, legit | IMG_2632 (0–1.5s) |
-| 3.0–4.2 | Masalah | Call asyik noisy? | IMG_2628 (manual Quad Mic ENC) |
-| 4.2–5.5 | Solusi, punch-in | Quad-Mic ENC / voice clear, bising gone | IMG_2628 |
-| 5.5–7.0 | Feature | Bluetooth 5.4 / connect laju, no drama | IMG_2634 (ikon BT 5.4) |
-| 7.0–8.5 | Feature | Gaming mode ON / zero lag, sumpah | IMG_2634 |
-| 8.5–10.0 | Feature | Ringan gila, 3.0g / comfy pakai lama | IMG_2636 (ikon Lightweight) |
-| 10.0–11.5 | Feature (hujan kat cermin kereta) | IPX5 / peluh & hujan? no hal | IMG_2636 |
-| 11.5–13.0 | Dalam kotak | In the box ada / spare ear tips | IMG_2637 |
-| 13.0–14.5 | Dalam kotak | + cable cas / wireless charging? boleh! | IMG_2638 |
-| 14.5–16.0 | Bukti, ding | ★ 4.6 rating / 12.7K sold, legit | IMG_2632 (1.2–3.7s, slow-mo halus) |
-| 16.0–18.0 | CTA tanpa tulisan: ikon beg kuning + tangan tekan 3x (pop + ripple), punch-in | (ikon beg kuning + tangan) / 5 colours, pilih vibe kau | IMG_2632 |
+| 0.0–1.5 | HOOK, slow-mo 0.6x, punch-in pada "100 JAM", ding | You all, earbuds ni / **tahan 100 JAM?!** | IMG_2626 (kotak "100 Hours") |
+| 1.5–3.0 | Cut + whoosh + flash, casing terbuka | Sekali charge 8 jam, / dengan case, terus 100 jam! | IMG_2632 (0–1.5s) |
+| 3.0–4.2 | Masalah | Pernah tak call, / tapi bising gila? | IMG_2628 (manual Quad Mic ENC) |
+| 4.2–5.5 | Solusi, punch-in | Ni ada 4 mic ENC, / suara you clear je | IMG_2628 |
+| 5.5–7.0 | Feature | BT 5.4, connect laju / takde putus-putus | IMG_2634 (ikon BT 5.4) |
+| 7.0–8.5 | Feature | Main game pun / tak lag langsung | IMG_2634 |
+| 8.5–10.0 | Feature | Ringan gila you all, / pakai lama pun comfy | IMG_2636 (ikon Lightweight) |
+| 10.0–11.5 | Feature (hujan kat cermin kereta) | Berpeluh, kena hujan? / relax, IPX5 tau | IMG_2636 |
+| 11.5–13.0 | Dalam kotak | Dalam box siap / spare ear tips | IMG_2637 |
+| 13.0–14.5 | Dalam kotak | Cable pun ada, / wireless charge pun boleh | IMG_2638 |
+| 14.5–16.0 | Bukti, ding | ★ 4.6 rating tau / 12.7K orang dah beli | IMG_2632 (1.2–3.7s, slow-mo halus) |
+| 16.0–18.0 | CTA tanpa tulisan: ikon beg kuning + tangan tekan 3x (pop + ripple), punch-in | (ikon beg kuning + tangan) / You all kena grab ni! | IMG_2632 |
 
 Semua teks duduk kat jalur atas (y ≈ 13–24%), satu-satunya ruang kosong dalam setiap shot. Teks tak tutup produk, tangan atau muka, tak masuk tepi kanan, dan tak masuk 20% bawah.
 
 ## 3 hook alternatif
-1. "3 gram je tapi battery 100 jam?? 💀" (ringan + bateri)
-2. "Stop charge earbuds every day, please." (masalah dulu)
-3. "Call dalam kereta, hujan lebat, still clear?" (ENC, sesuai dengan footage hujan)
+1. "You all, earbuds 3 gram je tapi tahan 100 jam??" (ringan + bateri)
+2. "You all still charge earbuds hari-hari? Stop it." (masalah dulu)
+3. "You all, call dalam kereta masa hujan pun clear tau" (ENC, sesuai dengan footage hujan)
 
 ## Caption TikTok
 > Serius aku dah lupa bila last cas earbuds ni 😭 8 jam sekali cas, campur casing sampai 100 jam. Call pun clear, bising keliling hilang (Quad-Mic ENC). Main game tak lag, kena hujan pun ok sebab IPX5. Ringan gila, pakai lama tak sakit telinga. Ada 5 warna, tekan beg kuning tengok 💛
