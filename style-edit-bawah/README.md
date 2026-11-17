@@ -6,7 +6,7 @@ Template HyperFrames 9:16 (1080x1920). Warna footage asal tak diubah.
 - **Tajuk kuning besar** (`#F5DE6E`, *Gochi Hand* 110–175px, tekstur kasar guna SVG `feTurbulence`):
   - Muncul **huruf demi huruf** (`stagger .045s`, `scale .3→1`, `back.out(2.2)`), ada yang **melengkung** (`arc`) atau **condong** (`rotate`).
   - Diletak keliling kepala / ruang kosong atas. Bunyi **scribble** (pen menulis) setiap kali keluar.
-  - Guna untuk hook (0–7s) dan penekanan: *Sangat Cantik*, *Chiffon*, *Soft Brocade*, *Bawah RM100*, *Cepat-Cepat grab!*
+  - Hook (0–7s) = tajuk jualan baru: *baju raya → Bawah RM100* · *tapi nampak → Mahal, gila!* · *siap buat badan → Nampak Kurus!* · *jangan sampai → Sold Out*. Penekanan lain: *Sangat Cantik*, *Chiffon*, *Soft Brocade*, *Bawah RM100*, *Cepat-Cepat grab!*
 - **Perkataan putih kecil condong** di sisi (46px) — pop `scale .55→1` + bunyi **pop**.
 - **Kapsyen putih kecil** frasa demi frasa, diletak **ATAS** (`top:205px`) supaya tak tutup baju.
 - **Kamera**: statik — tiada zoom / blur / potongan laju (atas permintaan).
