@@ -190,7 +190,6 @@ b{{font-weight:400;display:inline-block;}}
 {chr(10).join("  "+x for x in html_items)}
   <div id="dark" class="clip" data-start="{FEND}" data-duration="{END}"></div>
   <div id="endbox" class="clip" data-start="{FEND}" data-duration="{END}"><div id="endY">{endY}</div><div id="endW">sebelum sold out</div></div>
-  <audio id="music" src="sfx/music.wav" data-start="0" data-duration="{FEND}" data-volume="0.14"></audio>
 {chr(10).join("  "+x for x in au)}
 </div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

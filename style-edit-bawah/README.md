@@ -10,7 +10,7 @@ Template HyperFrames 9:16 (1080x1920). Warna footage asal tak diubah.
 - **Perkataan putih kecil condong** di sisi (46px) — pop `scale .55→1` + bunyi **pop**.
 - **Kapsyen putih kecil** frasa demi frasa, diletak **ATAS** (`top:205px`) supaya tak tutup baju.
 - **Kamera**: statik — tiada zoom / blur / potongan laju (atas permintaan).
-- **Muzik latar** lofi lembut (Rhodes + bass + hat, 78 BPM) volume 0.14, berhenti bila cakap habis.
+- **Muzik latar**: dibuang (atas permintaan). `sfx/music.wav` masih ada jika nak guna semula.
 - **Penutup**: video gelap 70%, senyap sekejap → **boom** dalam, tajuk "cepat grab!" berkelip putih/kuning + "sebelum sold out".
 - Tiada ikon IG / nama brand (atas permintaan).
 
