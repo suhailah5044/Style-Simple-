@@ -1,0 +1,297 @@
+{
+ "hook_top": 170,
+ "hook_score": [
+  0.0,
+  0.0
+ ],
+ "subs": [
+  {
+   "t": 3.0,
+   "text": "Turkish Gummies",
+   "col": "R",
+   "x": 440,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 5.0,
+   "text": "Ramai Kata Sedap!",
+   "col": "L",
+   "x": 80,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 8.1,
+   "text": "Anak Dah Habis Separuh",
+   "col": "R",
+   "x": 440,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 11.5,
+   "text": "Buat Terliur",
+   "col": "L",
+   "x": 80,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 16.1,
+   "text": "Macam-Macam Ada",
+   "col": "R",
+   "x": 440,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 20.1,
+   "text": "Confirm Masam!",
+   "col": "C",
+   "x": 360,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 21.1,
+   "text": "Anak Suka Sangat",
+   "col": "R",
+   "x": 440,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 27.8,
+   "text": "Macam-Macam Bentuk",
+   "col": "C",
+   "x": 360,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 29.3,
+   "text": "Bentuk Mangga",
+   "col": "R",
+   "x": 440,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 31.0,
+   "text": "Bentuk Gigi",
+   "col": "L",
+   "x": 80,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 36.5,
+   "text": "Ada Masam, Ada Manis",
+   "col": "R",
+   "x": 440,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 38.1,
+   "text": "Yang Penting Halal",
+   "col": "C",
+   "x": 360,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 41.9,
+   "text": "Sedap!",
+   "col": "R",
+   "x": 440,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 45.8,
+   "text": "Ramai Cakap Masam",
+   "col": "C",
+   "x": 360,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 48.4,
+   "text": "Memang Masam!",
+   "col": "R",
+   "x": 440,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 50.9,
+   "text": "Buat Ketagih",
+   "col": "C",
+   "x": 360,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 55.0,
+   "text": "Peminat Masam Wajib Try",
+   "col": "L",
+   "x": 160,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 58.1,
+   "text": "Lagi Masam Lagi Sedap",
+   "col": "C",
+   "x": 320,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 59.7,
+   "text": "Tak Cukup Sekali",
+   "col": "L",
+   "x": 160,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 62.3,
+   "text": "Standby Masa Travel",
+   "col": "C",
+   "x": 320,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 66.6,
+   "text": "1KG Puas Makan",
+   "col": "L",
+   "x": 160,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 75.2,
+   "text": "Buat Ketagih!",
+   "col": "R",
+   "x": 440,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 77.1,
+   "text": "Siap Ada Penutup",
+   "col": "C",
+   "x": 280,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 80.2,
+   "text": "Free Pengepit",
+   "col": "R",
+   "x": 440,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 81.9,
+   "text": "Mix Campur",
+   "col": "L",
+   "x": 80,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 83.8,
+   "text": "3 Pilihan",
+   "col": "L",
+   "x": 80,
+   "y": 250,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 86.7,
+   "text": "Terus Beli 1KG",
+   "col": "L",
+   "x": 80,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 88.4,
+   "text": "Lebih Jimat",
+   "col": "L",
+   "x": 80,
+   "y": 250,
+   "head": 0.631,
+   "prod": 0.0
+  },
+  {
+   "t": 89.9,
+   "text": "Boleh Kongsi Ramai",
+   "col": "C",
+   "x": 320,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 92.3,
+   "text": "Ambil Yang Mix",
+   "col": "L",
+   "x": 80,
+   "y": 190,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 96.7,
+   "text": "Banyak Lagi Tau",
+   "col": "C",
+   "x": 320,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  },
+  {
+   "t": 99.0,
+   "text": "Anak-Anak Suka",
+   "col": "R",
+   "x": 470,
+   "y": 170,
+   "head": 0.0,
+   "prod": 0.0
+  }
+ ]
+}

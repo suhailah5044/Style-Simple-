@@ -1,0 +1,6 @@
+assets/footage.mp4
+.hyperframes/
+render.log
+FINAL.mp4
+.*.hf-transaction-*/
+work-*/
