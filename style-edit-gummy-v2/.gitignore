@@ -5,3 +5,4 @@ render.log
 FINAL.mp4
 .*.hf-transaction-*/
 work-*/
+__pycache__/
