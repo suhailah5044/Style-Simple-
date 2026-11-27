@@ -1,0 +1,101 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Noto Color Emoji";src:url("assets/NotoColorEmoji.ttf") format("truetype");}
+@font-face{font-family:"Lexend Mega";src:url("assets/LexendMega.woff2") format("woff2");font-weight:100 900;}
+html,body{margin:0;background:#000;}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;}
+#cam{position:absolute;inset:0;transform-origin:50% 45%;}
+#cam video{width:100%;height:100%;object-fit:cover;display:block;}
+.word{position:absolute;width:440px;z-index:5;}
+.word.L{text-align:left;}
+.word.R{text-align:right;}
+.word .tx{display:inline-block;font-family:"Lexend Mega","Noto Color Emoji",sans-serif;font-weight:600;font-size:30px;line-height:1.3;letter-spacing:-0.03em;color:#fff;
+  text-shadow:0 2px 6px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3);opacity:0;}
+.word .bar{display:block;height:3px;width:56px;background:#fff;border-radius:2px;margin-top:10px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}
+.word.L .bar{transform-origin:0 50%;} .word.R .bar{margin-left:auto;transform-origin:100% 50%;}
+#title{position:absolute;top:340px;right:130px;width:460px;text-align:right;z-index:6;color:#fff;font-family:"Lexend Mega",sans-serif;font-weight:600;font-size:34px;line-height:1.35;letter-spacing:-0.03em;
+  text-shadow:0 2px 6px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3);}
+#title span{display:inline-block;opacity:0;}
+</style></head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="66.4" data-fps="30">
+  <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="66.4" data-has-audio="true" data-volume="1"></video></div>
+  <div id="title" class="clip" data-start="0" data-duration="3.5"><span id="t1">Flower design,</span><br><span id="t2">so classy!</span></div>
+    <div id="w0" class="clip word R" style="top:520px;right:150px;" data-start="4.0" data-duration="3.4"><span class="tx">Pretty Flower<br>Design 🌸</span><i class="bar"></i></div>
+  <div id="w1" class="clip word L" style="top:1600px;left:150px;" data-start="7.5" data-duration="3.5"><span class="tx">Sparkling<br>Crystal Details</span><i class="bar"></i></div>
+  <div id="w2" class="clip word L" style="top:1240px;left:150px;" data-start="11.05" data-duration="3.35"><span class="tx">Premium Gift<br>Box Included</span><i class="bar"></i></div>
+  <div id="w3" class="clip word L" style="top:560px;left:150px;" data-start="17.46" data-duration="2.54"><span class="tx">Elegant<br>Gold Finish</span><i class="bar"></i></div>
+  <div id="w4" class="clip word R" style="top:1500px;right:150px;" data-start="23.2" data-duration="4.4"><span class="tx">Classy &amp;<br>Timeless Look</span><i class="bar"></i></div>
+  <div id="w5" class="clip word R" style="top:1520px;right:150px;" data-start="30.8" data-duration="3.6"><span class="tx">Easy To Match<br>Any Outfit</span><i class="bar"></i></div>
+  <div id="w6" class="clip word L" style="top:1320px;left:150px;" data-start="45.3" data-duration="3.4"><span class="tx">Perfect For<br>Daily Wear</span><i class="bar"></i></div>
+  <div id="w7" class="clip word R" style="top:1380px;right:150px;" data-start="48.82" data-duration="2.08"><span class="tx">Adjustable<br>Length</span><i class="bar"></i></div>
+  <div id="w8" class="clip word R" style="top:1580px;right:150px;" data-start="50.95" data-duration="2.65"><span class="tx">16CM + 5CM<br>Extension</span><i class="bar"></i></div>
+  <div id="w9" class="clip word R" style="top:1450px;right:140px;" data-start="59.66" data-duration="6.64"><span class="tx">Sweet Gift<br>For Her 🎁</span><i class="bar"></i></div>
+  <audio id="a_cork" src="sfx/cork.wav" data-start="0.15" data-duration="1.0" data-volume="0.55"></audio>
+  <audio id="a_t2" src="sfx/glass_ting.wav" data-start="0.6" data-duration="0.9" data-volume="0.3"></audio>
+    <audio id="a0" src="sfx/ui_notif.wav" data-start="3.98" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a1" src="sfx/glass_ting.wav" data-start="7.48" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a2" src="sfx/ui_confirm.wav" data-start="11.03" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a3" src="sfx/riser_shimmer.wav" data-start="17.44" data-duration="1.1" data-volume="0.4"></audio>
+  <audio id="a4" src="sfx/sub_boom.wav" data-start="23.18" data-duration="1.1" data-volume="0.5"></audio>
+  <audio id="a5" src="sfx/ui_blip.wav" data-start="30.78" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a6" src="sfx/ui_tap.wav" data-start="45.28" data-duration="1.1" data-volume="0.45"></audio>
+  <audio id="a7" src="sfx/swoosh.wav" data-start="48.80" data-duration="1.1" data-volume="0.3"></audio>
+  <audio id="a8" src="sfx/coin.wav" data-start="50.93" data-duration="1.1" data-volume="0.35"></audio>
+  <audio id="a9" src="sfx/riser_shimmer.wav" data-start="59.64" data-duration="1.1" data-volume="0.4"></audio>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.set("#cam",{scale:1},0);
+tl.fromTo("#t1",{opacity:0,scale:.6,y:10},{opacity:1,scale:1,y:0,duration:.45,ease:"back.out(2.6)"},0.15);
+tl.fromTo("#t2",{opacity:0,y:16},{opacity:1,y:0,duration:.45,ease:"expo.out"},0.6);
+tl.fromTo("#cam",{scale:1.1},{scale:1.0,duration:1.0,ease:"power3.out"},0.15);
+tl.to("#cam",{scale:1.06,duration:2.2,ease:"sine.inOut"},1.2);
+tl.to("#title span",{opacity:0,y:-10,duration:.25,ease:"power2.in"},3.2);
+tl.to("#cam",{scale:1.0,duration:0.6,ease:"sine.inOut"},3.4);
+tl.fromTo("#w0 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},4.0);
+tl.fromTo("#w0 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},4.08);
+tl.to("#w0 .tx,#w0 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},7.18);
+tl.to("#cam",{scale:1.07,duration:3.4,ease:"sine.inOut"},4.0);
+tl.fromTo("#w1 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},7.5);
+tl.fromTo("#w1 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},7.58);
+tl.to("#w1 .tx,#w1 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},10.78);
+tl.fromTo("#cam",{scale:1.1},{scale:1.02,duration:0.45,ease:"power3.out"},7.5);
+tl.fromTo("#w2 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},11.05);
+tl.fromTo("#w2 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},11.13);
+tl.to("#w2 .tx,#w2 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},14.18);
+tl.to("#cam",{scale:1.0,duration:3.35,ease:"sine.inOut"},11.05);
+tl.fromTo("#w3 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},17.46);
+tl.fromTo("#w3 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},17.54);
+tl.to("#w3 .tx,#w3 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},19.78);
+tl.to("#cam",{scale:1.07,duration:2.54,ease:"sine.inOut"},17.46);
+tl.fromTo("#w4 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},23.2);
+tl.fromTo("#w4 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},23.28);
+tl.to("#w4 .tx,#w4 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},27.38);
+tl.fromTo("#cam",{scale:1.1},{scale:1.02,duration:0.45,ease:"power3.out"},23.2);
+tl.fromTo("#w5 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},30.8);
+tl.fromTo("#w5 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},30.88);
+tl.to("#w5 .tx,#w5 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},34.18);
+tl.to("#cam",{scale:1.0,duration:3.6,ease:"sine.inOut"},30.8);
+tl.fromTo("#w6 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},45.3);
+tl.fromTo("#w6 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},45.38);
+tl.to("#w6 .tx,#w6 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},48.48);
+tl.to("#cam",{scale:1.07,duration:3.4,ease:"sine.inOut"},45.3);
+tl.fromTo("#w7 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},48.82);
+tl.fromTo("#w7 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},48.90);
+tl.to("#w7 .tx,#w7 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},50.68);
+tl.to("#cam",{scale:1.0,duration:2.08,ease:"sine.inOut"},48.82);
+tl.fromTo("#w8 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},50.95);
+tl.fromTo("#w8 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},51.03);
+tl.to("#w8 .tx,#w8 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},53.38);
+tl.fromTo("#cam",{scale:1.1},{scale:1.02,duration:0.45,ease:"power3.out"},50.95);
+tl.fromTo("#w9 .tx",{opacity:0,y:22},{opacity:1,y:0,duration:0.38,ease:"expo.out"},59.66);
+tl.fromTo("#w9 .bar",{scaleX:0},{scaleX:1,duration:0.4,ease:"expo.out"},59.74);
+tl.to("#w9 .tx,#w9 .bar",{opacity:0,y:-10,duration:0.2,ease:"power2.in"},66.08);
+tl.to("#cam",{scale:1.07,duration:6.64,ease:"sine.inOut"},59.66);
+tl.set({},{},66.4);
+window.__timelines=window.__timelines||{};window.__timelines["root"]=tl;
+</script>
+</body></html>
