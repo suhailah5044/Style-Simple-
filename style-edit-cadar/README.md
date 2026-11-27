@@ -20,6 +20,19 @@ Template HyperFrames 9:16 (1080x1920, 50.7s). Footage asal tak diubah warna, tia
 - `v2` — overlay pilihan (ikut susunan): Floral Design 🌼 · Soft & Cooling Fabric · 360° Elastic Fit ·
   No Loose Corners! · Easy Wash & Care · Long Lasting Colour · Sweet Dreams, Comfy Nights ✨
 
+### Versi hook paling kuat di depan (V3–V6) — `hooks.py`
+Footage sama, disusun semula supaya momen paling kuat jadi pembuka (setiap versi intro lain). Segmen "test fit" & "seriously cantik" dibuang → 43s.
+Motion lembut pada setiap sambungan baru + cut asal. Teks kata kunci ikut segmen (posisi sama yang dah disemak).
+
+| Versi | Buka dengan (ucapan asal) | Hook |
+|---|---|---|
+| V3 | "kalau beli dekat mall harga tak akan dapat semurah ini" | Beli kat mall pun / tak dapat harga ni! |
+| V4 | "keliling cadar ni semuanya bergetah, terus fit, terus kemas" | Pasang je, terus / fit & kemas! |
+| V5 | "korang akan dapat satu sarung tilam dan dua sarung bantal" | 1 set dapat / 3 helai terus! (hanya pada shot katil penuh, tak tutup produk) |
+| V6 | "cotton yang bila kita basuh tak mudah pudar warna" | Dah basuh, / warna tak luntur! |
+
+`python3 hooks.py cut v3` (buat `assets/footage_v3.mp4`) → `python3 build.py v3` → render.
+
 ## Cara guna
 Footage (`assets/footage.mp4`) tak di-commit — tukar dari .mov asal:
 `ffmpeg -i in.mov -c:v libx264 -crf 15 -pix_fmt yuv420p -c:a aac assets/footage.mp4`

@@ -1,11 +1,11 @@
 # Gaya Misty Brooch (versi lembut) untuk Cadar Floral.
-# Guna: python3 build.py v1|v2  -> tulis index.html
+# Guna: python3 build.py v1|v2|v3|v4|v5|v6  -> tulis index.html (v3-v6: lihat hooks.py)
 import sys
 V = sys.argv[1] if len(sys.argv) > 1 else "v1"
 DUR = 50.73
 
 # Teks hook (tengah, 0-3.4s)
-HOOK = {"v1": ("Floral Design,", "So Aesthetic!"),
+HOOK = {"v3":0,"v4":0,"v5":0,"v6":0,"v1": ("Floral Design,", "So Aesthetic!"),
         "v2": ("Floral Design \U0001F33C", "")}[V]
 
 # [mula, tamat, teks, posisi, sfx]
@@ -23,6 +23,7 @@ O = {
   [41.65, 45.05, "Easy Care,<br>Tahan Lama", "L:470", "soft_tap"],
   [45.15, 50.60, "Bilik Terus<br>Nampak Classy!", "C:410", "soft_sparkle"],
  ],
+ "v3":0,"v4":0,"v5":0,"v6":0,
  "v2": [
   [6.95, 10.85, "Soft &amp; Cooling<br>Fabric", "L:380", "soft_chime"],
   [14.30, 19.70, "360° Elastic Fit", "L:560", "soft_tap"],
@@ -41,6 +42,11 @@ MOT = {
  "rise":   "{scale:1.04,x:0,y:18}",
  "driftR": "{scale:1.04,x:-20,y:0}",
 }
+SRC, HTOP, HEND = "assets/footage.mp4", 420, 3.0
+if V not in ("v1", "v2"):
+    import hooks
+    DUR, HOOK, HTOP, O, CUTS, HEND = hooks.plan(V)
+    SRC = f"assets/footage_{V}.mp4"
 ORDER = ["settle", "driftL", "rise", "driftR"]
 VOL = {"soft_chime": 0.18, "soft_tap": 0.2, "soft_sparkle": 0.16}
 
@@ -78,14 +84,14 @@ html,body{{margin:0;background:#000;}}
   text-shadow:0 2px 6px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3);opacity:0;}}
 .word .bar{{display:block;height:3px;width:56px;background:#fff;border-radius:2px;margin-top:12px;box-shadow:0 1px 4px rgba(0,0,0,.35);transform:scaleX(0);}}
 .word.L .bar{{transform-origin:0 50%;}} .word.R .bar{{margin-left:auto;transform-origin:100% 50%;}} .word.C .bar{{margin:12px auto 0;transform-origin:50% 50%;}}
-#title{{position:absolute;top:420px;left:0;right:0;text-align:center;z-index:6;color:#fff;font-family:"Lexend Mega","Noto Color Emoji",sans-serif;font-weight:600;font-size:34px;line-height:1.4;letter-spacing:-0.03em;
+#title{{position:absolute;top:{HTOP}px;left:0;right:0;text-align:center;z-index:6;color:#fff;font-family:"Lexend Mega","Noto Color Emoji",sans-serif;font-weight:600;font-size:34px;line-height:1.4;letter-spacing:-0.03em;
   text-shadow:0 2px 6px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.3);}}
 #title span{{display:inline-block;opacity:0;}}
 </style></head>
 <body>
 <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="{DUR}" data-fps="30">
-  <div id="cam"><video id="footage" src="assets/footage.mp4" data-start="0" data-duration="{DUR}" data-has-audio="true" data-volume="1"></video></div>
-  <div id="title" class="clip" data-start="0" data-duration="3.5"><span id="t1">{h1}</span><br><span id="t2">{h2}</span></div>
+  <div id="cam"><video id="footage" src="{SRC}" data-start="0" data-duration="{DUR}" data-has-audio="true" data-volume="1"></video></div>
+  <div id="title" class="clip" data-start="0" data-duration="{HEND+0.5}"><span id="t1">{h1}</span><br><span id="t2">{h2}</span></div>
   {chr(10).join("  "+x for x in ov)}
   <audio id="a_hook" src="sfx/soft_bell.wav" data-start="0.2" data-duration="1.6" data-volume="0.18"></audio>
   {chr(10).join("  "+x for x in au)}
@@ -95,8 +101,8 @@ html,body{{margin:0;background:#000;}}
 const tl=gsap.timeline({{paused:true}});
 tl.fromTo("#cam",{{scale:1.06,x:0,y:0}},{{scale:1,x:0,y:0,duration:1.6,ease:"power2.out"}},0);
 tl.fromTo("#t1",{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.8,ease:"power2.out"}},0.2);
-tl.fromTo("#t2",{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.8,ease:"power2.out"}},0.55);
-tl.to("#title span",{{opacity:0,y:-6,duration:0.45,ease:"power1.in"}},3.0);
+tl.fromTo("#t2",{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.8,ease:"power2.out"}},{0.35 if HEND<3 else 0.55});
+tl.to("#title span",{{opacity:0,y:-6,duration:0.45,ease:"power1.in"}},{HEND});
 {chr(10).join(js)}
 tl.set({{}},{{}},{DUR});
 window.__timelines=window.__timelines||{{}};window.__timelines["root"]=tl;

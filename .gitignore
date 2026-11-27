@@ -1,3 +1,5 @@
 style-edit-cadar/assets/footage.mp4
 .hyperframes/
 */.hyperframes/
+style-edit-cadar/assets/footage_v*.mp4
+__pycache__/
