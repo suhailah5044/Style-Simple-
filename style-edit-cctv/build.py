@@ -63,8 +63,8 @@ html,body{{margin:0;background:#000;}}
 .card{{position:absolute;top:350px;left:50%;width:560px;margin-left:-280px;z-index:5;opacity:0;background:#fff;padding:10px;border-radius:28px;box-shadow:0 18px 40px rgba(0,0,0,.35);overflow:hidden;box-sizing:border-box;}}
 
 .card img{{display:block;width:100%;border-radius:20px;}}
-#title{{position:absolute;top:230px;left:0;right:0;text-align:center;z-index:6;color:#fff;font-family:"Italianno","Noto Color Emoji",cursive;font-size:84px;line-height:.95;
-  text-shadow:0 2px 8px rgba(0,0,0,.5);}}
+#title{{position:absolute;top:230px;left:0;right:0;text-align:center;z-index:6;color:#fff;font-family:"Lexend Mega","Noto Color Emoji",sans-serif;font-weight:700;font-size:44px;letter-spacing:-0.04em;line-height:1.2;
+  text-shadow:0 2px 8px rgba(0,0,0,.6),0 0 3px rgba(0,0,0,.4);}}
 #title span{{display:inline-block;opacity:0;}}
 #title #t2{{font-family:"Lexend Mega",sans-serif;font-weight:600;font-size:30px;letter-spacing:-0.03em;margin-top:14px;}}
 </style></head>
